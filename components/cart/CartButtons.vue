@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ApolloQuery :query="require('~/../shared/gql/settings/shutter.gql')">
+    <ApolloQuery :query="require('~/gql/settings/shutter.gql')">
       <template v-slot="{ result: { error, data }, isLoading }">
         <div v-if="isLoading">Loading........</div>
         <div v-else-if="error" class="mask">

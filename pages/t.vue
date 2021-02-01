@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import settingQ from '~/../shared/gql/settings/settings.gql'
-import SUBSCRIPTION_SETTINGS_UPDATED from '~/../shared/gql/settings/settingsUpdated.gql'
+import settingQ from '~/gql/settings/settings.gql'
+import SUBSCRIPTION_SETTINGS_UPDATED from '~/gql/settings/settingsUpdated.gql'
 import { FacebookIcon } from 'vue-feather-icons'
 
 export default {

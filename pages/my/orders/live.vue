@@ -15,8 +15,8 @@
 
 <script>
 import Vue from 'vue'
-// import liveOrders from '~/../shared/gql/order/liveOrders.gql'
-import { HereMap } from '~/../shared/components'
+// import liveOrders from '~/gql/order/liveOrders.gql'
+import { HereMap } from '~/shared/components'
 export default {
   components: {
     HereMap,

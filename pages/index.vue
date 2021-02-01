@@ -43,13 +43,13 @@
 <script>
 import Vue from 'vue'
 import Categories from '~/components/Categories'
-import { Hero, Product } from '~/../shared/components'
+import { Hero, Product } from '~/shared/components'
 import StickyFooter from '~/components/StickyFooter'
 import BestSellers from '~/components/home/BestSellers'
 import Popular from '~/components/home/Popular'
 import AllItems from '~/components/home/AllItems'
 import RecentVisit from '~/components/home/RecentVisit'
-import products from '~/../shared/gql/product/products.gql'
+import products from '~/gql/product/products.gql'
 export default {
   components: {
     Hero,

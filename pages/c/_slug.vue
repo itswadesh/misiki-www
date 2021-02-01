@@ -1,7 +1,7 @@
 <template>
   <div>
     <ApolloQuery
-      :query="require('~/../shared/gql/category/category.gql')"
+      :query="require('~/gql/category/category.gql')"
       :variables="{ slug: $route.params.slug }"
     >
       <template v-slot="{ result: { error, data }, isLoading }">
@@ -23,7 +23,7 @@
       </div>-->
       <Categories />
       <ApolloQuery
-        :query="require('~/../shared/gql/product/products.gql')"
+        :query="require('~/gql/product/products.gql')"
         :variables="{ category: $route.params.slug }"
       >
         <template v-slot="{ result: { error, data }, isLoading }">
@@ -67,18 +67,18 @@
 
 <script>
 import Vue from 'vue'
-// import {Header} from '~/../shared/components'
+// import {Header} from '~/shared/components'
 import {
   Heading,
   Banner,
   Product,
   ListCard,
   Categories,
-} from '~/../shared/components'
+} from '~/shared/components'
 import StickyFooter from '~/components/StickyFooter'
 import { ContentLoader } from 'vue-content-loader'
-// import products from '~/../shared/gql/product/products.gql'
-// import category from '~/../shared/gql/category/category.gql'
+// import products from '~/gql/product/products.gql'
+// import category from '~/gql/category/category.gql'
 
 export default {
   data() {

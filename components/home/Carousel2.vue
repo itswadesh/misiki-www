@@ -13,7 +13,7 @@
 import Vue from 'vue'
 import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
 import '@jambonn/vue-concise-carousel/dist/vue-concise-carousel.css'
-import { Product } from '~/../shared/components'
+import { Product } from '~/shared/components'
 
 export default {
   props: ['title', 'products'],

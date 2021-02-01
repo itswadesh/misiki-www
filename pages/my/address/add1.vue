@@ -102,9 +102,9 @@
 
 <script>
 import Vue from 'vue'
-import { Textbox } from '~/../shared/components/ui'
+import { Textbox } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
-import address from '~/../shared/gql/user/address.gql'
+import address from '~/gql/user/address.gql'
 export default {
   middleware: ['isAuth'],
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div class="p-2 bg-white rounded shadow">
-    <ApolloQuery :query="require('~/../shared/gql/user/addresses.gql')">
+    <ApolloQuery :query="require('~/gql/user/addresses.gql')">
       <template v-slot="{ result: { error, data }, isLoading }">
         <div v-if="isLoading">Loading........</div>
         <div v-else-if="error">
@@ -62,8 +62,8 @@
 
 <script>
 // import Vue from 'vue'
-import { Radio } from '~/../shared/components/ui'
-import addresses from '~/../shared/gql/user/addresses.gql'
+import { Radio } from '~/shared/components/ui'
+import addresses from '~/gql/user/addresses.gql'
 
 export default {
   components: { Radio },

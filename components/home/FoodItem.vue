@@ -38,7 +38,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import Vue from 'vue'
-import { Ratingcircle } from '~/../shared/components/ui'
+import { Ratingcircle } from '~/shared/components/ui'
 
 export default {
   props: ['d'],

@@ -1,6 +1,6 @@
 <template>
   <ApolloQuery
-    :query="require('~/../shared/gql/product/products.gql')"
+    :query="require('~/gql/product/products.gql')"
     :variables="{ vendor }"
   >
     <template v-slot="{ result: { error, data }, isLoading }">
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { Product } from '~/../shared/components'
+import { Product } from '~/shared/components'
 import Carousel from '~/components/home/Carousel2'
 
 export default {

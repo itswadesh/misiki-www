@@ -19,8 +19,8 @@
 </template>
 <script>
 import Vue from 'vue'
-import { Loading, BackToTopDark } from '~/../shared/components/ui'
-import { Error, Search } from '~/../shared/components'
+import { Loading, BackToTopDark } from '~/shared/components/ui'
+import { Error, Search } from '~/shared/components'
 import StickyFooter from '~/components/StickyFooter'
 export default {
   components: { Error, Search, StickyFooter, BackToTopDark, Loading },

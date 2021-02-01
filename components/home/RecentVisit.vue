@@ -9,7 +9,7 @@
 <script>
 // import Vue from 'vue'
 import Carousel from './Carousel2'
-import productsByIds from '~/../shared/gql/product/productsByIds.gql'
+import productsByIds from '~/gql/product/productsByIds.gql'
 
 export default {
   data() {

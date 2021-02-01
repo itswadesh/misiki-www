@@ -28,7 +28,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import { Heading } from '~/../shared/components'
+import { Heading } from '~/shared/components'
 export default {
   components: { Heading },
 }

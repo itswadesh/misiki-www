@@ -207,7 +207,7 @@
 
 <script>
 import Vue from 'vue'
-import { Checkbox, Radio } from '~/../shared/components/ui'
+import { Checkbox, Radio } from '~/shared/components/ui'
 import { ArrowRightIcon } from 'vue-feather-icons'
 export default {
   components: { Checkbox, Radio, ArrowRightIcon },

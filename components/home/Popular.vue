@@ -1,6 +1,6 @@
 <template>
   <ApolloQuery
-    :query="require('~/../shared/gql/product/popular.gql')"
+    :query="require('~/gql/product/popular.gql')"
     :variables="{ city }"
     :update="(data) => data.popular"
   >
@@ -19,9 +19,9 @@
 
 <script>
 // import Vue from 'vue'
-import { Product } from '~/../shared/components'
+import { Product } from '~/shared/components'
 import Carousel from './Carousel2'
-// import popular from '~/../shared/gql/product/popular.gql'
+// import popular from '~/gql/product/popular.gql'
 
 export default {
   data() {

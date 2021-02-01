@@ -64,12 +64,12 @@ import {
   Categories,
   GeoLocation,
   SelectablePlan,
-} from '~/../shared/components'
+} from '~/shared/components'
 import { ContentLoader } from 'vue-content-loader'
 import ListCard from '~/components/ListCard'
-import { infiniteScroll } from '~/../shared/mixins'
-import { constructURL } from '~/../shared/lib/'
-import SEARCH from '~/../shared/gql/product/search.gql'
+import { infiniteScroll } from '~/shared/mixins'
+import { constructURL } from '~/shared/lib/'
+import SEARCH from '~/gql/product/search.gql'
 // import gsap from 'gsap'
 
 export default {

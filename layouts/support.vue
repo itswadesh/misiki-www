@@ -17,8 +17,8 @@
 </template>
 <script>
 import Vue from 'vue'
-import { Loading } from '~/../shared/components/ui'
-import { Error } from '~/../shared/components'
+import { Loading } from '~/shared/components/ui'
+import { Error } from '~/shared/components'
 const supportHeader = () => import('~/components/support/supportHeader')
 export default {
   components: { Error, supportHeader, Loading },

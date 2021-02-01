@@ -1,7 +1,7 @@
 <template>
   <ApolloQuery
     class
-    :query="require('~/../shared/gql/page/pageSlug.gql')"
+    :query="require('~/gql/page/pageSlug.gql')"
     :variables="{ slug: 'about' }"
     :update="
       (data) => {

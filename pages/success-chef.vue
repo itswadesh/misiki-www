@@ -17,7 +17,7 @@
 
 <script>
 import Vue from 'vue'
-import { Heading } from '~/../shared/components'
+import { Heading } from '~/shared/components'
 import { SearchIcon } from 'vue-feather-icons'
 export default {
   components: { Heading, SearchIcon },

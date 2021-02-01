@@ -52,7 +52,7 @@
 <script>
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
-import { Button } from '~/../shared/components/ui'
+import { Button } from '~/shared/components/ui'
 export default {
   props: {
     selectedAddress: { type: String },

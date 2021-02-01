@@ -102,7 +102,7 @@ const Offers = () => import('~/components/cart/Offers')
 const CartSummary = () => import('~/components/cart/CartSummary')
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 const CheckoutFooter = () => import('~/components/checkout/CheckoutFooter')
-import { Textbox } from '~/../shared/components/ui'
+import { Textbox } from '~/shared/components/ui'
 
 export default {
   components: {

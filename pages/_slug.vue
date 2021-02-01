@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <ApolloQuery
-      :query="require('~/../shared/gql/product/productSlug.gql')"
+      :query="require('~/gql/product/productSlug.gql')"
       :variables="{ slug: $route.params.slug }"
       :update="
         (data) => {
@@ -206,13 +206,13 @@ import {
   Ratingcircle,
   DetailPageSkeleton,
   BackButton,
-} from '~/../shared/components/ui'
-import productSlug from '~/../shared/gql/product/productSlug.gql'
-import SocialSharing from '~/../shared/components/SocialSharing'
-import productsByIds from '~/../shared/gql/product/productsByIds.gql'
-import hasOrder from '~/../shared/gql/order/hasOrder.gql'
-import productReviews from '~/../shared/gql/review/productReviews.gql'
-import reviewSummary from '~/../shared/gql/review/reviewSummary.gql'
+} from '~/shared/components/ui'
+import productSlug from '~/gql/product/productSlug.gql'
+import SocialSharing from '~/shared/components/SocialSharing'
+import productsByIds from '~/gql/product/productsByIds.gql'
+import hasOrder from '~/gql/order/hasOrder.gql'
+import productReviews from '~/gql/review/productReviews.gql'
+import reviewSummary from '~/gql/review/reviewSummary.gql'
 import { FacebookIcon, TruckIcon } from 'vue-feather-icons'
 // const host = process.server
 //   ? this.$ssrContext.req.headers.host

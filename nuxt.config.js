@@ -6,11 +6,11 @@ let { HTTP_ENDPOINT, ONESIGNAL_APP_ID, WWW_URL, dev } = require(resolve(
 ))
 // delete config.fontawesome
 delete config.buildModules
-config.plugins.push({ src: '~/../shared/plugins/map.js', ssr: false })
-config.plugins.push({ src: '~/../shared/plugins/timer.js', ssr: false })
-// config.plugins.push({ src: '~/../shared/plugins/drift.js', ssr: false })
+config.plugins.push({ src: '~/shared/plugins/map.js', ssr: false })
+config.plugins.push({ src: '~/shared/plugins/timer.js', ssr: false })
+// config.plugins.push({ src: '~/shared/plugins/drift.js', ssr: false })
 // config.plugins.push(
-//   { src: '~/../shared/plugins/vue-simple-photoswipe.js', ssr: false },
+//   { src: '~/shared/plugins/vue-simple-photoswipe.js', ssr: false },
 // )
 config.buildModules = [
   '@nuxtjs/apollo',

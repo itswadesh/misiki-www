@@ -105,11 +105,11 @@ import AddressCard from '~/components/checkout/AddressCard'
 import SelectAddress from '~/components/checkout/SelectAddress'
 import AddressNewCard from '~/components/checkout/AddressNewCard'
 import CartSummaryCheckout from '~/components/checkout/CartSummaryCheckout'
-import { Radio } from '~/../shared/components/ui'
+import { Radio } from '~/shared/components/ui'
 import CartItem from '~/components/cart/CartItem'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
-import ADDRESSES from '~/../shared/gql/user/addresses.gql'
-import deleteAddress from '~/../shared/gql/user/deleteAddress.gql'
+import ADDRESSES from '~/gql/user/addresses.gql'
+import deleteAddress from '~/gql/user/deleteAddress.gql'
 export default {
   middleware: ['isAuth'],
   data() {

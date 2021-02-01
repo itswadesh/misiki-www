@@ -1,5 +1,5 @@
 <template>
-  <ApolloQuery :query="require('~/../shared/gql/product/bestSellers.gql')">
+  <ApolloQuery :query="require('~/gql/product/bestSellers.gql')">
     <template v-slot="{ result: { error, data }, isLoading }">
       <div v-if="isLoading">Loading........</div>
 
@@ -16,8 +16,8 @@
 // import Vue from 'vue'
 import Carousel from './Carousel.vue'
 import Carousel2 from './Carousel2.vue'
-import bestSellers from '~/../shared/gql/product/bestSellers.gql'
-// import { ErrComponent } from '~/../shared/components/ui'
+import bestSellers from '~/gql/product/bestSellers.gql'
+// import { ErrComponent } from '~/shared/components/ui'
 
 export default {
   // data() {

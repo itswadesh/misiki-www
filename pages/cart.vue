@@ -105,7 +105,7 @@ import CartSummary from '~/components/cart/CartSummary'
 import CartBanners from '~/components/cart/CartBanners'
 import CartItemSkeleton from '~/components/cart/CartItemSkeleton'
 import CartItem from '~/components/cart/CartItem'
-import { Button, BackButton } from '~/../shared/components/ui'
+import { Button, BackButton } from '~/shared/components/ui'
 import { mapGetters, mapActions } from 'vuex'
 import gsap from 'gsap'
 

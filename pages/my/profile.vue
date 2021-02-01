@@ -103,11 +103,11 @@
 <script>
 import Vue from 'vue'
 import { mapActions } from 'vuex'
-import { Avatar, Heading } from '~/../shared/components'
-import { Textbox, Checkbox } from '~/../shared/components/ui'
-import me from '~/../shared/gql/user/me.gql'
+import { Avatar, Heading } from '~/shared/components'
+import { Textbox, Checkbox } from '~/shared/components/ui'
+import me from '~/gql/user/me.gql'
 
-import { location } from '~/../shared/mixins'
+import { location } from '~/shared/mixins'
 export default {
   middleware: ['isAuth'],
   mixins: [location],

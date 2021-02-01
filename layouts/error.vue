@@ -23,8 +23,8 @@
 
 <script>
 import Vue from 'vue'
-import { Loading } from '~/../shared/components/ui'
-import { Error } from '~/../shared/components'
+import { Loading } from '~/shared/components/ui'
+import { Error } from '~/shared/components'
 export default {
   props: ['error'],
   components: { Error, Loading },

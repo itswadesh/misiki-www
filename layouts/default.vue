@@ -18,8 +18,8 @@
 </template>
 <script>
 import Vue from 'vue'
-import { Loading, BackToTopDark } from '~/../shared/components/ui'
-import { Header } from '~/../shared/components'
+import { Loading, BackToTopDark } from '~/shared/components/ui'
+import { Header } from '~/shared/components'
 
 export default {
   middleware: ['geo'],

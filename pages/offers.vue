@@ -3,7 +3,7 @@
     <Heading title="Offers" />
     <div class="min-h-screen bg-gray-100">
       <div class="w-full">
-        <ApolloQuery :query="require('~/../shared/gql/coupon/coupons.gql')">
+        <ApolloQuery :query="require('~/gql/coupon/coupons.gql')">
           <template v-slot="{ result: { error, data }, isLoading }">
             <div v-if="isLoading">
               <content-loader
@@ -47,12 +47,12 @@
 
 <script>
 import Vue from 'vue'
-import { Heading } from '~/../shared/components'
+import { Heading } from '~/shared/components'
 import { ContentLoader } from 'vue-content-loader'
-import { ListSkeleton } from '~/../shared/components/ui'
+import { ListSkeleton } from '~/shared/components/ui'
 import Coupon from '~/components/Coupon'
 import StickyFooter from '~/components/StickyFooter'
-// import coupons from '~/../shared/gql/cart/coupons.gql'
+// import coupons from '~/gql/cart/coupons.gql'
 
 export default {
   components: { Heading, Coupon, StickyFooter, ListSkeleton, ContentLoader },

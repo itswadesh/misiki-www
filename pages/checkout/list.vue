@@ -6,7 +6,7 @@
         CHOOSE DELIVERY ADDRESS
       </div>
       <div class="m-2 lg:flex">
-        <ApolloQuery :query="require('~/../shared/gql/user/addresses.gql')">
+        <ApolloQuery :query="require('~/gql/user/addresses.gql')">
           <template v-slot="{ result: { error, data }, isLoading }">
             <div v-if="isLoading">Loading........</div>
             <ErrComponent v-else-if="error" :error="error" />
@@ -85,10 +85,10 @@
 
 <script>
 import Vue from 'vue'
-import { Radio } from '~/../shared/components/ui'
+import { Radio } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 import { ArrowRightIcon } from 'vue-feather-icons'
-// import addresses from '~/../shared/gql/user/addresses.gql'
+// import addresses from '~/gql/user/addresses.gql'
 export default {
   data() {
     return {

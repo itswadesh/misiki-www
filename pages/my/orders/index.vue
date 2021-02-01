@@ -18,7 +18,7 @@
       </h1>
     </div>-->
     <ApolloQuery
-      :query="require('~/../shared/gql/order/orders.gql')"
+      :query="require('~/gql/order/orders.gql')"
       :variables="{ id: $route.query.id }"
     >
       <template v-slot="{ result: { error, data }, isLoading }">
@@ -103,11 +103,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { ListCardSkeleton } from '~/../shared/components'
-import { Heading } from '~/../shared/components'
+import { ListCardSkeleton } from '~/shared/components'
+import { Heading } from '~/shared/components'
 
 // import Vue from 'vue'
-// import orders from '~/../shared/gql/order/orders.gql'
+// import orders from '~/gql/order/orders.gql'
 export default {
   components: { ListCardSkeleton, Heading },
   layout: 'account',

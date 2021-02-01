@@ -23,9 +23,9 @@
   </div>
 </template>
 <script>
-import { Submit, Textarea, StarRating } from '~/../shared/components/ui'
-import { Heading } from '~/../shared/components'
-import saveReview from '~/../shared/gql/review/saveReview.gql'
+import { Submit, Textarea, StarRating } from '~/shared/components/ui'
+import { Heading } from '~/shared/components'
+import saveReview from '~/gql/review/saveReview.gql'
 
 export default {
   components: { Heading, Submit, Textarea, StarRating },

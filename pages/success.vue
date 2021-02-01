@@ -60,11 +60,11 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import { GMap, BackButton } from '~/../shared/components/ui'
+import { GMap, BackButton } from '~/shared/components/ui'
 import StickyFooter from '~/components/StickyFooter.vue'
-import order from '~/../shared/gql/order/order.gql'
-import clearCart from '~/../shared/gql/cart/clearCart.gql'
-import SUBSCRIPTION_ORDER_UPDATED from '~/../shared/gql/order/SUBSCRIPTION_ORDER_UPDATED.gql'
+import order from '~/gql/order/order.gql'
+import clearCart from '~/gql/cart/clearCart.gql'
+import SUBSCRIPTION_ORDER_UPDATED from '~/gql/order/SUBSCRIPTION_ORDER_UPDATED.gql'
 import Push from 'push.js'
 import { CheckIcon, RefreshCwIcon } from 'vue-feather-icons'
 

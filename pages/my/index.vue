@@ -7,7 +7,7 @@
 
 <script>
 import Vue from 'vue'
-import { GeoLocation } from '~/../shared/components/'
+import { GeoLocation } from '~/shared/components/'
 import AccountMenu from '~/components/AccountMenu'
 export default {
   components: { AccountMenu, GeoLocation },

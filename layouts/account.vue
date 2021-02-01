@@ -22,10 +22,10 @@
 
 <script>
 import Vue from 'vue'
-import { Error, Header } from '~/../shared/components'
+import { Error, Header } from '~/shared/components'
 import StickyFooter from '~/components/StickyFooter'
 import AccountMenu from '~/components/AccountMenu'
-import { Loading, BackToTopDark } from '~/../shared/components/ui'
+import { Loading, BackToTopDark } from '~/shared/components/ui'
 export default {
   components: {
     Error,

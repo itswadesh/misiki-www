@@ -1,6 +1,6 @@
 <template>
   <ApolloQuery
-    :query="require('~/../shared/gql/product/bestSellers.gql')"
+    :query="require('~/gql/product/bestSellers.gql')"
     :update="(data) => data.bestSellers"
   >
     <template v-slot="{ result: { error, data }, isLoading }">
@@ -95,7 +95,7 @@
 import Vue from 'vue'
 import Carousel from './Carousel'
 import Carousel2 from './Carousel2'
-import bestSellers from '~/../shared/gql/product/bestSellers.gql'
+import bestSellers from '~/gql/product/bestSellers.gql'
 import FoodItem from './FoodItem.vue'
 
 export default {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ApolloQuery
-      :query="require('~/../shared/gql/product/search.gql')"
+      :query="require('~/gql/product/search.gql')"
       :variables="{ city, page: 1, sort: '-updatedAt' }"
       :update="(data) => data.search"
     >
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { Product } from '~/../shared/components'
+import { Product } from '~/shared/components'
 
 export default {
   data() {

@@ -1,6 +1,6 @@
 <template>
   <ApolloQuery
-    :query="require('~/../shared/gql/product/bestSellers.gql')"
+    :query="require('~/gql/product/bestSellers.gql')"
     :update="(data) => data.bestSellers"
     :variables="{ city }"
     fetchPolicy="no-cache"
@@ -51,9 +51,9 @@
 <script>
 import Vue from 'vue'
 import Carousel from './CarouselBestSeller'
-import bestSellers from '~/../shared/gql/product/bestSellers.gql'
+import bestSellers from '~/gql/product/bestSellers.gql'
 import FoodItem from './FoodItem.vue'
-import { Product } from '~/../shared/components'
+import { Product } from '~/shared/components'
 
 export default {
   data() {

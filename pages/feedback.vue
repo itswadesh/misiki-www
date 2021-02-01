@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import { Textbox, Submit, Textarea } from '~/../shared/components/ui'
-import { Heading } from '~/../shared/components'
-import saveMessage from '~/../shared/gql/product/saveMessage.gql'
+import { Textbox, Submit, Textarea } from '~/shared/components/ui'
+import { Heading } from '~/shared/components'
+import saveMessage from '~/gql/product/saveMessage.gql'
 import { mapGetters } from 'vuex'
 
 export default {

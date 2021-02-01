@@ -42,7 +42,7 @@
 
 <script>
 import Vue from 'vue'
-import { Textbox } from '~/../shared/components/ui'
+import { Textbox } from '~/shared/components/ui'
 import { ArrowLeftIcon } from 'vue-feather-icons'
 
 export default {

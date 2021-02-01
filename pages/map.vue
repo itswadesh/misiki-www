@@ -7,7 +7,7 @@
 
 <script>
 import Vue from 'vue'
-import { location } from '~/../shared/mixins'
+import { location } from '~/shared/mixins'
 export default {
   mixins: [location],
 }

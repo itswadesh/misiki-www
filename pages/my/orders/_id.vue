@@ -14,7 +14,7 @@
       </h1>
     </div>-->
     <ApolloQuery
-      :query="require('~/../shared/gql/order/order.gql')"
+      :query="require('~/gql/order/order.gql')"
       :variables="{ id: $route.params.id }"
       :update="(data) => data.order"
       fetchPolicy="no-cache"
@@ -195,9 +195,9 @@
 <script>
 import { mapGetters } from 'vuex'
 import Vue from 'vue'
-import { HereMap } from '~/../shared/components'
-// import order from '~/../shared/gql/order/order.gql'
-import { Heading } from '~/../shared/components'
+import { HereMap } from '~/shared/components'
+// import order from '~/gql/order/order.gql'
+import { Heading } from '~/shared/components'
 
 export default {
   middleware: ['isAuth'],

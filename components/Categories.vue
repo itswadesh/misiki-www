@@ -1,6 +1,6 @@
 <template>
   <ApolloQuery
-    :query="require('~/../shared/gql/category/categories.gql')"
+    :query="require('~/gql/category/categories.gql')"
     :variables="{ city }"
   >
     <template v-slot="{ result: { error, data }, isLoading }">
@@ -37,8 +37,8 @@
 
 <script>
 import { ContentLoader } from 'vue-content-loader'
-import categories from '~/../shared/gql/category/categories.gql'
-import { OnelineSkeleton } from '~/../shared/components/ui'
+import categories from '~/gql/category/categories.gql'
+import { OnelineSkeleton } from '~/shared/components/ui'
 export default {
   components: { OnelineSkeleton, ContentLoader },
   data() {

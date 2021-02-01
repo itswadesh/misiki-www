@@ -86,8 +86,8 @@
 <script>
 import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
-import { Heading } from '~/../shared/components'
-import { Textbox } from '~/../shared/components/ui'
+import { Heading } from '~/shared/components'
+import { Textbox } from '~/shared/components/ui'
 
 export default {
   components: {

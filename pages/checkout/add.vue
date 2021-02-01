@@ -20,10 +20,10 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Textbox } from '~/../shared/components/ui'
-import { AddressEdit } from '~/../shared/components'
-import addAddress from '~/../shared/gql/user/addAddress.gql'
-import updateAddress from '~/../shared/gql/user/updateAddress.gql'
+import { Textbox } from '~/shared/components/ui'
+import { AddressEdit } from '~/shared/components'
+import addAddress from '~/gql/user/addAddress.gql'
+import updateAddress from '~/gql/user/updateAddress.gql'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 
 export default {

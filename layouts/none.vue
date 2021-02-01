@@ -16,8 +16,8 @@
 
 <script>
 import Vue from 'vue'
-import { Loading } from '~/../shared/components/ui'
-// import { ErrComponent } from '~/../shared/components/ui'
+import { Loading } from '~/shared/components/ui'
+// import { ErrComponent } from '~/shared/components/ui'
 
 export default {
   components: { Loading },

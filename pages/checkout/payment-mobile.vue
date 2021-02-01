@@ -20,7 +20,7 @@
         Select your prefered payment method
       </div>
       <ApolloQuery
-        :query="require('~/../shared/gql/payment/paymentMethods.gql')"
+        :query="require('~/gql/payment/paymentMethods.gql')"
         :variables="{ active: true }"
         :update="
           (data) => {
@@ -227,15 +227,15 @@
 <script>
 import Vue from 'vue'
 import { mapGetters, mapActions, mapMutations } from 'vuex'
-import { Radio, Submit } from '~/../shared/components/ui'
+import { Radio, Submit } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
-import capturePay from '~/../shared/gql/pay/capturePay.gql'
-import razorpay from '~/../shared/gql/pay/razorpay.gql'
-import STRIPE_MUTATION from '~/../shared/gql/pay/stripe.gql'
-import address from '~/../shared/gql/user/address.gql'
-import validateCart from '~/../shared/gql/cart/validateCart.gql'
+import capturePay from '~/gql/pay/capturePay.gql'
+import razorpay from '~/gql/pay/razorpay.gql'
+import STRIPE_MUTATION from '~/gql/pay/stripe.gql'
+import address from '~/gql/user/address.gql'
+import validateCart from '~/gql/cart/validateCart.gql'
 import { Card, createToken, CardNumber } from 'vue-stripe-elements-plus'
-// import { STRIPE_PUBLISHABLE_KEY } from '~/../shared/config'
+// import { STRIPE_PUBLISHABLE_KEY } from '~/shared/config'
 import { ContentLoader } from 'vue-content-loader'
 
 export default {
