@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-const config = require(resolve(process.cwd(), '../shared/nuxtConfig'))
+const config = require(resolve(process.cwd(), './shared/nuxtConfig'))
 let { HTTP_ENDPOINT, ONESIGNAL_APP_ID, WWW_URL, dev } = require(resolve(
   process.cwd(),
   '../shared/config'
