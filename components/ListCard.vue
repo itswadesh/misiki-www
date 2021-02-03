@@ -87,7 +87,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Ratingcircle } from './../../shared/components/ui'
+import { Ratingcircle } from '~/shared/components/ui'
 import { ContentLoader } from 'vue-content-loader'
 export default {
   props: ['p'],

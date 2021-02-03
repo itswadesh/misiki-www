@@ -1,7 +1,7 @@
-# reload
-
-> My riveting Nuxt.js project
-
+# Clone Submodules
+```
+git clone git@github.com:itswadesh/misiki-www.git --recurse-submodules
+```
 ## Build Setup
 
 ```bash
