@@ -1,4 +1,4 @@
-# Clone Submodules
+# Clone Entire
 ```
 git clone git@github.com:itswadesh/misiki-www.git --recurse-submodules
 ```

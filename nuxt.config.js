@@ -33,6 +33,8 @@ config.pwa = {
   },
 }
 const server = dev ? 'http://localhost:8888' : WWW_URL
+HTTP_ENDPOINT = HTTP_ENDPOINT || 'https://apiv2.misiki.in'
+
 config.apollo = {
   // watchLoading: '../shared/plugins/apollo-watch-loading-handler.js',
   // errorHandler: './plugins/apollo-error-handler.js',
