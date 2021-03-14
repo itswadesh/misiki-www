@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap block w-full p-3 bg-white lg:hidden">
+        <div class="flex flex-wrap w-full p-3 bg-white lg:hidden">
           <div
             class="w-20 text-3xl font-bold text-left border-r border-gray-200 headings"
           >

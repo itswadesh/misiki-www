@@ -30,7 +30,7 @@
             <div
               v-if="data.vendor && data.vendor.info"
               class="absolute bottom-0 w-3/4 py-2 text-xl font-bold text-center text-white bg-black"
-              style="background-color: rgba(0, 0, 0, 0.5);"
+              style="background-color: rgba(0, 0, 0, 0.5)"
             >
               <!-- <div class="text-white opacity-100"></div> -->
               {{ data.vendor.info.restaurant }}

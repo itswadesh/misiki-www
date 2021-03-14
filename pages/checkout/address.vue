@@ -1,7 +1,7 @@
 <template>
   <div>
     <CheckoutHeader selected="address" />
-    <div style="max-width: 1000px; margin: 0 auto;">
+    <div style="max-width: 1000px; margin: 0 auto">
       <div
         class="flex flex-wrap items-start justify-between p-2 mx-auto lg:mx-10"
       >

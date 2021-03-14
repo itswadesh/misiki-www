@@ -13,7 +13,7 @@
         </nuxt-link>
         <div class="text-xs text-gray-600">Step 2 of 3</div>
       </div>
-      <AddressEdit go="checkout" id="add" />
+      <AddressEdit go="checkout" :id="$route.query.id" />
     </div>
   </div>
 </template>

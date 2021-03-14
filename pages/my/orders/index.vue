@@ -18,17 +18,17 @@
       </h1>
     </div>-->
     <ApolloQuery
-      :query="require('~/gql/order/orders.gql')"
+      :query="require('~/gql/order/myOrders.gql')"
       :variables="{ id: $route.query.id }"
     >
       <template v-slot="{ result: { error, data }, isLoading }">
         <ListCardSkeleton v-if="isLoading">Loading........</ListCardSkeleton>
         <ErrComponent v-else-if="error" :error="error" />
-        <div v-else-if="data && data.orders">
+        <div v-else-if="data && data.myOrders">
           <nuxt-link
             class="block pb-3 mx-2 my-4 bg-white rounded shadow-lg hover:shadow-xl"
             :to="`/my/orders/${o.id}`"
-            v-for="o in data.orders.data"
+            v-for="o in data.myOrders.data"
             :key="o.id"
           >
             <div class="p-3 rounded">

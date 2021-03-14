@@ -19,7 +19,7 @@
     <div class="restroname">{{ d.name }}</div>
     <div class="card-container">
       <div class="a-contain">
-        <div style="font-weight: 600; min-width: 3rem;">
+        <div style="font-weight: 600; min-width: 3rem">
           {{ d.price | currency(settings.currency_symbol) }}
         </div>
         <div class="f-pink">

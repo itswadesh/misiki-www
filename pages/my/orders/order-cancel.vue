@@ -1,8 +1,8 @@
 <template>
-  <div style="background: #f5f5f5;">
+  <div style="background: #f5f5f5">
     <!-- mobile -->
     <div
-      class="flex justify-between block w-full text-xs font-semibold border-b-2 border-gray-300 lg:hidden"
+      class="flex justify-between w-full text-xs font-semibold border-b-2 border-gray-300 lg:hidden"
     >
       <div
         @click="step = 1"

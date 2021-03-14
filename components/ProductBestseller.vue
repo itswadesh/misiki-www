@@ -12,7 +12,7 @@
         Lunch
       </div>
       <div
-        v--else-if="p.time == '8:30 - 9:30 PM'"
+        v-else-if="p.time == '8:30 - 9:30 PM'"
         class="absolute right-0 z-10 px-4 text-xs text-white bg-blue-500 rounded-l-lg opacity-75"
       >
         Dinner

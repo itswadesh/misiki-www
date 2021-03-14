@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div style="padding: 10px 0;">
+    <div style="padding: 10px 0">
       <button type="button" v-on:click="route()">Route</button>
     </div>
     <HereMap

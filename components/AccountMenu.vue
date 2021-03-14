@@ -160,6 +160,78 @@
             <li>
               <button
                 type="button"
+                @click="select(5, '/legal/about-us')"
+                :aria-selected="selected === 5"
+                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+              >
+                <svg
+                  :class="selected === 5 ? 'text-indigo-400' : 'text-gray-500'"
+                  class="w-6 h-6 transition-all ease-out transition-medium"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M2 15V5c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v15a1 1 0 0 1-1.7.7L16.58 17H4a2 2 0 0 1-2-2zM20 5H4v10h13a1 1 0 0 1 .7.3l2.3 2.29V5z"
+                  />
+                </svg>
+                <span
+                  :class="selected === 5 ? 'text-indigo-600' : 'text-gray-700'"
+                  class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+                  >About Us</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                @click="select(6, '/legal/privacy-policy')"
+                :aria-selected="selected === 6"
+                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+              >
+                <svg
+                  :class="selected === 6 ? 'text-indigo-400' : 'text-gray-500'"
+                  class="w-6 h-6 transition-all ease-out transition-medium"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M2 15V5c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v15a1 1 0 0 1-1.7.7L16.58 17H4a2 2 0 0 1-2-2zM20 5H4v10h13a1 1 0 0 1 .7.3l2.3 2.29V5z"
+                  />
+                </svg>
+                <span
+                  :class="selected === 6 ? 'text-indigo-600' : 'text-gray-700'"
+                  class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+                  >Privacy Policy</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                @click="select(7, '/legal/terms')"
+                :aria-selected="selected === 7"
+                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+              >
+                <svg
+                  :class="selected === 7 ? 'text-indigo-400' : 'text-gray-500'"
+                  class="w-6 h-6 transition-all ease-out transition-medium"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M2 15V5c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v15a1 1 0 0 1-1.7.7L16.58 17H4a2 2 0 0 1-2-2zM20 5H4v10h13a1 1 0 0 1 .7.3l2.3 2.29V5z"
+                  />
+                </svg>
+                <span
+                  :class="selected === 7 ? 'text-indigo-600' : 'text-gray-700'"
+                  class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
+                  >Terms</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
                 @click="logout"
                 class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
               >

@@ -24,7 +24,7 @@
       <Categories />
       <ApolloQuery
         :query="require('~/gql/product/products.gql')"
-        :variables="{ category: $route.params.slug }"
+        :variables="{ category: $route.params.slug, city }"
       >
         <template v-slot="{ result: { error, data }, isLoading }">
           <content-loader
@@ -55,7 +55,7 @@
               <ListCard :p="p" class :isLoading="isLoading" />
             </div>
           </div>
-          <div v-else class="text-center mt-64">
+          <div v-else class="mt-64 text-center">
             No items under this category
           </div>
         </template>
@@ -68,13 +68,8 @@
 <script>
 import Vue from 'vue'
 // import {Header} from '~/shared/components'
-import {
-  Heading,
-  Banner,
-  Product,
-  ListCard,
-  Categories,
-} from '~/shared/components'
+import { Heading, Banner, Product, ListCard } from '~/shared/components'
+import Categories from '~/components/Categories'
 import StickyFooter from '~/components/StickyFooter'
 import { ContentLoader } from 'vue-content-loader'
 // import products from '~/gql/product/products.gql'
@@ -83,33 +78,38 @@ import { ContentLoader } from 'vue-content-loader'
 export default {
   data() {
     return {
+      city: null,
       category: null,
       products: null,
     }
   },
-  async created() {
-    const slug = this.$route.params.slug
-    // try {
-    //   this.$store.commit('clearErr')
-    //   this.category = (
-    //     await this.$apollo.query({
-    //       query: category,
-    //       variables: { slug }
-    //       // fetchPolicy: 'no-cache'
-    //     })
-    //   ).data.category
-    // this.products = (
-    //   await this.$apollo.query({
-    //     query: products,
-    //     variables: { category: slug }
-    //     // fetchPolicy: 'no-cache'
-    //   })
-    // ).data.products
-    // } catch (e) {
-    //   this.products = []
-    // } finally {
-    //   this.$store.commit('busy', false)
-    // }
+  // async created() {
+  //   const slug = this.$route.params.slug
+  // try {
+  //   this.$store.commit('clearErr')
+  //   this.category = (
+  //     await this.$apollo.query({
+  //       query: category,
+  //       variables: { slug }
+  //       // fetchPolicy: 'no-cache'
+  //     })
+  //   ).data.category
+  // this.products = (
+  //   await this.$apollo.query({
+  //     query: products,
+  //     variables: { category: slug }
+  //     // fetchPolicy: 'no-cache'
+  //   })
+  // ).data.products
+  // } catch (e) {
+  //   this.products = []
+  // } finally {
+  //   this.$store.commit('busy', false)
+  // }
+  // },
+  middleware: ['geo'],
+  async mounted() {
+    this.city = (this.$cookies.get('geo') || {}).city
   },
   components: {
     Heading,

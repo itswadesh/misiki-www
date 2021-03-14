@@ -15,7 +15,12 @@
             <Product :p="p" />
           </div>
         </div>
-        <div v-else>No item for today</div>
+        <div v-else-if="!isLoading" class="flex flex-col min-h-screen">
+          No item for today
+        </div>
+        <div v-else class="flex flex-col min-h-screen">
+          <ListCardSkeleton />
+        </div>
       </template>
     </ApolloQuery>
   </div>
@@ -23,6 +28,7 @@
 
 <script>
 import { Product } from '~/shared/components'
+import ListCardSkeleton from '~/components/Skeletons/ListCardSkeleton'
 
 export default {
   data() {
@@ -32,6 +38,7 @@ export default {
   },
   components: {
     Product,
+    ListCardSkeleton,
   },
   middleware: ['geo'],
   created() {
