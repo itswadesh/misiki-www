@@ -9,6 +9,11 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+    },
+  },
+  plugins: [require('@tailwindcss/forms'), require('tailwindcss-rtl')],
   purge: false,
 }

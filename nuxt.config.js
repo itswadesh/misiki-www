@@ -2,7 +2,7 @@ import { resolve } from 'path'
 const config = require(resolve(process.cwd(), './shared/nuxtConfig'))
 let { HTTP_ENDPOINT, ONESIGNAL_APP_ID, WWW_URL, dev } = require(resolve(
   process.cwd(),
-  '../shared/config'
+  './shared/config'
 ))
 // delete config.fontawesome
 delete config.buildModules
@@ -15,6 +15,7 @@ config.plugins.push({ src: '~/shared/plugins/timer.js', ssr: false })
 config.buildModules = [
   '@nuxtjs/apollo',
   '@nuxtjs/robots',
+  '@nuxtjs/component-cache',
   // '@nuxtjs/onesignal',
   '@nuxtjs/pwa',
   '@nuxtjs/tailwindcss',
