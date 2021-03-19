@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full text-center">
-    <img class="object-cover w-full h-84" v-lazy="'/onboarding.png'" alt />
-    <h1 class="mx-6 mt-6 text-2xl font-bold leading-tight">
+  <div class="h-screen text-center bg-yellow-300">
+    <!-- <img class="object-cover w-full h-84" v-lazy="'/onboarding.png'" alt /> -->
+    <h1 class="pt-6 mx-6 text-2xl font-bold leading-tight">
       Order from cloud kitchens near you
     </h1>
     <div class="text-gray-600">Ready to see top chefs to order?</div>

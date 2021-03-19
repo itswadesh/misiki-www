@@ -1,20 +1,24 @@
 <template>
   <div>
     <CheckoutHeader selected="address" />
-    <div class="w-full pb-4 m-auto lg:w-1/3">
+    <div class="w-full pb-4 mx-auto lg:w-1/3">
       <div class="flex items-center justify-between p-3 shadow lg:shadow-none">
-        <nuxt-link class="flex items-center" to="/checkout/address">
-          <svg class="mb-1" viewBox="0 0 24 24" fill="currentColor">
+        <nuxt-link class="flex items-center w-3/5" to="/checkout/address">
+          <svg class="w-8 h-6 my-auto" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"
             />
           </svg>
-          <div class="ml-3 text-xl font-bold text-gray-700">Add address</div>
+          <div class="ml-1 text-lg font-medium text-gray-700">Add address</div>
         </nuxt-link>
         <div class="text-xs text-gray-600">Step 2 of 3</div>
       </div>
-      <AddressEdit go="checkout" :id="$route.query.id" />
     </div>
+      <!-- input  -->
+      <div class="container mx-auto lg:w-1/3">
+          <AddressEdit go="checkout" :id="$route.query.id" />
+      </div>
+    
   </div>
 </template>
 

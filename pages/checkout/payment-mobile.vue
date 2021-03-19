@@ -31,19 +31,7 @@
       >
         <template v-slot="{ result: { error, data }, isLoading }">
           <div v-if="isLoading">
-            <!-- <content-loader
-              v-for="(n, ix) in 2"
-              :key="ix"
-              :height="200"
-              :speed="2"
-              primaryColor="#f3f3f3"
-              secondaryColor="#ecebeb"
-            >
-              <rect x="20" y="20" rx="4" ry="4" width="110" height="25" />
-              <rect x="20" y="55" rx="4" ry="4" width="140" height="9" />
-              <rect x="315" y="45" rx="4" ry="4" width="55" height="20" />
-              <rect x="150" y="95" rx="4" ry="4" width="120" height="15" />
-            </content-loader> -->
+           Loading....
           </div>
           <ErrComponent v-else-if="error" :error="error" />
           <div v-else-if="data && data.data.length > 0">
@@ -201,7 +189,7 @@
     <div
       class="fixed bottom-0 w-full p-2 m-auto font-bold bg-white shadow-md lg:shadow-none lg:w-1/2 lg:relative"
     >
-      <div class="flex items-center p-3">
+      <div class="flex items-center p-2">
         <div class="flex-1 text-center">
           <div>{{ cart.total | currency(settings.currency_symbol) }}</div>
           <div>
@@ -236,7 +224,6 @@ import address from '~/gql/user/address.gql'
 import validateCart from '~/gql/cart/validateCart.gql'
 import { Card, createToken, CardNumber } from 'vue-stripe-elements-plus'
 // import { STRIPE_PUBLISHABLE_KEY } from '~/shared/config'
-// import { ContentLoader } from 'vue-content-loader'
 
 export default {
   middleware({ store, redirect }) {

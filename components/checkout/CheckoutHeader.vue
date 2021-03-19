@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-wrap justify-between p-2 lg:px-8 lg:pb-8">
+  <div class="flex flex-wrap justify-between p-2 lg:pb-8">
     <div class="order-0 lg:order-0">
       <nuxt-link to="/">
         <img alt="Misiki" class="h-10" v-lazy="`${settings.logo}`" />
       </nuxt-link>
     </div>
     <div
-      class="flex justify-between order-2 w-full pt-3 text-xs font-bold tracking-widest text-center text-gray-700 lg:order-1 lg:w-1/3"
+      class="flex justify-between order-2 w-full pt-3 text-xs font-bold tracking-widest text-center text-gray-700 lg:order-1 lg:w-1/2"
     >
       <nuxt-link to="/cart">BAG</nuxt-link>
       <hr class="flex-1 mx-4 my-2" style="border-top: dashed 1px;" />

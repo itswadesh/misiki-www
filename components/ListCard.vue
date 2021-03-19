@@ -1,9 +1,10 @@
 <template>
   <div>
-    <!-- <div class="flex justify-between px-2 py-4 bg-white">
+    <div class="flex justify-between px-2 py-4">
       <input
+        placeholder="Search Your Food"
         type="text"
-        class="w-full text-xl border rounded-full"
+        class="w-full px-4 bg-white border rounded-full text-normal"
         name="search"
       />
       <img
@@ -14,20 +15,7 @@
     <div class="flex justify-between">
       <h1 class="px-2 font-bold">Popular of the week</h1>
       <h2 class="px-2 text-sm font-medium">Show all (>)</h2>
-    </div>-->
-    <!-- <content-loader
-        v-if="!isLoading"
-        :height="100"
-        :speed="2"
-        primaryColor="#f3f3f3"
-        secondaryColor="#ecebeb"
-      >
-        <rect x="30" y="15" rx="4" ry="4" width="100" height="70" />
-        <rect x="140" y="20" rx="4" ry="4" width="100" height="10" />
-        <rect x="140" y="40" rx="4" ry="4" width="120" height="8" />
-        <rect x="350" y="15" rx="25" ry="25" width="25" height="25"/>
-        <rect x="340" y="45" rx="4" ry="4" width="50" height="8"/>
-    </content-loader>-->
+    </div>
     <div class="relative flex px-1 py-2 m-2 bg-white rounded shadow">
       <div
         v-if="p.time == '12 - 2 PM'"
@@ -54,7 +42,7 @@
         <nuxt-link :to="`/${p.slug}`" class="font-bold tracking-wide">
           {{ p.name }}
         </nuxt-link>
-        <div class="flex justify-between">
+        <div class="flex justify-between my-auto">
           <div class="flex items-center text-sm tracking-widest text-gray-500">
             <svg
               class="w-4 transition-all ease-out transition-medium"
@@ -67,7 +55,7 @@
             </svg>
             {{ p.vendor.info.restaurant }}
           </div>
-          <div class="text-xl font-black text-gray-700">
+          <div class="pr-2 text-xl font-black text-gray-700 ">
             {{ p.price | currency(settings.currency_symbol) }}
           </div>
         </div>
@@ -88,11 +76,10 @@
 <script>
 import { mapGetters } from 'vuex'
 import { Ratingcircle } from '~/shared/components/ui'
-import { ContentLoader } from 'vue-content-loader'
 export default {
   props: ['p'],
   methods: {},
-  components: { Ratingcircle, ContentLoader },
+  components: { Ratingcircle },
   computed: { ...mapGetters({ settings: 'settings' }) },
 }
 </script>

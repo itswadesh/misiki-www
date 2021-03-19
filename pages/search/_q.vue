@@ -13,7 +13,7 @@
       ></SelectablePlan>
     </div>
     <Banner />
-    <div class="container min-h-screen">
+    <div class="container min-h-screen mx-auto">
       <!-- <Categories /> -->
       <div
         class
@@ -21,19 +21,8 @@
         :infinite-scroll-distance="3"
         :infinite-scroll-immediate-check="true"
       >
-        <!-- <content-loader
-          v-if="loading"
-          :height="100"
-          :speed="2"
-          primaryColor="#f3f3f3"
-          secondaryColor="#ecebeb"
-        >
-          <rect x="20" y="15" rx="4" ry="4" width="100" height="70" />
-          <rect x="140" y="20" rx="4" ry="4" width="100" height="10" />
-          <rect x="140" y="40" rx="4" ry="4" width="120" height="8" />
-          <rect x="350" y="15" rx="25" ry="25" width="25" height="25" />
-          <rect x="340" y="45" rx="4" ry="4" width="50" height="8" />
-        </content-loader> -->
+      <div v-if="loading">Loading.......</div>
+       
         <!-- <transition-group
           @before-enter="beforeEnter"
           @enter="enter"
@@ -65,7 +54,6 @@ import {
   GeoLocation,
   SelectablePlan,
 } from '~/shared/components'
-// import { ContentLoader } from 'vue-content-loader'
 import ListCard from '~/components/ListCard'
 import { infiniteScroll } from '~/shared/mixins'
 import { constructURL } from '~/shared/lib/'
@@ -96,7 +84,6 @@ export default {
     ListCardSkeleton,
     GeoLocation,
     SelectablePlan,
-    // ContentLoader,
   },
   created() {
     this.type = this.$route.query.type || ''

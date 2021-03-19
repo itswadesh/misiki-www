@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <Heading title="Add Address" />
     <AddressEdit :id="$route.params.id" />
   </div>

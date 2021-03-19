@@ -2,12 +2,12 @@
   <div>
     <nuxt-link
       to="/login?role=chef"
-      class="block px-2 py-1 mx-auto text-center text-gray-700 bg-yellow-200 border-2 border-yellow-300 rounded shadow cursor-pointer hover:text-black hover:bg-yellow-300"
+      class="block px-2 py-1 mx-auto font-medium text-center text-gray-700 bg-yellow-200 border-2 border-yellow-300 rounded shadow cursor-pointer hover:text-black hover:bg-yellow-300"
     >
       Get started as chef in 30 seconds
     </nuxt-link>
     <Hero />
-    <div class="mb-20">
+    <div class="w-full mb-20">
       <Categories />
       <div
         class="block px-2 py-1 mx-auto text-center bg-blue-200 border-2 border-blue-300 shadow"

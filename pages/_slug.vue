@@ -47,9 +47,9 @@
                   v-lazy="data.type === 'V' ? '/veg.png' : '/non-veg.png'"
                   class="w-5"
                 />
-                <div class="flex items-center">
+                <div class="flex items-center ">
                   <svg
-                    class="transition-all ease-out transition-medium"
+                    class="w-12 h-12 my-auto transition-all ease-out transition-medium"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -58,8 +58,9 @@
                     />
                   </svg>
                   <!-- <div v-if="city == 'Sunabeda'" class="flex items-center"> -->
-                  <div class="flex items-center">
-                    <TruckIcon size="1x" class="mr-2" /> Delivery:
+                  <div class="flex flex-row my-auto">
+                    <TruckIcon size="1.5x" class="my-auto mr-4" /> 
+                    <p class="my-auto"> Delivery: </p>
                     <b class="ml-1 text-xl"> {{ data.time }}</b>
                   </div>
                   <!-- <div class="flex items-center" v-else>

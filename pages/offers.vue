@@ -6,19 +6,7 @@
         <ApolloQuery :query="require('~/gql/coupon/coupons.gql')">
           <template v-slot="{ result: { error, data }, isLoading }">
             <div v-if="isLoading">
-              <!-- <content-loader
-                v-for="(n, ix) in 2"
-                :key="ix"
-                :height="200"
-                :speed="2"
-                primaryColor="#f3f3f3"
-                secondaryColor="#ecebeb"
-              >
-                <rect x="20" y="20" rx="4" ry="4" width="110" height="25" />
-                <rect x="20" y="55" rx="4" ry="4" width="140" height="9" />
-                <rect x="315" y="45" rx="4" ry="4" width="55" height="20" />
-                <rect x="150" y="95" rx="4" ry="4" width="120" height="15" />
-              </content-loader> -->
+              Loading.....
             </div>
             <ErrComponent v-else-if="error" :error="error" />
             <div
@@ -48,7 +36,6 @@
 <script>
 import Vue from 'vue'
 import { Heading } from '~/shared/components'
-// import { ContentLoader } from 'vue-content-loader'
 import { ListSkeleton } from '~/shared/components/ui'
 import Coupon from '~/components/Coupon'
 import StickyFooter from '~/components/StickyFooter'

@@ -1,16 +1,16 @@
 <template>
-  <div style class="bg-gray-100 antialiased">
+  <div style class="antialiased bg-gray-100">
     <div
       class="mask"
       v-if="$store.state.settings && $store.state.settings.closed"
     >
-      <h1 class="text-red-500 text-xl bg-gray-900 p-8">
+      <h1 class="p-8 text-xl text-red-500 bg-gray-900">
         {{ $store.state.settings.closedMessage }}
       </h1>
     </div>
     <Header />
     <Error />
-    <div class="min-h-screen flex flex-col h-full">
+    <div class="flex flex-col h-full min-h-screen">
       <!-- <Loading /> -->
       <AccountMenu class="hidden md:block" />
       <nuxt />

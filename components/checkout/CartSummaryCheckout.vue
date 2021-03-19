@@ -36,9 +36,9 @@
       </div>
     </div>
     <div
-      class="fixed bottom-0 left-0 w-full px-4 pb-2 bg-white lg:relative lg:pr-0"
+      class="fixed bottom-0 left-0 w-full pb-2 bg-white lg:relative "
     >
-      <div class="flex justify-between mt-2">
+      <div class="flex justify-between px-2 my-2 lg:px-0">
         <div class="text-lg font-bold text-left">Grand Total</div>
         <div class="text-lg font-bold text-right text-black">
           {{ cart.total | currency(settings.currency_symbol) }}

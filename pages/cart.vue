@@ -9,7 +9,7 @@
           class="hidden w-full mt-10 text-lg font-bold bg-white lg:block headings"
         >
           <div class="flex flex-wrap">
-            <div class="w-1/2 text-left">
+            <div class="w-1/2 pl-3 text-left">
               Cart ({{ cart.qty }} Item <span v-if="cart.qty > 1">s</span>)
             </div>
             <div class="w-1/2 text-right">
@@ -86,7 +86,7 @@
           >APPLY</nuxt-link
         >
       </div>
-      <CartSummary :cart="cart">
+      <CartSummary :cart="cart" class="">
         <Button @click="$router.push('/checkout/address')" color="primary">
           <span v-if="!user">LOGIN TO CONTINUE</span>
           <span v-else>SELECT ADDRESS</span>

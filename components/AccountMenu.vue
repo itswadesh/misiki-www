@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col lg:w-1/4">
     <div
       v-if="user"
-      class="w-full p-10 leading-loose text-center bg-white border-b border-gray-200 shadow lg:w-1/5 lg:mt-10"
+      class="w-full p-10 leading-loose text-center bg-white border-b border-gray-200 shadow lg:mt-10"
     >
       <div class="mb-2">
         <img

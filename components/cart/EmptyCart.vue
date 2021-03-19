@@ -9,15 +9,16 @@
         Cart
       </h1>
     </div>-->
-    <div class="my-auto">
+    <div class="mx-auto my-auto">
       <div class="flex justify-center py-6">
         <img v-lazy="`empty-cart.gif`" class="w-48 h-48 rounded-full" />
       </div>
       <div class="py-4 text-2xl">Your cart is empty</div>
-      <div class="flex px-6 text-base text-gray-500 align-middle">
+      <p class="flex justify-center px-6 text-base text-center text-gray-500">
         Good food is always cooking! Go ahead, order some yummy items from the
         menu.
-      </div>
+      </p>
+
       <nuxt-link
         to="/search/"
         class="inline-block px-6 py-2 my-3 rounded-full primary"

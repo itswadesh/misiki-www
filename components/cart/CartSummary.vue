@@ -1,5 +1,5 @@
 <template>
-  <div class="pl-18">
+  <div class="container w-full pb-6 mx-auto md:w-2/3 lg:w-1/2">
     <div class="border-t">
       <div class="px-4 my-4 lg:px-0">
         <p class="text-xl font-normal text-black lg:my-8">Price Summary</p>
@@ -59,7 +59,7 @@
     <div
       class="fixed bottom-0 right-0 w-full px-2 py-4 bg-white shadow lg:relative lg:px-0 lg:py-0 lg:shadow-none"
     >
-      <div class="flex justify-between">
+      <div class="container flex justify-between w-full px-3 mx-auto md:w-2/3 lg:w-full">
         <div class="w-1/2 text-lg font-bold text-left">Total</div>
         <div class="w-1/2 ml-2 font-bold text-right text-black-400">
           {{ cart.total | currency(settings.currency_symbol) }}
