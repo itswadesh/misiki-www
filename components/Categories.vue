@@ -4,7 +4,7 @@
     :variables="{ city }"
   >
     <template v-slot="{ result: { error, data }, isLoading }">
-      <content-loader
+      <!-- <content-loader
         v-if="isLoading"
         :height="70"
         :speed="2"
@@ -15,7 +15,7 @@
         <rect x="130" y="15" rx="4" ry="4" width="50" height="50" />
         <rect x="230" y="15" rx="4" ry="4" width="50" height="50" />
         <rect x="330" y="15" rx="4" ry="4" width="50" height="50" />
-      </content-loader>
+      </content-loader> -->
       <ErrComponent v-else-if="error" />
       <div
         class="sticky top-0 z-10 flex flex-no-wrap w-full pl-1 mb-2 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"

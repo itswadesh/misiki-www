@@ -31,7 +31,7 @@
       >
         <template v-slot="{ result: { error, data }, isLoading }">
           <div v-if="isLoading">
-            <content-loader
+            <!-- <content-loader
               v-for="(n, ix) in 2"
               :key="ix"
               :height="200"
@@ -43,7 +43,7 @@
               <rect x="20" y="55" rx="4" ry="4" width="140" height="9" />
               <rect x="315" y="45" rx="4" ry="4" width="55" height="20" />
               <rect x="150" y="95" rx="4" ry="4" width="120" height="15" />
-            </content-loader>
+            </content-loader> -->
           </div>
           <ErrComponent v-else-if="error" :error="error" />
           <div v-else-if="data && data.data.length > 0">
@@ -236,13 +236,15 @@ import address from '~/gql/user/address.gql'
 import validateCart from '~/gql/cart/validateCart.gql'
 import { Card, createToken, CardNumber } from 'vue-stripe-elements-plus'
 // import { STRIPE_PUBLISHABLE_KEY } from '~/shared/config'
-import { ContentLoader } from 'vue-content-loader'
+// import { ContentLoader } from 'vue-content-loader'
 
 export default {
   middleware({ store, redirect }) {
     if (store.state.cart.qty < 1) return redirect('/cart')
   },
-  components: { CheckoutHeader, Radio, Submit, Card, ContentLoader },
+  components: { CheckoutHeader, Radio, Submit, Card, 
+  // ContentLoader
+   },
   data() {
     return {
       address: {},

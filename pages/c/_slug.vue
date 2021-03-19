@@ -27,7 +27,7 @@
         :variables="{ category: $route.params.slug, city }"
       >
         <template v-slot="{ result: { error, data }, isLoading }">
-          <content-loader
+          <!-- <content-loader
             v-if="isLoading"
             :height="100"
             :speed="2"
@@ -39,7 +39,7 @@
             <rect x="140" y="40" rx="4" ry="4" width="120" height="8" />
             <rect x="350" y="15" rx="25" ry="25" width="25" height="25" />
             <rect x="340" y="45" rx="4" ry="4" width="50" height="8" />
-          </content-loader>
+          </content-loader> -->
           <ErrComponent v-else-if="error" :error="error" />
 
           <div
@@ -71,7 +71,7 @@ import Vue from 'vue'
 import { Heading, Banner, Product, ListCard } from '~/shared/components'
 import Categories from '~/components/Categories'
 import StickyFooter from '~/components/StickyFooter'
-import { ContentLoader } from 'vue-content-loader'
+// import { ContentLoader } from 'vue-content-loader'
 // import products from '~/gql/product/products.gql'
 // import category from '~/gql/category/category.gql'
 
@@ -119,7 +119,7 @@ export default {
     Categories,
     ListCard,
     StickyFooter,
-    ContentLoader,
+    // ContentLoader,
   },
 }
 </script>

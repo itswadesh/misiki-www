@@ -21,7 +21,7 @@
         :infinite-scroll-distance="3"
         :infinite-scroll-immediate-check="true"
       >
-        <content-loader
+        <!-- <content-loader
           v-if="loading"
           :height="100"
           :speed="2"
@@ -33,7 +33,7 @@
           <rect x="140" y="40" rx="4" ry="4" width="120" height="8" />
           <rect x="350" y="15" rx="25" ry="25" width="25" height="25" />
           <rect x="340" y="45" rx="4" ry="4" width="50" height="8" />
-        </content-loader>
+        </content-loader> -->
         <!-- <transition-group
           @before-enter="beforeEnter"
           @enter="enter"
@@ -65,7 +65,7 @@ import {
   GeoLocation,
   SelectablePlan,
 } from '~/shared/components'
-import { ContentLoader } from 'vue-content-loader'
+// import { ContentLoader } from 'vue-content-loader'
 import ListCard from '~/components/ListCard'
 import { infiniteScroll } from '~/shared/mixins'
 import { constructURL } from '~/shared/lib/'
@@ -96,7 +96,7 @@ export default {
     ListCardSkeleton,
     GeoLocation,
     SelectablePlan,
-    ContentLoader,
+    // ContentLoader,
   },
   created() {
     this.type = this.$route.query.type || ''
