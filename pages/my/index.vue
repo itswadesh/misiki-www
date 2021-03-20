@@ -12,6 +12,6 @@ import AccountMenu from '~/components/AccountMenu'
 export default {
   components: { AccountMenu, GeoLocation },
   middleware: ['isAuth'],
-  layout: 'account',
+  // layout: 'account',
 }
 </script>

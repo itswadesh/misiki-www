@@ -1,8 +1,10 @@
 <template>
-  <div class="flex flex-col lg:w-1/4">
+<div class="fixed inset-0 z-20 hidden w-2/3 h-full overflow-x-hidden transition lg:w-1/4 lg:block lg:h-auto lg:relative">
+  <div class="flex flex-col ">
+    <div class="flex justify-end lg:justify-center">
     <div
       v-if="user"
-      class="w-full p-10 leading-loose text-center bg-white border-b border-gray-200 shadow lg:mt-10"
+      class="w-full p-10 leading-loose text-center bg-white border-b border-gray-200 shadow"
     >
       <div class="mb-2">
         <img
@@ -20,23 +22,42 @@
       <div class="text-lg">{{ user.firstName }} {{ user.lastName }}</div>
       <div class="text-sm text-gray-500">{{ user.phone }}</div>
     </div>
+       <button
+            aria-label="Open sidebar"
+            @click="hideSidebar(null)"
+            class="absolute z-10 inline-flex items-center justify-center w-8 h-8 rounded hover:bg-gray-100 lg:hidden focus:outline-none"
+          >
+            <svg
+              class="w-5 h-5 text-primary-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+  </div>
     <div class="h-full p-8 bg-gray-200">
       <div class="flex justify-center">
         <nav id="nav" class="relative w-full">
-          <span
+          <!-- <span
             class="absolute w-full h-10 transition-transform ease-out bg-white rounded-lg shadow transition-medium"
             :style="{ transform: `translateY(calc(100% * ${selected}))` }"
-          ></span>
+          ></span> -->
           <ul class="relative">
-            <li>
-              <button
-                type="button"
-                @click="select(0, '/my/orders')"
-                :aria-selected="selected === 0"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+            <li class="my-1">
+              <!-- :class="selected === 0 ? 'text-indigo-400' : 'text-gray-500'" -->
+              <nuxt-link to="/my/orders"
+                active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
               >
                 <svg
-                  :class="selected === 0 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -53,21 +74,20 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 0 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Orders</span
                 >
-              </button>
+              </nuxt-link>
             </li>
-            <li>
-              <button
-                type="button"
-                @click="select(1, '/my/address')"
-                :aria-selected="selected === 1"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+            <li class="my-1">
+              <!-- @click="select(1, '/my/address')" -->
+                <!-- :aria-selected="selected === 1" -->
+              <nuxt-link to="/my/address"            
+                active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
               >
+                  <!-- :class="selected === 1 ? 'text-indigo-400' : 'text-gray-500'" -->
                 <svg
-                  :class="selected === 1 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -79,21 +99,17 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 1 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Address</span
                 >
-              </button>
+              </nuxt-link>
             </li>
-            <li>
-              <button
-                type="button"
-                @click="select(2, '/my/profile')"
-                :aria-selected="selected === 2"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
-              >
+            <li class="my-1">
+              <nuxt-link to="/my/profile"
+               active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
+               >
                 <svg
-                  :class="selected === 2 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -103,15 +119,14 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 2 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Profile Details</span
                 >
-              </button>
+              </nuxt-link>
             </li>
             <!-- <li>
-              <button
-                type="button"
+              <nuxt-link
+                
                 @click="select(3, '/feedback')"
                 :aria-selected="selected === 3"
                 class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
@@ -131,17 +146,14 @@
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Wishlist</span
                 >
-              </button>
+              </nuxt-link>
             </li> -->
-            <li>
-              <button
-                type="button"
-                @click="select(4, '/feedback')"
-                :aria-selected="selected === 4"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
-              >
+            <li class="my-1">
+              <nuxt-link to="/feedback"
+               active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
+               >
                 <svg
-                  :class="selected === 4 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -151,21 +163,17 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 4 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Feedback</span
                 >
-              </button>
+              </nuxt-link>
             </li>
-            <li>
-              <button
-                type="button"
-                @click="select(5, '/legal/about-us')"
-                :aria-selected="selected === 5"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+            <li class="my-1">
+              <nuxt-link to="/legal/about-us"
+                active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
               >
                 <svg
-                  :class="selected === 5 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -175,21 +183,17 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 5 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >About Us</span
                 >
-              </button>
+              </nuxt-link>
             </li>
-            <li>
-              <button
-                type="button"
-                @click="select(6, '/legal/privacy-policy')"
-                :aria-selected="selected === 6"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
-              >
+            <li class="my-1">
+              <nuxt-link to="/legal/privacy-policy"
+                active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
+               >
                 <svg
-                  :class="selected === 6 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -199,21 +203,17 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 6 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Privacy Policy</span
                 >
-              </button>
+              </nuxt-link>
             </li>
-            <li>
-              <button
-                type="button"
-                @click="select(7, '/legal/terms')"
-                :aria-selected="selected === 7"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
-              >
+            <li class="my-1">
+              <nuxt-link to="/legal/terms"    
+                active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
+               >
                 <svg
-                  :class="selected === 7 ? 'text-indigo-400' : 'text-gray-500'"
                   class="w-6 h-6 transition-all ease-out transition-medium"
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -223,17 +223,16 @@
                   />
                 </svg>
                 <span
-                  :class="selected === 7 ? 'text-indigo-600' : 'text-gray-700'"
                   class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
                   >Terms</span
                 >
-              </button>
+              </nuxt-link>
             </li>
-            <li>
+            <li class="my-1">
               <button
-                type="button"
                 @click="logout"
-                class="flex items-center w-full px-3 py-2 focus:outline-none focus-visible:underline"
+                active-class="text-indigo-500 bg-white "                
+                class="flex items-center w-full px-2 py-2 text-gray-500 rounded hover:shadow-lg hover:text-indigo-500 focus:outline-none focus-visible:underline"
               >
                 <svg
                   class="w-6 h-6 text-gray-500 transition-all ease-out transition-medium"
@@ -262,25 +261,33 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
+import Button from '~/shared/components/ui/Button.vue'
 export default {
+  components: { Button },
   data() {
     return {
-      selected: 0,
+      // selected: 0,
     }
   },
   computed: {
     ...mapGetters({ user: 'auth/user' }),
   },
   methods: {
-    select(i, url) {
-      this.selected = i
-      this.$router.push(url)
+    hideSidebar(e) {
+      this.sidebar = false
+      if (e) this.$router.push(`/c/${e}`)
+      this.$emit('hideSidebar', true)
     },
+    // select(i, url) {
+    //   this.selected = i
+    //   this.$router.push(url)
+    // },
     async logout() {
       this.$store.dispatch('auth/logout')
     },

@@ -19,7 +19,7 @@
         </svg>
         <span class="text-xs">Explore</span>
       </nuxt-link>
-      <nuxt-link to="/my/" class="category-item" active-class="text-primary">
+      <nuxt-link to="/my/profile" class="category-item" active-class="text-primary">
         <svg
           class="w-6 h-6 transition-all ease-out transition-medium"
           viewBox="0 0 24 24"

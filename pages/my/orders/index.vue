@@ -17,7 +17,10 @@
         Orders
       </h1>
     </div>-->
+    <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
+    <AccountMenu  />
     <ApolloQuery
+      class="w-full mt-0 lg:ml-8 lg:w-3/4 "
       :query="require('~/gql/order/myOrders.gql')"
       :variables="{ id: $route.query.id }"
     >
@@ -98,6 +101,7 @@
         </div>
       </template>
     </ApolloQuery>
+    </div>
   </div>
 </template>
 
@@ -110,7 +114,7 @@ import { Heading } from '~/shared/components'
 // import orders from '~/gql/order/orders.gql'
 export default {
   components: { ListCardSkeleton, Heading },
-  layout: 'account',
+  // layout: 'account',
   middleware: ['isAuth'],
   data() {
     return {

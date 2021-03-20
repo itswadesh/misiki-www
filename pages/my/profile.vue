@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="bg-gray-100">
     <Heading title="Personal Details" />
-    <div class="w-full pb-4 m-auto lg:w-1/3">
+    <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
+    <AccountMenu  />
+    <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
       <form
         class="w-full mb-1 lg:mx-15 form"
         novalidate
@@ -79,7 +81,7 @@
           </div> -->
         </div>
         <div
-          class="fixed bottom-0 flex justify-between w-full shadow lg:shadow-none lg:relative"
+          class="fixed bottom-0 left-0 flex justify-between w-full shadow lg:shadow-none lg:relative"
         >
           <button
             type="button"
@@ -97,6 +99,7 @@
         </div>
       </form>
     </div>
+    </div>
   </div>
 </template>
 
@@ -106,6 +109,7 @@ import { mapActions } from 'vuex'
 import { Avatar, Heading } from '~/shared/components'
 import { Textbox, Checkbox } from '~/shared/components/ui'
 import me from '~/gql/user/me.gql'
+import AccountMenu from '~/components/AccountMenu'
 
 import { location } from '~/shared/mixins'
 export default {
@@ -124,6 +128,7 @@ export default {
     Textbox,
     Checkbox,
     Avatar,
+    AccountMenu,
   },
   computed: {
     // user() {
