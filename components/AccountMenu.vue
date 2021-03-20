@@ -2,33 +2,33 @@
 <div class="fixed inset-0 z-20 hidden w-2/3 h-full overflow-x-hidden transition lg:w-1/4 lg:block lg:h-auto lg:relative">
   <div class="flex flex-col ">
     <div class="flex justify-end lg:justify-center">
-    <div
-      v-if="user"
-      class="w-full p-10 leading-loose text-center bg-white border-b border-gray-200 shadow"
-    >
-      <div class="mb-2">
-        <img
-          v-if="user.avatar"
-          class="inline-block object-cover w-16 h-16 rounded-full"
-          v-lazy="user.avatar"
-          alt
-        />
-        <span
-          v-else
-          class="inline-block w-20 h-20 p-2 text-4xl text-gray-600 bg-gray-200 rounded-full"
-          >{{ user.firstName | first }}</span
-        >
-      </div>
-      <div class="text-lg">{{ user.firstName }} {{ user.lastName }}</div>
-      <div class="text-sm text-gray-500">{{ user.phone }}</div>
-    </div>
-       <button
+          <div
+            v-if="user"
+            class="w-full p-10 leading-loose text-center bg-white border-b border-gray-200 shadow"
+          >
+            <div class="mb-2">
+              <img
+                v-if="user.avatar"
+                class="inline-block object-cover w-16 h-16 rounded-full"
+                v-lazy="user.avatar"
+                alt
+              />
+              <span
+                v-else
+                class="inline-block w-20 h-20 p-2 text-4xl text-gray-600 bg-gray-200 rounded-full"
+                >{{ user.firstName | first }}</span
+              >
+            </div>
+            <div class="text-lg">{{ user.firstName }} {{ user.lastName }}</div>
+            <div class="text-sm text-gray-500">{{ user.phone }}</div>
+          </div>
+          <button
             aria-label="Open sidebar"
             @click="hideSidebar(null)"
             class="absolute z-10 inline-flex items-center justify-center w-8 h-8 rounded hover:bg-gray-100 lg:hidden focus:outline-none"
           >
             <svg
-              class="w-5 h-5 text-primary-500"
+              class="w-5 h-5 text-black"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

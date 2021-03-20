@@ -13,7 +13,7 @@
 
             <div v-else-if="data && data.addresses.length > 0">
               <div
-                class="flex flex-wrap justify-between w-full p-2 mb-2 bg-white border rounded shadow md:w-1/2"
+                class="flex flex-wrap justify-between w-full p-2 mb-2 bg-white border rounded shadow md:w-4/5"
                 :class="{ 'border-green-500': selectedAddress == a.id }"
                 v-for="(a, ix) in data.addresses"
                 :key="a.id"
