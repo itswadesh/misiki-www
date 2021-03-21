@@ -94,6 +94,9 @@
                   :rating="reviewSummary.avg"
                 />
                 <div class="">{{ data.ratings }} ratings</div>
+                 <nuxt-link :to="`/review?id=${product.id}`" class="ml-3 text-green-500 hover:shadow">
+                  <button class="p-2 text-sm">Add a Review</button>
+                </nuxt-link>
               </div>
               <h2 class="text-2xl font-bold">
                 {{ data.price | currency(settings.currency_symbol) }}
