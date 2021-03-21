@@ -2,6 +2,13 @@
 ```
 git clone git@github.com:itswadesh/misiki-www.git --recurse-submodules
 ```
+
+# Update submodule
+
+```
+git submodule update --init --recursive
+```
+
 ## Build Setup
 
 ```bash
