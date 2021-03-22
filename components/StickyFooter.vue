@@ -1,15 +1,15 @@
 <template>
   <div
-    class="fixed bottom-0 z-10 w-full mt-20 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
+    class="fixed bottom-0 z-10 w-full py-4 mt-20 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
   >
     <div class="flex items-center justify-around">
       <nuxt-link
         to="/search/"
-        class="category-item"
+        class=""
         active-class="text-primary"
       >
         <svg
-          class="w-6 h-6 transition-all ease-out transition-medium"
+          class="w-6 h-6 mx-auto transition-all ease-out transition-medium"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
@@ -17,11 +17,11 @@
             d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
           />
         </svg>
-        <span class="text-xs">Explore</span>
+        <span class="my-auto text-xs">Explore</span>
       </nuxt-link>
-      <nuxt-link to="/my/profile" class="category-item" active-class="text-primary">
+      <nuxt-link to="/my/profile" class="" active-class="text-primary">
         <svg
-          class="w-6 h-6 transition-all ease-out transition-medium"
+          class="w-6 h-6 mx-auto transition-all ease-out transition-medium"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
@@ -31,9 +31,9 @@
         </svg>
         <span class="text-xs">Account</span>
       </nuxt-link>
-      <nuxt-link to="/offers" class="category-item" active-class="text-primary">
+      <nuxt-link to="/offers" class="" active-class="text-primary">
         <svg
-          class="w-6 h-6 transition-all ease-out transition-medium"
+          class="w-6 h-6 mx-auto transition-all ease-out transition-medium"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
@@ -45,15 +45,15 @@
       </nuxt-link>
       <nuxt-link
         to="/cart"
-        class="relative category-item"
+        class="relative "
         active-class="text-primary"
       >
         <span
-          class="absolute inline-block w-6 h-6 ml-5 -mt-4 text-sm font-bold text-center text-red-600 bg-yellow-400 rounded-full"
+          class="absolute inline-block w-5 h-5 ml-2 -mt-2 text-sm font-bold text-center text-red-600 bg-yellow-400 rounded-full"
           >{{ cart.qty }}</span
         >
         <svg
-          class="w-6 h-6 transition-all ease-out transition-medium"
+          class="w-6 h-6 mx-auto transition-all ease-out transition-medium"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
