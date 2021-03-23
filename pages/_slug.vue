@@ -23,31 +23,30 @@
               <fa icon="search" class="text-white" />
             </nuxt-link>-->
           </div>
-          <div
-            v-lazy:background-image="`${data.img}`"
-            class="relative flex justify-center h-48 bg-cover lazy-background"
-          >
+          <div class="flex flex-col lg:flex-row">
             <div
-              v-if="data.vendor && data.vendor.info"
-              class="absolute bottom-0 w-3/4 py-2 text-xl font-bold text-center text-white bg-black"
-              style="background-color: rgba(0, 0, 0, 0.5)"
+              v-lazy:background-image="`${data.img}`"
+              class="relative flex justify-center bg-cover lg:w-1/2 h-80 lazy-background"
             >
-              <!-- <div class="text-white opacity-100"></div> -->
-              {{ data.vendor.info.restaurant }}
+              <div
+                v-if="data.vendor && data.vendor.info"
+                class="absolute bottom-0 w-3/4 py-2 text-xl font-bold text-center text-white bg-black"
+                style="background-color: rgba(0, 0, 0, 0.5)"
+              >
+                <!-- <div class="text-white opacity-100"></div> -->
+                {{ data.vendor.info.restaurant }}
+              </div>
             </div>
-          </div>
 
           <!-- <img v-lazy="`${data.img}`" alt class="object-cover w-full h-48 mb-2" /> -->
-          <div class="z-10 px-4 rounded-t-lg">
-            <div class="mt-4 mb-2">
-              <div
-                class="flex items-center justify-between text-sm text-gray-600"
-              >
+          <div class="z-10 px-4 lg:w-1/2">
+            <div class="flex flex-col mt-4 mb-2">
+              <div class="flex items-center justify-between text-sm text-gray-600 lg:justify-start">
                 <img
                   v-lazy="data.type === 'V' ? '/veg.png' : '/non-veg.png'"
                   class="w-5"
                 />
-                <div class="flex items-center ">
+                <div class="flex items-center ml-0 lg:ml-3">
                   <svg
                     class="w-12 h-12 my-auto mr-1 transition-all ease-out sm:mr-0 transition-medium"
                     viewBox="0 0 24 24"
@@ -116,6 +115,7 @@
             <div class="pb-3 text-xs text-gray-500">
               {{ data.description }}
             </div>
+          </div>
           </div>
           <hr />
           <SocialSharing :data="product" :host="host" />
