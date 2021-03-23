@@ -49,7 +49,7 @@
                 />
                 <div class="flex items-center ">
                   <svg
-                    class="w-12 h-12 my-auto transition-all ease-out transition-medium"
+                    class="w-12 h-12 my-auto mr-1 transition-all ease-out sm:mr-0 transition-medium"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -58,10 +58,10 @@
                     />
                   </svg>
                   <!-- <div v-if="city == 'Sunabeda'" class="flex items-center"> -->
-                  <div class="flex flex-row my-auto">
+                  <div class="flex flex-col my-auto sm:flex-row">
                     <TruckIcon size="1.5x" class="my-auto mr-4" /> 
                     <p class="my-auto"> Delivery: </p>
-                    <b class="ml-1 text-xl"> {{ data.time }}</b>
+                    <b class="text-xl sm:ml-1"> {{ data.time }}</b>
                   </div>
                   <!-- <div class="flex items-center" v-else>
                     <TruckIcon size="1x" class="mr-2" /> Delivery within
@@ -87,26 +87,30 @@
             </div>
               </div>-->
             </div>
-            <div class="flex justify-between">
+            <div class="flex flex-col sm:justify-between sm:flex-row">
               <div class="flex items-center">
                 <Ratingcircle
                   v-if="reviewSummary"
                   :rating="reviewSummary.avg"
                 />
-                <div class="">{{ data.ratings }} ratings</div>
-                 <nuxt-link :to="`/review?id=${product.id}`" class="ml-3 text-green-500 hover:shadow">
-                  <button class="p-2 text-sm">Add a Review</button>
-                </nuxt-link>
+                <div class="flex flex-row justify-between w-full mb-2 sm:mb-0">
+                  <div class="my-auto">{{ data.ratings }} ratings</div>
+                  <nuxt-link :to="`/review?id=${product.id}`" class="my-auto ml-3 text-green-500 hover:shadow">
+                    <button class="p-2 text-sm">Add a Review</button>
+                  </nuxt-link>
+                </div>
               </div>
-              <h2 class="text-2xl font-bold">
-                {{ data.price | currency(settings.currency_symbol) }}
-              </h2>
-              <div class="flex justify-around">
-                <CartButtons
-                  :product="product"
-                  :variant="userSelectedVariant"
-                  :notify="true"
-                />
+              <div class="flex flex-row justify-between py-3 mb-2 sm:mb-0">
+                <h2 class="text-2xl font-bold sm:mr-5">
+                  {{ data.price | currency(settings.currency_symbol) }}
+                </h2>
+                <div class="flex justify-around">
+                  <CartButtons
+                    :product="product"
+                    :variant="userSelectedVariant"
+                    :notify="true"
+                  />
+                </div>
               </div>
             </div>
             <div class="pb-3 text-xs text-gray-500">

@@ -9,9 +9,7 @@
     <Hero />
     <div class="w-full mb-20">
       <Categories />
-      <div
-        class="block px-2 py-1 mx-auto text-center bg-blue-200 border-2 border-blue-300 shadow"
-      >
+      <div class="block px-2 py-2 mx-auto mb-2 text-center bg-blue-200 border-2 border-blue-300 shadow">
         For delivery info:
         <span class="font-bold">8637260828</span> (Bheem)
       </div>

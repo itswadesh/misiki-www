@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed bottom-0 z-10 w-full py-4 mt-20 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
+    class="fixed bottom-0 z-10 w-full py-3 mt-20 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
   >
     <div class="flex items-center justify-around">
       <nuxt-link
