@@ -3,11 +3,11 @@ require('dotenv').config()
 
 // Start Config
 const PM2_NAME = 'mc'
-const REMOTE_DIR = '/var/www/misiki'
+const REMOTE_DIR = '/var/www/misiki/www'
 const REMOTE_HOST = '139.59.42.129'
 const REMOTE_USER = 'root'
 const PRIVATE_KEY = process.env.LIVE_KEY
-const FILE_NAMES = 'www shared'
+const FILE_NAMES = '.nuxt static nuxt.config.js shared config lang package.json'
 // End Config
 
 // Zip and send file to remote server
@@ -38,9 +38,8 @@ var host = {
     'cd ' + REMOTE_DIR,
     'sudo tar xf arialshop.tar.gz -C ' + REMOTE_DIR,
     'sudo rm arialshop.tar.gz',
-    'cd www',
-    'sudo npm install --production',
-    'sudo pm2 reload ' + PM2_NAME
+    'sudo npm install --force',
+    'sudo pm2 reload ' + PM2_NAME,
   ],
 }
 
@@ -48,7 +47,7 @@ var SSH2Shell = require('ssh2shell'),
   SSH = new SSH2Shell(host),
   //Use a callback function to process the full session text
   callback = function (sessionText) {
-    console.log(sessionText)
+    // console.log(sessionText)
   }
 
 //Start the process
