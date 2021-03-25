@@ -3,7 +3,7 @@
   <form
     novalidate
     autocomplete="off"
-    class="w-full"
+    class="z-0 w-full"
   >
     <div class="relative flex flex-row flex-1 sm:mx-3 md:mx-20 height">
       <!-- :placeholder="$t('Search for products, brands and more')" -->

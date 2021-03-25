@@ -9,12 +9,31 @@
     <header class="fixed top-0 z-10 w-full h-auto p-3 bg-yellow-600 shadow-lg" >
       <div>
       <div class="flex flex-row justify-between mx-auto xl:container">
-        <div class="my-auto text-white">
-          <nuxt-link to="/">
-            <div class="my-auto text-xl">{{ settings.websiteName }}</div>
-          </nuxt-link>
+       <div class="flex flex-row mr-2">
+           <!-- <svg @click="sidebar=!sidebar"
+              class="w-6 h-6 my-auto mt-1 text-white me-3"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg> -->
+            <div class="my-auto text-white">
+              <nuxt-link to="/">
+                <div class="my-auto text-xl">{{ settings.websiteName }}</div>
+              </nuxt-link>
+            </div>
         </div>
-        <Search class="hidden sm:flex" />
+        <!-- <div v-if="sidebar" class="absolute inset-0">
+          <AccountMenu class="z-20" />
+        </div> -->
+        <Search class="z-0 hidden sm:flex" />
         <!--right header block -->
         <div class="flex flex-row">
           <div
@@ -78,7 +97,7 @@
           </nuxt-link>
         </div>
       </div>
-              <Search class="mt-2 sm:hidden" />
+              <Search class="z-0 mt-2 sm:hidden" />
 
       </div>
     </header>
@@ -88,15 +107,18 @@
 <script>
 // import CART from '~/gql/cart/cart.gql'
 import Search from '~/components/Search'
+import AccountMenu from '~/components/AccountMenu'
+
 export default {
   components: {
-    Search,
+    Search,AccountMenu
   },
   props: {
     msg: String,
   },
   data() {
     return {
+      sidebar:false,
       isOpen: false,
       isOpenMore: false,
     }
