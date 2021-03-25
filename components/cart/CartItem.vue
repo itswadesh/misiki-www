@@ -1,10 +1,10 @@
 <template>
   <div
-    class="relative flex justify-between w-full py-5 mx-4 border-b border-gray-300"
+    class="relative flex justify-between w-full py-5 mx-1 border-b border-gray-300 lg:mx-4"
   >
     <nuxt-link class :to="`/${item.slug}`">
       <img
-        class="object-cover w-32 h-20 rounded-lg shadow"
+        class="object-cover w-32 h-24 rounded-lg shadow"
         v-lazy="item.img"
         alt
       />
@@ -38,12 +38,12 @@
         </svg>
       </button>
     </div>
-    <div class="w-full pl-4 lg:w-4/5">
+    <div class="relative w-full pl-4 lg:w-4/5">
       <nuxt-link class="mb-2 text-black" :to="`/${item.slug}`">
         {{ item.name }}
       </nuxt-link>
       <div class="flex" v-if="item.stock < 5">{{ item.stock }} left</div>
-      <div class="flex items-center justify-between w-full">
+      <div class="absolute bottom-0 flex items-center justify-between w-full pr-5">
         <div class="text-2xl font-black">
           {{ item.price | currency(settings.currency_symbol) }}
         </div>

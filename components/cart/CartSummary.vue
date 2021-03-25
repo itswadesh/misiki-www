@@ -1,5 +1,5 @@
 <template>
-  <div class="container w-full pb-6 mx-auto md:w-2/3 lg:w-1/2">
+  <div class="container w-full px-4 pb-6 mx-auto">
     <div class="border-t">
       <div class="px-4 my-4 lg:px-0">
         <p class="text-xl font-normal text-black lg:my-8">Price Summary</p>

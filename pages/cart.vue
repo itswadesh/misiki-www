@@ -1,18 +1,20 @@
 <template>
-  <div class="min-h-screen">
+  <div class="h-screen">
     <!-- <BackButton /> -->
     <EmptyCart v-if="!cart || !cart.qty || cart.qty == 0" />
-    <div class="flex flex-wrap justify-between bg-white" v-else>
+    
+    <div class="flex flex-col px-1 mx-auto bg-white lg:px-4 lg:flex-row" v-else>
+    <div class="lg:pr-6 lg:w-1/2">
       <div class="flex justify-between w-full pb-2 hr-line">
         <!-- <Offers /> -->
         <div
-          class="hidden w-full mt-10 text-lg font-bold bg-white lg:block headings"
+          class="hidden w-full mt-10 ml-4 -mr-6 text-lg font-bold lg:block"
         >
-          <div class="flex flex-wrap">
-            <div class="w-1/2 pl-3 text-left">
+          <div class="flex flex-row flex-wrap justify-between">
+            <div>
               Cart ({{ cart.qty }} Item <span v-if="cart.qty > 1">s</span>)
             </div>
-            <div class="w-1/2 text-right">
+            <div>
               Total
               {{
                 tweenedNumber.toFixed(0) | currency(settings.currency_symbol)
@@ -67,7 +69,7 @@
       </div>-->
       <!-- <CartBanners /> -->
       <div
-        class="flex items-center justify-between w-full p-2 mx-4 my-4 bg-gray-100"
+        class="flex items-center justify-between w-full p-2 px-3 my-4 bg-gray-100 lg:mx-4"
         v-if="cart.discount"
       >
         Promo Code
@@ -86,7 +88,8 @@
           >APPLY</nuxt-link
         >
       </div>
-      <CartSummary :cart="cart" class="">
+      </div>
+      <CartSummary :cart="cart" class="w-2/3 lg:w-1/2">
         <Button @click="$router.push('/checkout/address')" color="primary">
           <span v-if="!user">LOGIN TO CONTINUE</span>
           <span v-else>SELECT ADDRESS</span>
