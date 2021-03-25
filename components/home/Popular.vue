@@ -12,7 +12,13 @@
       <div v-else-if="data && data.data.length" class="">
         <Carousel :products="data.data" title="Popular" class="" />
       </div>
-      <div v-else>No popular products</div>
+      <div
+        v-else
+        class="flex flex-col items-center justify-center w-full text-center h-72"
+      >
+        <h3 class="text-3xl font-bold">No food available now</h3>
+        <div>We are open from 10:00PM to 6:00PM</div>
+      </div>
     </template>
   </ApolloQuery>
 </template>

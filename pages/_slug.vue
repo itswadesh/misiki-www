@@ -1,8 +1,7 @@
 <template>
-  <div class="bg-white">
-    <Nav />
+  <div class="w-full min-h-full mt-20 bg-white lg:mt-16">
     <ApolloQuery
-    class="mt-24 sm:mt-16"
+      class=""
       :query="require('~/gql/product/productSlug.gql')"
       :variables="{ slug: $route.params.slug }"
       :update="
@@ -17,7 +16,7 @@
         <ErrComponent v-else-if="error" />
         <div v-else-if="data" class="relative">
           <div class="absolute z-10 w-full">
-            <BackButton />
+            <!-- <BackButton /> -->
             <!-- <nuxt-link
               to="/search/"
               class="absolute top-0 right-0 w-10 h-10 pt-2 mt-1 mr-1 text-center bg-black rounded-full opacity-25 px-auto py-auto"
@@ -40,45 +39,47 @@
               </div>
             </div>
 
-          <!-- <img v-lazy="`${data.img}`" alt class="object-cover w-full h-48 mb-2" /> -->
-          <div class="z-10 px-4 lg:w-1/2">
-            <div class="flex flex-col mt-4 mb-2">
-              <div class="flex items-center justify-between text-sm text-gray-600 lg:justify-start">
-                <img
-                  v-lazy="data.type === 'V' ? '/veg.png' : '/non-veg.png'"
-                  class="w-5"
-                />
-                <div class="flex items-center ml-0 lg:ml-3">
-                  <svg
-                    class="w-12 h-12 my-auto mr-1 transition-all ease-out sm:mr-0 transition-medium"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M16.32 7.1A8 8 0 1 1 9 4.06V2h2v2.06c1.46.18 2.8.76 3.9 1.62l1.46-1.46 1.42 1.42-1.46 1.45zM10 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM7 0h6v2H7V0zm5.12 8.46l1.42 1.42L10 13.4 8.59 12l3.53-3.54z"
-                    />
-                  </svg>
-                  <!-- <div v-if="city == 'Sunabeda'" class="flex items-center"> -->
-                  <div class="flex flex-col my-auto sm:flex-row">
-                    <TruckIcon size="1.5x" class="my-auto mr-4" /> 
-                    <p class="my-auto"> Delivery: </p>
-                    <b class="text-xl sm:ml-1"> {{ data.time }}</b>
-                  </div>
-                  <!-- <div class="flex items-center" v-else>
+            <!-- <img v-lazy="`${data.img}`" alt class="object-cover w-full h-48 mb-2" /> -->
+            <div class="z-10 px-4 lg:w-1/2">
+              <div class="flex flex-col mt-4 mb-2">
+                <div
+                  class="flex items-center justify-between text-sm text-gray-600 lg:justify-start"
+                >
+                  <img
+                    v-lazy="data.type === 'V' ? '/veg.png' : '/non-veg.png'"
+                    class="w-5"
+                  />
+                  <div class="flex items-center ml-0 lg:ml-3">
+                    <svg
+                      class="w-8 h-8 my-auto mr-1 transition-all ease-out sm:mr-0 transition-medium"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M16.32 7.1A8 8 0 1 1 9 4.06V2h2v2.06c1.46.18 2.8.76 3.9 1.62l1.46-1.46 1.42 1.42-1.46 1.45zM10 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM7 0h6v2H7V0zm5.12 8.46l1.42 1.42L10 13.4 8.59 12l3.53-3.54z"
+                      />
+                    </svg>
+                    <!-- <div v-if="city == 'Sunabeda'" class="flex items-center"> -->
+                    <div class="flex flex-col my-auto sm:flex-row">
+                      <!-- <TruckIcon class="my-auto mr-4" /> -->
+                      <p class="my-auto">Delivery:</p>
+                      <b class="text-xl sm:ml-1"> {{ data.time }}</b>
+                    </div>
+                    <!-- <div class="flex items-center" v-else>
                     <TruckIcon size="1x" class="mr-2" /> Delivery within
                     <b class="ml-1 text-xl text-secondary"> 1hr</b>
                   </div> -->
-                </div>
-                <!-- <div>{{ data.stock }} left</div> -->
-                <!-- <div v-if="data.vendor && data.vendor.info">
+                  </div>
+                  <!-- <div>{{ data.stock }} left</div> -->
+                  <!-- <div v-if="data.vendor && data.vendor.info">
                   By {{ data.vendor.info.restaurant }}
                 </div> -->
-                <div v-if="data.stock > 0 && data.stock < 6">
-                  Only {{ data.stock }} left
+                  <div v-if="data.stock > 0 && data.stock < 6">
+                    Only {{ data.stock }} left
+                  </div>
                 </div>
-              </div>
-              <h1 class="mt-2 text-xl font-bold">{{ data.name }}</h1>
-              <!-- <div class="flex items-center justify-between mt-4 text-sm">
+                <h1 class="mt-2 text-xl font-bold">{{ data.name }}</h1>
+                <!-- <div class="flex items-center justify-between mt-4 text-sm">
             <div class="px-3 text-white bg-orange-500 rounded-full">free delivery</div>
             <div class="text-gray-600">
               <fa icon="history" /> 33min
@@ -87,114 +88,122 @@
               <fa icon="map-marker" /> 27kms
             </div>
               </div>-->
-            </div>
-            <div class="flex flex-col sm:justify-between sm:flex-row">
-              <div class="flex items-center">
-                <Ratingcircle
-                  v-if="reviewSummary"
-                  :rating="reviewSummary.avg"
-                />
-                <div class="flex flex-row justify-between w-full mb-2 sm:mb-0">
-                  <div class="my-auto">{{ data.ratings }} ratings</div>
-                  <nuxt-link :to="`/review?id=${product.id}`" class="my-auto ml-3 text-green-500 hover:shadow">
-                    <button class="p-2 text-sm">Add a Review</button>
-                  </nuxt-link>
-                </div>
               </div>
-              <div class="flex flex-row justify-between py-3 mb-2 sm:mb-0">
-                <h2 class="text-2xl font-bold sm:mr-5">
-                  {{ data.price | currency(settings.currency_symbol) }}
-                </h2>
-                <div class="flex justify-around">
-                  <CartButtons
-                    :product="product"
-                    :variant="userSelectedVariant"
-                    :notify="true"
+              <div class="flex flex-col sm:justify-between sm:flex-row">
+                <div class="flex items-center">
+                  <Ratingcircle
+                    v-if="reviewSummary"
+                    :rating="reviewSummary.avg"
                   />
+                  <div
+                    class="flex flex-row justify-between w-full mb-2 sm:mb-0"
+                  >
+                    <div class="my-auto">{{ data.ratings }} ratings</div>
+                    <nuxt-link
+                      :to="`/review?id=${product.id}`"
+                      class="my-auto ml-3 text-green-500 hover:shadow"
+                    >
+                      <button class="p-2 text-sm">Add a Review</button>
+                    </nuxt-link>
+                  </div>
+                </div>
+                <div class="flex flex-row justify-between py-3 mb-2 sm:mb-0">
+                  <h2 class="text-2xl font-bold sm:mr-5">
+                    {{ data.price | currency(settings.currency_symbol) }}
+                  </h2>
+                  <div class="flex justify-around">
+                    <CartButtons
+                      :product="product"
+                      :variant="userSelectedVariant"
+                      :notify="true"
+                    />
+                  </div>
                 </div>
               </div>
+              <div class="pb-3 text-xs text-gray-500">
+                {{ data.description }}
+              </div>
+              <SocialSharing :data="product" :host="host" />
             </div>
-            <div class="pb-3 text-xs text-gray-500">
-              {{ data.description }}
-            </div>
-          </div>
-          </div>
-          <hr />
-          <SocialSharing :data="product" :host="host" />
-          <hr class="mb-4" />
-          <div v-if="data.vendor">
-            <h3 class="px-3 text-2xl font-bold">About Chef</h3>
-            <div class="flex p-6 mb-6 bg-gray-100 rounded-lg">
-              <img
-                v-if="data.vendor.avatar"
-                class="object-cover w-24 h-24 mx-0 mr-6 rounded-full"
-                v-lazy="data.vendor.avatar"
-              />
-              <img
-                v-else
-                class="w-24 h-24 mx-0 mr-6 rounded-full"
-                v-lazy="`https://randomuser.me/api/portraits/women/17.jpg`"
-              />
-              <div class="text-left">
-                <h2 class="text-lg" v-if="!data.vendor.info.public">
-                  {{ data.vendor.info.restaurant }}
-                </h2>
-                <h2 class="text-lg" v-else>
-                  {{ data.vendor.firstName }} {{ data.vendor.lastName }}
-                </h2>
-                <div
-                  class="flex items-center text-xs tracking-wide text-gray-600"
-                >
-                  <MapPinIcon size="1.25x" class="mr-1" />
-                  {{ data.vendor.city }}
-                </div>
-                <div class="flex items-center text-sm text-green-500">
-                  {{ data.vendor.ratings }}
-                  <StarIcon size="1.25x" class="mr-1" />
-                  {{ data.vendor.reviews }} reviews
-                </div>
-                <div class="text-gray-600" v-if="data.vendor.info">
-                  {{ data.vendor.info.speciality }}
+            <!-- <div v-if="data.vendor">
+              <h3 class="px-3 text-2xl font-bold">About Chef</h3>
+              <div class="flex p-6 mb-6 bg-gray-100 rounded-lg">
+                <img
+                  v-if="data.vendor.avatar"
+                  class="object-cover w-24 h-24 mx-0 mr-6 rounded-full"
+                  v-lazy="data.vendor.avatar"
+                />
+                <img
+                  v-else
+                  class="w-24 h-24 mx-0 mr-6 rounded-full"
+                  v-lazy="`https://randomuser.me/api/portraits/women/17.jpg`"
+                />
+                <div class="text-left">
+                  <h2 class="text-lg" v-if="!data.vendor.info.public">
+                    {{ data.vendor.info.restaurant }}
+                  </h2>
+                  <h2 class="text-lg" v-else>
+                    {{ data.vendor.firstName }} {{ data.vendor.lastName }}
+                  </h2>
+                  <div
+                    class="flex items-center text-xs tracking-wide text-gray-600"
+                  >
+                    <MapPinIcon size="1.25x" class="mr-1" />
+                    {{ data.vendor.city }}
+                  </div>
+                  <div class="flex items-center text-sm text-green-500">
+                    {{ data.vendor.ratings }}
+                    <StarIcon size="1.25x" class="mr-1" />
+                    {{ data.vendor.reviews }} reviews
+                  </div>
+                  <div class="text-gray-600" v-if="data.vendor.info">
+                    {{ data.vendor.info.speciality }}
+                  </div>
                 </div>
               </div>
-            </div>
-            <ChefMenu :vendor="data.vendor && data.vendor.id" />
-            <div
-              class="mb-4"
-              v-if="
-                data.vendor.info &&
-                data.vendor.info.kitchenPhotos &&
-                data.vendor.info.kitchenPhotos.length
-              "
-            >
-              <h3 class="px-3 mb-2 text-2xl font-bold">Kitchen Photos</h3>
-              <div class="flex flex-wrap px-2">
-                <div
-                  class="w-1/3 px-1 mb-2"
-                  v-for="(p, ix) in data.vendor.info.kitchenPhotos"
-                  :key="ix"
-                >
-                  <img v-lazy="p" class="object-cover h-24 rounded-lg shadow" />
-                </div>
-              </div>
-            </div>
-
-            <div class="px-3" v-if="reviewSummary">
-              <h3 class="mb-2 text-2xl font-bold">Reviews</h3>
-              <div class="text-sm text-gray-700">
-                <Ratingcircle :rating="reviewSummary.avg" />
-                <div>
-                  Average of {{ reviewSummary.avg }} out of
-                  {{ reviewSummary.count }} ratings &
-                  {{ reviewSummary.reviews && reviewSummary.reviews.length }}
-                  reviews
-                </div>
-              </div>
-              <nuxt-link :to="`/review/${data && data.id}`" v-if="orderCount"
-                >Rate Now</nuxt-link
+              <ChefMenu :vendor="data.vendor && data.vendor.id" />
+              <div
+                class="mb-4"
+                v-if="
+                  data.vendor.info &&
+                  data.vendor.info.kitchenPhotos &&
+                  data.vendor.info.kitchenPhotos.length
+                "
               >
-            </div>
+                <h3 class="px-3 mb-2 text-2xl font-bold">Kitchen Photos</h3>
+                <div class="flex flex-wrap px-2">
+                  <div
+                    class="w-1/3 px-1 mb-2"
+                    v-for="(p, ix) in data.vendor.info.kitchenPhotos"
+                    :key="ix"
+                  >
+                    <img
+                      v-lazy="p"
+                      class="object-cover h-24 rounded-lg shadow"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="px-3" v-if="reviewSummary">
+                <h3 class="mb-2 text-2xl font-bold">Reviews</h3>
+                <div class="text-sm text-gray-700">
+                  <Ratingcircle :rating="reviewSummary.avg" />
+                  <div>
+                    Average of {{ reviewSummary.avg }} out of
+                    {{ reviewSummary.count }} ratings &
+                    {{ reviewSummary.reviews && reviewSummary.reviews.length }}
+                    reviews
+                  </div>
+                </div>
+                <nuxt-link :to="`/review/${data && data.id}`" v-if="orderCount"
+                  >Rate Now</nuxt-link
+                >
+              </div>
+            </div> -->
           </div>
+          <hr class="mb-4" />
+          <Popular />
         </div>
         <CartBar />
       </template>
@@ -212,6 +221,7 @@ import CartButtons from '~/components/cart/CartButtons'
 import CartBar from '~/components/cart/CartBar'
 import StickyFooter from '~/components/StickyFooter'
 import ChefMenu from '~/components/ChefMenu'
+import Popular from '~/components/home/Popular'
 import { MapPinIcon, StarIcon } from 'vue-feather-icons'
 
 import {
@@ -235,6 +245,7 @@ export default {
     Nav,
     CartButtons,
     StickyFooter,
+    Popular,
     CartBar,
     Ratingcircle,
     DetailPageSkeleton,

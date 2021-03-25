@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-import Vue from 'vue'
 import { Loading, BackToTopDark } from '~/shared/components/ui'
 import { Error, Search } from '~/shared/components'
 import StickyFooter from '~/components/StickyFooter'

@@ -1,13 +1,9 @@
 <template>
   <div
-    class="fixed bottom-0 z-10 w-full py-3 mt-20 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
+    class="fixed bottom-0 z-10 w-full py-3 mt-20 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg lg:hidden"
   >
     <div class="flex items-center justify-around">
-      <nuxt-link
-        to="/search/"
-        class=""
-        active-class="text-primary"
-      >
+      <nuxt-link to="/search/" class="" active-class="text-primary">
         <svg
           class="w-6 h-6 mx-auto transition-all ease-out transition-medium"
           viewBox="0 0 24 24"
@@ -43,11 +39,7 @@
         </svg>
         <span class="text-xs">Offers</span>
       </nuxt-link>
-      <nuxt-link
-        to="/cart"
-        class="relative "
-        active-class="text-primary"
-      >
+      <nuxt-link to="/cart" class="relative" active-class="text-primary">
         <span
           class="absolute inline-block w-5 h-5 ml-2 -mt-2 text-sm font-bold text-center text-red-600 bg-yellow-400 rounded-full"
           >{{ cart.qty }}</span

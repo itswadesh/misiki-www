@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <Nav />
-    <nuxt-link
-    
+  <div class="w-full">
+    <!-- <nuxt-link
       to="/login?role=chef"
       class="block px-2 py-1 mx-auto mt-24 font-medium text-center text-gray-700 bg-yellow-200 border-2 border-yellow-300 rounded shadow cursor-pointer sm:mt-16 hover:text-black hover:bg-yellow-300"
     >
       Get started as chef in 30 seconds
-    </nuxt-link>
-    <Hero />
+    </nuxt-link> -->
+    <HomeHeroSlider class="mt-1 bg-white md:mt-1 lg:mt-5 xl:mt-5" />
+
     <div class="w-full mb-20">
       <Categories />
       <!-- <div class="block px-2 py-2 mx-auto mb-2 text-center bg-blue-200 border-2 border-blue-300 shadow">

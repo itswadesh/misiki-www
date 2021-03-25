@@ -1,15 +1,11 @@
 <template>
   <!-- @submit.stop.prevent="submit(search)" -->
-  <form
-    novalidate
-    autocomplete="off"
-    class="z-0 w-full"
-  >
+  <form novalidate autocomplete="off" class="z-0 w-full">
     <div class="relative flex flex-row flex-1 sm:mx-3 md:mx-20 height">
       <!-- :placeholder="$t('Search for products, brands and more')" -->
       <input
         type="text"
-        placeholder="Search for Foods"
+        placeholder="Search for Home Cooked Foods"
         class="w-full p-2 pl-3 text-sm border-0 rounded-sm shadow-lg placeholder focus:outline-none focus:ring focus:ring-yellow-500"
         v-model="search"
       />
@@ -35,46 +31,46 @@
 </template>
 
 <script>
-// import { typingTimeout } from '~/config'
-// export default {
-//   data() {
-//     return {
-//       search: '',
-//     }
-//   },
-//   methods: {
-//     submit(q) {
-//       this.$router.push(`/search/${q}`)
-//     },
-//   },
-//   watch: {
-//     search: {
-//       immediate: false,
-//       handler(value, oldValue) {
-//         // if (value.length < 4) return;
-//         if (!oldValue) return // Do not trigger on page load
-//         clearTimeout(this.typingTimer)
-//         let vm = this
-//         this.typingTimer = setTimeout(function () {
-//           if (!value || value == 'undefined') value = '' // When clear button clicked
-//           vm.searchString = value
-//           vm.$router.push(`/search/${value}`)
-//         }, typingTimeout)
-//       },
-//     },
-//     '$route.params.q': {
-//       immediate: true,
-//       handler(value) {
-//         let pathName = null
-//         if (this.$route.name) pathName = this.$route.name.substr(0, 8)
-//         if (pathName === 'category') return
-//         if (!value || value == 'undefined') value = ''
-//         if (value == '') return
-//         if (this.search == '') this.search = value
-//       },
-//     },
-//   },
-// }
+import { typingTimeout } from '~/shared/config'
+export default {
+  data() {
+    return {
+      search: '',
+    }
+  },
+  methods: {
+    submit(q) {
+      this.$router.push(`/search/${q}`)
+    },
+  },
+  watch: {
+    search: {
+      immediate: false,
+      handler(value, oldValue) {
+        // if (value.length < 4) return;
+        if (!oldValue) return // Do not trigger on page load
+        clearTimeout(this.typingTimer)
+        let vm = this
+        this.typingTimer = setTimeout(function () {
+          if (!value || value == 'undefined') value = '' // When clear button clicked
+          vm.searchString = value
+          vm.$router.push(`/search/${value}`)
+        }, typingTimeout)
+      },
+    },
+    '$route.params.q': {
+      immediate: true,
+      handler(value) {
+        let pathName = null
+        if (this.$route.name) pathName = this.$route.name.substr(0, 8)
+        if (pathName === 'category') return
+        if (!value || value == 'undefined') value = ''
+        if (value == '') return
+        if (this.search == '') this.search = value
+      },
+    },
+  },
+}
 </script>
 
 <style scoped>

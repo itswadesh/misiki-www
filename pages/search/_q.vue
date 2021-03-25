@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <Nav /> -->
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-24 lg:mt-20">
       <SelectablePlan
         class="filter"
         v-for="f in foodFilters"
@@ -22,8 +21,8 @@
         :infinite-scroll-distance="3"
         :infinite-scroll-immediate-check="true"
       >
-      <div v-if="loading">Loading.......</div>
-       
+        <div v-if="loading">Loading.......</div>
+
         <!-- <transition-group
           @before-enter="beforeEnter"
           @enter="enter"
@@ -39,12 +38,10 @@
         No items found. Please modify your search
       </div>
     </div>
-    <GeoLocation />
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import Nav from '~/components/home/Nav'
 
@@ -54,17 +51,14 @@ import {
   Product,
   ListCardSkeleton,
   Categories,
-  GeoLocation,
   SelectablePlan,
 } from '~/shared/components'
 import ListCard from '~/components/ListCard'
 import { infiniteScroll } from '~/shared/mixins'
 import { constructURL } from '~/shared/lib/'
 import SEARCH from '~/gql/product/search.gql'
-// import gsap from 'gsap'
 
 export default {
-  layout: 'search',
   mixins: [infiniteScroll],
   data() {
     return {
@@ -86,7 +80,6 @@ export default {
     Categories,
     ListCard,
     ListCardSkeleton,
-    GeoLocation,
     SelectablePlan,
   },
   created() {

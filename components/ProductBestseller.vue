@@ -1,5 +1,8 @@
 <template>
-  <div class="relative w-56 mx-1 mb-2 border rounded shadow bg-gradient-to-r from-green-200 via-blue-300 to-red-300 sm:mx-2 sm:w-56" v-if="p">
+  <div
+    class="relative w-56 mx-1 mb-2 border rounded shadow sm:mx-2 sm:w-56"
+    v-if="p"
+  >
     <!-- <img
      v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
       class="absolute top-0 right-0 w-5 mt-1 mr-1"
@@ -17,7 +20,11 @@
       >
         Dinner
       </div>
-      <img v-lazy="`${p.img}`" alt class="object-cover w-full h-40 mb-2 rounded" />
+      <img
+        v-lazy="`${p.img}`"
+        alt
+        class="object-cover w-full h-40 mb-2 rounded"
+      />
     </nuxt-link>
     <div class="px-2">
       <div v-if="p.ratings">
@@ -25,7 +32,9 @@
         <div class="pl-2 review-font">{{ p.reviews }} reviews</div>
       </div>
       <nuxt-link :to="`/${p.slug}`">
-        <h2 class="py-2 text-xs font-bold tracking-wide truncate">{{ p.name }}</h2>
+        <h2 class="py-2 text-xs font-bold tracking-wide truncate">
+          {{ p.name }}
+        </h2>
       </nuxt-link>
       <p>{{ p.description }}</p>
       <div class="flex flex-wrap items-center justify-between my-2">

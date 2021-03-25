@@ -8,7 +8,6 @@ import { Login } from '~/shared/components'
 export default {
   mixins: [location],
   components: { Login },
-  layout: 'none',
   head() {
     return {
       title: 'Login to Misiki',

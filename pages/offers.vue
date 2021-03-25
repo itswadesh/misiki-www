@@ -1,14 +1,11 @@
 <template>
   <div>
-    <Nav />
     <!-- <Heading title="Offers" /> -->
     <div class="min-h-screen pt-12 bg-gray-100">
       <div class="w-full">
         <ApolloQuery :query="require('~/gql/coupon/coupons.gql')">
           <template v-slot="{ result: { error, data }, isLoading }">
-            <div v-if="isLoading">
-              Loading.....
-            </div>
+            <div v-if="isLoading">Loading.....</div>
             <ErrComponent v-else-if="error" :error="error" />
             <div
               class="mx-2"

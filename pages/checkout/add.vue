@@ -15,11 +15,10 @@
         <div class="text-xs text-gray-600">Step 2 of 3</div>
       </div>
     </div>
-      <!-- input  -->
-      <div class="container mx-auto lg:w-1/3">
-          <AddressEdit go="checkout" :id="$route.query.id" />
-      </div>
-    
+    <!-- input  -->
+    <div class="container mx-auto lg:w-1/3">
+      <AddressEdit go="checkout" :id="$route.query.id" />
+    </div>
   </div>
 </template>
 

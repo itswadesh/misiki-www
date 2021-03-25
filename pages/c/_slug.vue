@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Nav />
+  <div class="flex flex-col justify-start w-full mt-20 lg:mt-16">
     <ApolloQuery
       :query="require('~/gql/category/category.gql')"
       :variables="{ slug: $route.params.slug }"
@@ -22,7 +21,7 @@
           <Product :p="p" class />
         </div>
       </div>-->
-      <Categories class="mt-10" />
+      <Categories class="" />
       <ApolloQuery
         :query="require('~/gql/product/products.gql')"
         :variables="{ category: $route.params.slug, city }"
@@ -40,7 +39,11 @@
               data.products.data.length
             "
           >
-            <div class="w-full" v-for="p in data.products.data" :key="p._id">
+            <div
+              class="w-full lg:w-1/2 xl:w-1/3"
+              v-for="p in data.products.data"
+              :key="p._id"
+            >
               <ListCard :p="p" class :isLoading="isLoading" />
             </div>
           </div>
@@ -109,7 +112,7 @@ export default {
     Categories,
     ListCard,
     StickyFooter,
-    Nav
+    Nav,
     // ContentLoader,
   },
 }

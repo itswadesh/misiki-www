@@ -1,20 +1,20 @@
 <template>
   <div class="">
-    <h1 class="mx-auto mt-8 text-5xl font-bold text-center mb:8 lg:mb-16">
+    <h1
+      class="w-full mx-auto mt-8 text-5xl font-bold text-center mb:8 lg:mb-16"
+    >
       <span class="underline">Contact</span>
       Us
     </h1>
-    <div class="flex flex-col justify-center">
-      <div
-        class="flex flex-wrap justify-center w-full px-2 mx-auto lg:px-16 xl:px-48 lg:mb-12"
-      >
+    <div class="">
+      <div class="w-full px-2 mx-auto">
         <div
-          class="w-full py-8 pr-0 my-4 mb-8 bg-white rounded shadow lg:bg-transparent lg:shadow-none lg:rounded-none lg:w-1/2 lg:pr-12"
+          class="w-full py-8 pr-0 my-4 mb-8 bg-white rounded shadow lg:bg-transparent lg:shadow-none lg:rounded-none"
         >
           <form
             novalidate
             @submit.stop.prevent="submit()"
-            class="flex flex-col w-full px-2 mx-auto leading-loose lg:px-24"
+            class="w-full px-2 mx-auto leading-loose"
           >
             <input
               type="text"

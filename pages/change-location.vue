@@ -6,8 +6,6 @@
 </template>
 
 <script>
-
-
 import Nav from '~/components/home/Nav'
 
 import { ChangeLocation } from '~/shared/components'

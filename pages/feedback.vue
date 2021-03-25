@@ -1,22 +1,25 @@
 <template>
   <div>
-    <Nav />
     <!-- <Heading title="Feedback" /> -->
-    <div class="container flex flex-row max-w-full p-4 mx-auto mt-24 sm:p-8 sm:mt-16">
-    <AccountMenu class="" />
-    <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
-      <form
-        novalidate
-        autocomplete="off"
-        @submit.stop.prevent="submit(message)"
-        class="mx-2"
+    <div
+      class="container flex flex-row max-w-full p-4 mx-auto mt-24 sm:p-8 sm:mt-16"
+    >
+      <AccountMenu class="" />
+      <div
+        class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4"
       >
-        <Textarea v-model="message" ref="message" label="Message" />
-        <Submit class="mt-10">Send</Submit>
-      </form>
+        <form
+          novalidate
+          autocomplete="off"
+          @submit.stop.prevent="submit(message)"
+          class="mx-2"
+        >
+          <Textarea v-model="message" ref="message" label="Message" />
+          <Submit class="mt-10">Send</Submit>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
