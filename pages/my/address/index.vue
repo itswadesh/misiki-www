@@ -4,7 +4,7 @@
   <!-- <Heading title="Manage Address" /> -->
   <div class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8">
     <AccountMenu />
-    <AddressList class="w-full mt-0 lg:ml-8 lg:w-3/4 lg:-mt-0 xs:w-full headings" />
+    <AddressList class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4" />
   </div>
 </div>
 </template>

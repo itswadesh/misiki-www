@@ -2,6 +2,7 @@
   <div class="bg-white">
     <Nav />
     <ApolloQuery
+    class="mt-24 sm:mt-16"
       :query="require('~/gql/product/productSlug.gql')"
       :variables="{ slug: $route.params.slug }"
       :update="

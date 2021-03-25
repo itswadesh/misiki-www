@@ -7,7 +7,7 @@
     <div v-if="isLoading">Loading...</div>
       <ErrComponent v-else-if="error" />
       <div
-        class="sticky top-0 z-10 flex flex-no-wrap max-w-full p-1 pl-1 mb-2 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
+        class="sticky top-0 z-0 flex flex-no-wrap max-w-full p-1 pl-1 mb-2 overflow-x-auto text-gray-700 bg-gray-100 border-t shadow-lg"
         v-else-if="data && data.categories.data"
       >
         <nuxt-link

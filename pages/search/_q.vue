@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Nav />
-    <div class="flex justify-center mt-24 sm:mt-16">
+    <!-- <Nav /> -->
+    <div class="flex justify-center">
       <SelectablePlan
         class="filter"
         v-for="f in foodFilters"
