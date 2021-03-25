@@ -1,6 +1,8 @@
 <template>
   <div>
+    <Nav />
     <nuxt-link
+    style="margin-top:57px"
       to="/login?role=chef"
       class="block px-2 py-1 mx-auto font-medium text-center text-gray-700 bg-yellow-200 border-2 border-yellow-300 rounded shadow cursor-pointer hover:text-black hover:bg-yellow-300"
     >
@@ -40,6 +42,8 @@
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 import Categories from '~/components/Categories'
 import { Hero, Product } from '~/shared/components'
 import StickyFooter from '~/components/StickyFooter'
@@ -53,6 +57,7 @@ export default {
     Hero,
     // Product,
     Categories,
+    Nav,
     StickyFooter,
     BestSellers,
     // RecentVisit,

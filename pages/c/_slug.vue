@@ -1,10 +1,11 @@
 <template>
   <div>
+    <Nav />
     <ApolloQuery
       :query="require('~/gql/category/category.gql')"
       :variables="{ slug: $route.params.slug }"
     >
-      <template v-slot="{ result: { error, data }, isLoading }">
+      <template v-slot="{ result: { error, data }, isLoading }" class="mt-20">
         <Heading v-if="isLoading" :title="`Explore ...`" back="/" />
         <ErrComponent v-else-if="error" :error="error" />
 
@@ -21,7 +22,7 @@
           <Product :p="p" class />
         </div>
       </div>-->
-      <Categories />
+      <Categories class="mt-10" />
       <ApolloQuery
         :query="require('~/gql/product/products.gql')"
         :variables="{ category: $route.params.slug, city }"
@@ -55,6 +56,8 @@
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 // import {Header} from '~/shared/components'
 import { Heading, Banner, Product, ListCard } from '~/shared/components'
 import Categories from '~/components/Categories'
@@ -106,6 +109,7 @@ export default {
     Categories,
     ListCard,
     StickyFooter,
+    Nav
     // ContentLoader,
   },
 }

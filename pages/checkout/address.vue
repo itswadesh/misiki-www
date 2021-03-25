@@ -1,6 +1,7 @@
 <template>
   <div>
-    <CheckoutHeader selected="address" />
+    <Nav />
+    <CheckoutHeader selected="address" class="static mt-16" />
     <div style="max-width: 1000px; margin: 0 auto">
       <div
         class="flex flex-wrap items-start justify-between p-2 mx-auto lg:mx-10"
@@ -101,6 +102,8 @@
 <script>
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
+import Nav from '~/components/home/Nav'
+
 import AddressCard from '~/components/checkout/AddressCard'
 import SelectAddress from '~/components/checkout/SelectAddress'
 import AddressNewCard from '~/components/checkout/AddressNewCard'
@@ -135,6 +138,7 @@ export default {
     CheckoutHeader,
     Radio,
     SelectAddress,
+    Nav,
     AddressNewCard,
     AddressCard,
     CartSummaryCheckout,

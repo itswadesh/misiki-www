@@ -1,9 +1,10 @@
 <template>
   <div class="h-screen">
+    <Nav />
     <!-- <BackButton /> -->
     <EmptyCart v-if="!cart || !cart.qty || cart.qty == 0" />
     
-    <div class="flex flex-col px-1 mx-auto bg-white lg:px-4 lg:flex-row" v-else>
+    <div class="flex flex-col px-1 mx-auto mt-24 bg-white sm:mt-16 lg:px-4 lg:flex-row" v-else>
     <div class="lg:pr-6 lg:w-1/2">
       <div class="flex justify-between w-full pb-2 hr-line">
         <!-- <Offers /> -->
@@ -102,6 +103,8 @@
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 import StickyFooter from '~/components/StickyFooter'
 import EmptyCart from '~/components/cart/EmptyCart'
 import CartSummary from '~/components/cart/CartSummary'
@@ -154,6 +157,7 @@ export default {
     },
   },
   components: {
+    Nav,
     EmptyCart,
     CartSummary,
     CartBanners,

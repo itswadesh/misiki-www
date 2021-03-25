@@ -1,6 +1,8 @@
 <template>
+<div>
+  <Nav />
   <div class="container mx-auto">
-    <CheckoutHeader selected="payment" />
+    <CheckoutHeader selected="payment" class="mt-16" />
     <div
       class="flex items-center justify-between p-3 m-auto shadow lg:py-2 lg:px-0 lg:shadow-none lg:w-1/2"
     >
@@ -210,10 +212,13 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import { Radio, Submit } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
@@ -229,7 +234,7 @@ export default {
   middleware({ store, redirect }) {
     if (store.state.cart.qty < 1) return redirect('/cart')
   },
-  components: { CheckoutHeader, Radio, Submit, Card, 
+  components: { CheckoutHeader, Radio, Submit, Card,  Nav
   // ContentLoader
    },
   data() {

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <CheckoutHeader selected="address" />
+    <Nav />
+    <CheckoutHeader selected="address" class="mt-16" />
     <div class="w-full pb-4 mx-auto lg:w-1/3">
       <div class="flex items-center justify-between p-3 shadow lg:shadow-none">
         <nuxt-link class="flex items-center w-3/5" to="/checkout/address">
@@ -24,6 +25,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Nav from '~/components/home/Nav'
+
 import { Textbox } from '~/shared/components/ui'
 import { AddressEdit } from '~/shared/components'
 import addAddress from '~/gql/user/addAddress.gql'
@@ -32,7 +35,7 @@ const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 
 export default {
   middleware: ['isAuth'],
-  components: { CheckoutHeader, Textbox, AddressEdit },
+  components: { CheckoutHeader, Textbox, AddressEdit, Nav },
   data() {
     return {
       address: null,

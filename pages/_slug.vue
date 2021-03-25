@@ -1,5 +1,6 @@
 <template>
   <div class="bg-white">
+    <!-- <Nav /> -->
     <ApolloQuery
       :query="require('~/gql/product/productSlug.gql')"
       :variables="{ slug: $route.params.slug }"
@@ -203,6 +204,8 @@
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 import { mapGetters } from 'vuex'
 import CartButtons from '~/components/cart/CartButtons'
 import CartBar from '~/components/cart/CartBar'
@@ -228,6 +231,7 @@ import { FacebookIcon, TruckIcon } from 'vue-feather-icons'
 export default {
   components: {
     ChefMenu,
+    Nav,
     CartButtons,
     StickyFooter,
     CartBar,
