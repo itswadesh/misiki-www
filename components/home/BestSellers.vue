@@ -12,7 +12,7 @@
       <div v-else-if="error">
         <ErrComponent />
       </div>
-      <div v-else-if="data" class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+      <div v-else-if="data">
         <div v-if="data.t && data.t.length > 0">
           <Carousel
             :products="data.t"

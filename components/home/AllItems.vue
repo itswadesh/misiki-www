@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-1 sm:px-4">
     <ApolloQuery
       :query="require('~/gql/product/search.gql')"
       :variables="{ city, page: 1, sort: '-updatedAt' }"
@@ -7,11 +7,11 @@
     >
       <template v-slot="{ result: { error, data }, isLoading }">
         <div v-if="isLoading" class="flex">
-          <Product class="w-1/2" v-for="(n, ix) in 2" :key="ix" :p="{}" />
+          <Product class="w-1/4" v-for="(n, ix) in 2" :key="ix" :p="{}" />
         </div>
         <ErrComponent v-else-if="error" :error="error" />
-        <div v-else-if="data && data.data.length" class="flex flex-wrap">
-          <div v-for="p in data.data" :key="p.id" class="w-1/2">
+        <div v-else-if="data && data.data.length" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+          <div v-for="p in data.data" :key="p.id" class="col-span-1">
             <Product :p="p" />
           </div>
         </div>

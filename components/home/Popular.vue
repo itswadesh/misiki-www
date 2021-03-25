@@ -6,11 +6,11 @@
   >
     <template v-slot="{ result: { error, data }, isLoading }">
       <div v-if="isLoading" class="flex">
-        <Product class="w-1/3" v-for="(n, ix) in 2" :key="ix" :p="{}" />
+        <Product class="w-1/4" v-for="(n, ix) in 2" :key="ix" :p="{}" />
       </div>
       <ErrComponent v-else-if="error" :error="error" />
-      <div v-else-if="data && data.data.length">
-        <Carousel :products="data.data" title="Popular" />
+      <div v-else-if="data && data.data.length" class="">
+        <Carousel :products="data.data" title="Popular" class="" />
       </div>
       <div v-else>No popular products</div>
     </template>
