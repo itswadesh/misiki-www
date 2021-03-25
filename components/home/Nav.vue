@@ -48,7 +48,7 @@
               >
               <span v-else class="cursor-pointer">
                 <nuxt-link
-                  to="/"
+                  to="/my/profile"
                   class="flex flex-col items-center mx-auto"
                 >
                   <svg
