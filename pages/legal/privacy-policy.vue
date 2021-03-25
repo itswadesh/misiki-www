@@ -15,8 +15,9 @@ h2 {
 </style>
 <template>
   <div class="bg-gray-100">
-  <Heading title="Policy MISIKI" />
-  <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
+<Nav />
+  <!-- <Heading title="Policy MISIKI" /> -->
+  <div class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8">
     <AccountMenu />
     <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
 
@@ -68,11 +69,13 @@ h2 {
 </template>
 
 <script>
+import Nav from '~/components/home/Nav'
+
 import AccountMenu from '~/components/AccountMenu'
 import { Heading } from '~/shared/components'
 export default {
   components:{
-    AccountMenu, Heading
+    AccountMenu, Heading, Nav
   },
 }
 </script>

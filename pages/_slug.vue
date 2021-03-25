@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <!-- <Nav /> -->
+    <Nav />
     <ApolloQuery
       :query="require('~/gql/product/productSlug.gql')"
       :variables="{ slug: $route.params.slug }"

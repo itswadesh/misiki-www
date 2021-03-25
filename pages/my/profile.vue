@@ -1,7 +1,8 @@
 <template>
   <div class="bg-gray-100">
-    <Heading title="Personal Details" />
-    <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
+    <Nav />
+    <!-- <Heading title="Personal Details" /> -->
+    <div class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8">
     <AccountMenu  />
     <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
       <form
@@ -104,6 +105,8 @@
 </template>
 
 <script>
+import Nav from '~/components/home/Nav'
+
 import Vue from 'vue'
 import { mapActions } from 'vuex'
 import { Avatar, Heading } from '~/shared/components'
@@ -128,6 +131,7 @@ export default {
     Textbox,
     Checkbox,
     Avatar,
+    Nav,
     AccountMenu,
   },
   computed: {

@@ -1,5 +1,5 @@
 <template>
-<div class="fixed inset-0 z-20 hidden w-2/3 h-full overflow-x-hidden transition lg:w-1/4 lg:block lg:h-auto lg:relative">
+<div class="fixed inset-0 z-20 hidden w-2/3 h-full overflow-x-hidden transition lg:z-0 lg:w-1/4 lg:block lg:h-auto lg:relative">
   <div class="flex flex-col ">
     <div class="flex justify-end lg:justify-center">
           <div

@@ -1,6 +1,7 @@
 <template>
   <div class="text-center bg-gray-100">
-    <Heading title="Order Details" />
+    <Nav />
+    <!-- <Heading title="Order Details" /> -->
     <!-- <div class="flex items-center justify-start mx-2">
       <nuxt-link to="/my/orders" class="absolute flex-1 font-bold text-left">
         <svg class="mr-1 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
@@ -194,6 +195,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Nav from '~/components/home/Nav'
+
 import Vue from 'vue'
 import { HereMap } from '~/shared/components'
 // import order from '~/gql/order/order.gql'
@@ -230,6 +233,7 @@ export default {
   components: {
     HereMap,
     Heading,
+    Nav
   },
 }
 </script>

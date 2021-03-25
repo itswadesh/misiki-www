@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nav />
-    <CheckoutHeader selected="address" class="mt-16" />
+    <CheckoutHeader selected="address" class="mt-24 sm:mt-16" />
     <div class="w-full pb-4 mx-auto lg:w-1/3">
       <div class="flex items-center justify-between p-3 shadow lg:shadow-none">
         <nuxt-link class="flex items-center w-3/5" to="/checkout/address">

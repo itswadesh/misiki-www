@@ -1,7 +1,8 @@
 <template>
   <div>
-    <Heading title="Offers" />
-    <div class="min-h-screen bg-gray-100">
+    <Nav />
+    <!-- <Heading title="Offers" /> -->
+    <div class="min-h-screen pt-12 bg-gray-100">
       <div class="w-full">
         <ApolloQuery :query="require('~/gql/coupon/coupons.gql')">
           <template v-slot="{ result: { error, data }, isLoading }">
@@ -35,6 +36,8 @@
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 import { Heading } from '~/shared/components'
 import { ListSkeleton } from '~/shared/components/ui'
 import Coupon from '~/components/Coupon'
@@ -42,7 +45,7 @@ import StickyFooter from '~/components/StickyFooter'
 // import coupons from '~/gql/cart/coupons.gql'
 
 export default {
-  components: { Heading, Coupon, StickyFooter, ListSkeleton },
+  components: { Heading, Coupon, StickyFooter, ListSkeleton, Nav },
   data() {
     return {
       // coupons: []

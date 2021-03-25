@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="flex justify-center">
+    <Nav />
+    <div class="flex justify-center mt-24 sm:mt-16">
       <SelectablePlan
         class="filter"
         v-for="f in foodFilters"
@@ -45,6 +46,8 @@
 <script>
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
+import Nav from '~/components/home/Nav'
+
 import {
   Heading,
   Banner,
@@ -76,6 +79,7 @@ export default {
     }
   },
   components: {
+    Nav,
     Heading,
     Banner,
     Product,

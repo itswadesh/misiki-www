@@ -1,6 +1,7 @@
 <template>
   <div>
-    <CheckoutHeader />
+    <Nav />
+    <CheckoutHeader class="mt-24 sm:mt-16" />
     <div class="flex flex-wrap justify-between">
       <div class="lg:w-16 xs:w-0"></div>
       <div class="px-2 mt-10 xs:w-full lg:w-2/4">
@@ -46,6 +47,8 @@
 <script>
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
+import Nav from '~/components/home/Nav'
+
 const CartItem = () => import('~/components/cart/CartItem')
 const Offers = () => import('~/components/cart/Offers')
 const CartSummary = () => import('~/components/cart/CartSummary')
@@ -56,6 +59,7 @@ import { ArrowRightIcon, HeartIcon } from 'vue-feather-icons'
 export default {
   components: {
     CartItem,
+    Nav,
     Offers,
     CartSummary,
     CheckoutHeader,

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <CheckoutHeader />
+    <Nav />
+    <CheckoutHeader class="mt-24 sm:mt-16" />
     <div>
       <div class="p-3 text-sm font-hairline text-gray-600">
         CHOOSE DELIVERY ADDRESS
@@ -85,6 +86,8 @@
 
 <script>
 import Vue from 'vue'
+import Nav from '~/components/home/Nav'
+
 import { Radio } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 import { ArrowRightIcon } from 'vue-feather-icons'
@@ -100,7 +103,7 @@ export default {
   created() {
     // this.getAddress()
   },
-  components: { CheckoutHeader, Radio, ArrowRightIcon },
+  components: { CheckoutHeader, Radio, ArrowRightIcon, Nav },
   methods: {
     // async getAddress() {
     //   this.$store.commit('clearErr')

@@ -88,11 +88,13 @@ import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 import { Heading } from '~/shared/components'
 import { Textbox } from '~/shared/components/ui'
+// import Nav from '~/components/home/Nav.vue'
 
 export default {
   components: {
     Heading,
     Textbox,
+    // Nav,
   },
   middleware: ['isAuth'],
   async asyncData({ store }) {

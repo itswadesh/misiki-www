@@ -1,6 +1,8 @@
 <template>
+<div>
+  <Nav />
   <ApolloQuery
-    class
+    class="mt-24 sm:mt-16"
     :query="require('~/gql/page/pageSlug.gql')"
     :variables="{ slug: 'about' }"
     :update="
@@ -24,11 +26,16 @@
       </div>
     </template>
   </ApolloQuery>
+</div>
 </template>
 <script>
+import Nav from '~/components/home/Nav'
 const Shortcode = () => import('~/components/Shortcode')
 
 export default {
+  components:{
+    Nav
+  },
   layout: 'none',
   data() {
     return {

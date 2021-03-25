@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nav />
-    <CheckoutHeader selected="address" class="static mt-16" />
+    <CheckoutHeader selected="address" class="static mt-24 sm:mt-16" />
     <div style="max-width: 1000px; margin: 0 auto">
       <div
         class="flex flex-wrap items-start justify-between p-2 mx-auto lg:mx-10"

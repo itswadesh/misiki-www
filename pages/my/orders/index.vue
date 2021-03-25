@@ -1,6 +1,7 @@
 <template>
   <div class>
-    <Heading title="My Orders" />
+    <Nav />
+    <!-- <Heading title="My Orders" /> -->
     <!-- <div class="flex items-center justify-start">
       <nuxt-link to="/my" class="absolute flex-1 font-bold text-left">
         <svg
@@ -17,7 +18,7 @@
         Orders
       </h1>
     </div>-->
-    <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
+    <div class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8">
     <AccountMenu  />
     <ApolloQuery
       class="w-full mt-0 lg:ml-8 lg:w-3/4 "
@@ -109,11 +110,12 @@
 import { mapGetters } from 'vuex'
 import { ListCardSkeleton } from '~/shared/components'
 import { Heading } from '~/shared/components'
+import Nav from '~/components/home/Nav'
 
 // import Vue from 'vue'
 // import orders from '~/gql/order/orders.gql'
 export default {
-  components: { ListCardSkeleton, Heading },
+  components: { ListCardSkeleton, Heading , Nav},
   // layout: 'account',
   middleware: ['isAuth'],
   data() {

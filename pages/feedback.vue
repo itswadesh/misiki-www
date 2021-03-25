@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Heading title="Feedback" />
+    <Nav />
+    <!-- <Heading title="Feedback" /> -->
     <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
     <AccountMenu class="" />
     <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
@@ -19,6 +20,8 @@
 </template>
 
 <script>
+import Nav from '~/components/home/Nav'
+
 import AccountMenu from '~/components/AccountMenu'
 import { Textbox, Submit, Textarea } from '~/shared/components/ui'
 import { Heading } from '~/shared/components'
@@ -34,7 +37,7 @@ export default {
   computed: {
     ...mapGetters({ user: 'auth/user', loading: 'loading' }),
   },
-  components: { Heading, Textbox, Textarea, Submit, AccountMenu },
+  components: { Heading, Textbox, Textarea, Submit, AccountMenu, Nav },
   methods: {
     async submit(message) {
       if (message == '') {

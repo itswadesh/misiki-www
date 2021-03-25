@@ -17,6 +17,8 @@ export default {
 }
 </script>
 <template>
+  <div>
+    <Nav />
   <div class="mx-2 mb-16 hfull lg:mx-48">
     <h1 class="text-4xl text-center">Refund & Cancellation Policy</h1>
     <ul>
@@ -40,4 +42,16 @@ export default {
       </li>
     </ul>
   </div>
+  </div>
 </template>
+
+<script>
+import Nav from '~/components/home/Nav'
+export default {
+  component:{
+    Nav
+  }
+   
+  }
+</script>
+

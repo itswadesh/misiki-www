@@ -1,12 +1,13 @@
 <template>
   <div>
-    <Heading title="Post Your Rating" />
+    <Nav />
+    <!-- <Heading title="Post Your Rating" /> -->
     
     <form
       novalidate
       autocomplete="off"
       @submit.prevent.prevent="submit()"
-      class="mx-2"
+      class="mx-2 mt-24 sm:mt-16"
     >
       <div class="flex flex-col items-center pt-3 my-4 bg-white">
       <div class="flex flex-col-reverse justify-between w-full px-4 md:flex-row">
@@ -43,10 +44,11 @@ import { Heading } from '~/shared/components'
 import REVIEW from '~/gql/review/saveReview.gql'
 import PRODUCT from '~/gql/product/product.gql'
 import { mapGetters, mapActions, mapMutations } from 'vuex'
+import Nav from '~/components/home/Nav'
 
 
 export default {
-  components: { Heading, Submit, Textarea, StarRating },
+  components: { Heading, Submit, Textarea, StarRating, Nav },
   fetch({ store, redirect, route }) {
     if (!(store.state.auth || {}).user)
       return redirect('/login?return=/food/reviews/' + route.params.id)

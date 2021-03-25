@@ -1,8 +1,9 @@
 <template>
   <div style="background: #f5f5f5">
+    <Nav />
     <!-- mobile -->
     <div
-      class="flex justify-between w-full text-xs font-semibold border-b-2 border-gray-300 lg:hidden"
+      class="flex justify-between w-full mt-16 text-xs font-semibold border-b-2 border-gray-300 sm:mt-12 lg:hidden"
     >
       <div
         @click="step = 1"
@@ -209,8 +210,10 @@
 import Vue from 'vue'
 import { Checkbox, Radio } from '~/shared/components/ui'
 import { ArrowRightIcon } from 'vue-feather-icons'
+import Nav from '~/components/home/Nav'
+
 export default {
-  components: { Checkbox, Radio, ArrowRightIcon },
+  components: { Checkbox, Radio, ArrowRightIcon, Nav },
   data() {
     return {
       step: 1,

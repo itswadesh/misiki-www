@@ -8,8 +8,9 @@ h1 {
 
 <template>
   <div class="bg-gray-100">
-  <Heading title="About MISIKI" />
-  <div class="container flex flex-row max-w-full p-4 mx-auto sm:p-8">
+  <Nav />
+  <!-- <Heading title="About MISIKI" /> -->
+  <div class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8">
     <AccountMenu  />
     <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
       <main>
@@ -101,10 +102,11 @@ h1 {
 <script>
 import AccountMenu from '~/components/AccountMenu'
 import { Heading } from '~/shared/components'
+import Nav from '~/components/home/Nav'
 
 export default {
   components:{
-    AccountMenu, Heading
+    AccountMenu, Heading, Nav
   },
   head() {
     return {

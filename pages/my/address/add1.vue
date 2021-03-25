@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CheckoutHeader />
+    <!-- <CheckoutHeader /> -->
     <div class="w-full pb-4 m-auto lg:w-1/3">
       <div>
         <div
