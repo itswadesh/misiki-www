@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen">
+  <div class="mt-20 bg-white lg:mt-16">
     <!-- <BackButton /> -->
     <EmptyCart v-if="!cart || !cart.qty || cart.qty == 0" />
 
