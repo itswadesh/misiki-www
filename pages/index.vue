@@ -6,7 +6,7 @@
     >
       Get started as chef in 30 seconds
     </nuxt-link> -->
-    <HomeHeroSlider class="mt-1 bg-white md:mt-1 lg:mt-5 xl:mt-5" />
+    <HomeHeroSlider class="bg-white mt-14" />
 
     <div class="w-full mb-20">
       <Categories />

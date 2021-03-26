@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen bg-white">
-    <BackButton to="/" />
+  <div class="min-h-screen bg-white">
+    <!-- <BackButton to="/" /> -->
     <GMap class="w-full h-72" />
     <div class="py-3 text-xl font-bold text-center bg-white" v-if="loading">
       Searching Order
@@ -10,11 +10,11 @@
     </h1>
     <div v-else class>
       <h2
-        v-if="order.delivery"
+        v-if="order"
         class="py-3 mb-2 font-bold text-center text-gray-500 bg-yellow-200 border-t border-b-2 border-dashed text-md"
       >
         OTP:
-        <span class="text-primary">{{ order.delivery.otp }}</span>
+        <span class="text-primary">{{ order.otp }}</span>
       </h2>
       <div class="w-full px-4 mt-4 text-lg tracking-wider">
         {{ order.items[0].status }}
@@ -44,10 +44,10 @@
           </div>
         </div>
       </div>
-      <div class="my-4 text-center">
+      <!-- <div class="my-4 text-center">
         OTP:
         <span class="font-bold text-red-500">{{ order.otp }}</span>
-      </div>
+      </div> -->
       <button
         @click="refresh()"
         class="fixed bottom-0 flex items-center justify-center w-full py-4 text-center text-white primary"

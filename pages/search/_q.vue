@@ -15,14 +15,15 @@
     <Banner />
     <div class="container min-h-screen mx-auto">
       <!-- <Categories /> -->
+      <div v-if="loading && data && data.length" class="text-center">
+        Loading.......
+      </div>
       <div
-        class
         v-infinite-scroll="loadMore"
         :infinite-scroll-distance="3"
         :infinite-scroll-immediate-check="true"
+        class="flex flex-wrap"
       >
-        <div v-if="loading">Loading.......</div>
-
         <!-- <transition-group
           @before-enter="beforeEnter"
           @enter="enter"
@@ -31,7 +32,12 @@
           :css="false"
           name="slide-up"
         > -->
-        <ListCard class="slide-up-item" v-for="p in data" :key="p.id" :p="p" />
+        <ListCard
+          class="w-full slide-up-item lg:w-1/2 xl:w-1/3"
+          v-for="p in data"
+          :key="p.id"
+          :p="p"
+        />
         <!-- </transition-group> -->
       </div>
       <div v-if="data.length < 1 && !loading" class="mt-64 text-center">

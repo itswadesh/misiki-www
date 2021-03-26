@@ -1,21 +1,5 @@
 <template>
   <div>
-    <div class="flex justify-between px-2 py-4">
-      <input
-        placeholder="Search Your Food"
-        type="text"
-        class="w-full px-4 bg-white border rounded-full text-normal"
-        name="search"
-      />
-      <img
-        v-lazy="`img/banners.svg`"
-        class="w-8 h-8 ml-2 bg-gray-300 rounded-full"
-      />
-    </div>
-    <div class="flex justify-between">
-      <h1 class="px-2 font-bold">Popular of the week</h1>
-      <h2 class="px-2 text-sm font-medium">Show all (>)</h2>
-    </div>
     <div class="relative flex px-1 py-2 m-2 bg-white rounded shadow">
       <div
         v-if="p.time == '12 - 2 PM'"
@@ -24,7 +8,7 @@
         Lunch
       </div>
       <div
-        v-else-if="p.time == '8:30 - 9:30 PM'"
+        v-else-if="p.time == '8:30 - 10:00 PM'"
         class="absolute left-0 z-10 px-4 text-xs text-white bg-blue-500 rounded-r-lg opacity-75"
       >
         Dinner
@@ -55,18 +39,21 @@
             </svg>
             {{ p.vendor.info.restaurant }}
           </div>
-          <div class="pr-2 text-xl font-black text-gray-700 ">
+          <div class="pr-2 text-xl font-black text-gray-700">
             {{ p.price | currency(settings.currency_symbol) }}
           </div>
         </div>
         <div class="flex items-center justify-between">
           <div class="flex items-center">
             <Ratingcircle :rating="p.ratings" class="m-review" />
-            <!-- <fa icon="star h-3 w-3 my-2" /> -->
             <!-- <span class="mx-1 text-sm font-medium text-black">4.6</!-->
             <!-- <div class="text-sm font-medium text-gray-500">(rating/review)</div> -->
           </div>
-          <!-- <div class="px-3 text-xs text-white bg-orange-500 rounded-full">Free Delivery</div> -->
+          <!-- <div class="px-3 text-xs rounded-full">Free Delivery</div> -->
+          <img
+            v-lazy="p.type === 'V' ? '/veg.png' : '/non-veg.png'"
+            class="w-5 mr-2"
+          />
         </div>
       </div>
     </div>

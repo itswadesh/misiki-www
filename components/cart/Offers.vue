@@ -19,7 +19,7 @@
     >
       <div class="font-hairline text-gray-500">
         <TruckIcon aria-hidden="true" /> Shop for
-        <span class="font-bold text-orange-500">₹444</span> more to get
+        <span class="font-bold text-primary-500">₹444</span> more to get
         <span class="font-bold">Free Delivery</span>
       </div>
     </div>

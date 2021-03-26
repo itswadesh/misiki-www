@@ -28,7 +28,9 @@
         class="overflow-hidden focus:outline-none"
       >
         <button @click="go(b.link)">
-          <div class="m-5 shadow sm:shadow-none sm:m-2 rounded-2xl focus:outline-none">
+          <div
+            class="m-5 shadow sm:shadow-none sm:m-2 rounded-2xl focus:outline-none"
+          >
             <img
               v-lazy="b.img"
               class="object-cover w-full overflow-hidden border sm:p-2 sm:border-none h-60 md:object-cover lg:p-3 md:h-64 lg:h-80 xl:h-96 rounded-2xl focus:outline-none"

@@ -2,52 +2,56 @@
   <div class="bg-gray-100">
     <Nav />
     <!-- <Heading title="Personal Details" /> -->
-    <div class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8">
-    <AccountMenu  />
-    <div class="w-full h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4">
-      <form
-        class="w-full mb-1 lg:mx-15 form"
-        novalidate
-        autocomplete="off"
-        @submit.stop.prevent="submit(profile)"
+    <div
+      class="container flex flex-row max-w-full p-4 mx-auto mt-16 sm:mt-12 sm:p-8"
+    >
+      <AccountMenu />
+      <div
+        class="w-full min-h-screen px-3 py-5 mt-0 bg-white shadow md:px-10 lg:h-auto lg:ml-8 lg:w-3/4"
       >
-        <div class="p-2" v-if="a">
-          <!-- <Avatar
+        <form
+          class="w-full mb-1 lg:mx-15 form"
+          novalidate
+          autocomplete="off"
+          @submit.stop.prevent="submit(profile)"
+        >
+          <div class="p-2" v-if="a">
+            <!-- <Avatar
             :image="profile.avatar"
             name="avatar"
             folder="avatar"
             @remove="removeImage"
             @save="saveImage"
           /> -->
-          <div
-            type="tel"
-            label="Phone"
-            class="w-full mb-4 text-center"
-            name="name"
-          >
-            Phone: {{ profile.phone }}
-          </div>
-          <div class="flex justify-between w-full mb-4">
+            <div
+              type="tel"
+              label="Phone"
+              class="w-full mb-4 text-center"
+              name="name"
+            >
+              Phone: {{ profile.phone }}
+            </div>
+            <div class="flex justify-between w-full mb-4">
+              <Textbox
+                label="First Name"
+                class="w-1/2 mr-1"
+                name="firstName"
+                v-model="profile.firstName"
+              />
+              <Textbox
+                label="Last Name"
+                class="w-1/2 ml-1"
+                name="lastName"
+                v-model="profile.lastName"
+              />
+            </div>
             <Textbox
-              label="First Name"
-              class="w-1/2 mr-1"
-              name="firstName"
-              v-model="profile.firstName"
+              label="Email"
+              class="w-full mb-4"
+              name="email"
+              v-model="profile.email"
             />
-            <Textbox
-              label="Last Name"
-              class="w-1/2 ml-1"
-              name="lastName"
-              v-model="profile.lastName"
-            />
-          </div>
-          <Textbox
-            label="Email"
-            class="w-full mb-4"
-            name="email"
-            v-model="profile.email"
-          />
-          <!-- <Textbox
+            <!-- <Textbox
             label="Address"
             class="w-full mb-4"
             name="name"
@@ -80,26 +84,26 @@
               v-model="a.state"
             />
           </div> -->
-        </div>
-        <div
-          class="fixed bottom-0 left-0 flex justify-between w-full shadow lg:shadow-none lg:relative"
-        >
-          <button
-            type="button"
-            @click="$router.push('/my')"
-            class="w-1/2 p-3 text-sm font-semibold tracking-widest text-black bg-white lg:rounded"
+          </div>
+          <div
+            class="fixed bottom-0 left-0 flex justify-between w-full shadow lg:shadow-none lg:relative"
           >
-            CANCEL
-          </button>
-          <button
-            type="submit"
-            class="w-1/2 p-3 text-sm font-semibold tracking-widest primary lg:rounded"
-          >
-            CONTINUE
-          </button>
-        </div>
-      </form>
-    </div>
+            <button
+              type="button"
+              @click="$router.push('/my')"
+              class="w-1/2 p-3 text-sm font-semibold tracking-widest text-black bg-white lg:rounded"
+            >
+              CANCEL
+            </button>
+            <button
+              type="submit"
+              class="w-1/2 p-3 text-sm font-semibold tracking-widest primary lg:rounded"
+            >
+              CONTINUE
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>

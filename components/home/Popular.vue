@@ -10,7 +10,16 @@
       </div>
       <ErrComponent v-else-if="error" :error="error" />
       <div v-else-if="data && data.data.length" class="">
-        <Carousel :products="data.data" title="Popular" class="" />
+        <div class="w-full px-1 my-4 sm:px-4">
+          <h2 class="m-2 my-3 text-xl">Today's Menu</h2>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+          >
+            <div v-for="p in data.data" :key="p.id" class="col-span-1">
+              <Product :p="p" class="" />
+            </div>
+          </div>
+        </div>
       </div>
       <div
         v-else

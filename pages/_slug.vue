@@ -80,7 +80,7 @@
                 </div>
                 <h1 class="mt-2 text-xl font-bold">{{ data.name }}</h1>
                 <!-- <div class="flex items-center justify-between mt-4 text-sm">
-            <div class="px-3 text-white bg-orange-500 rounded-full">free delivery</div>
+            <div class="px-3 text-white bg-primary-500 rounded-full">free delivery</div>
             <div class="text-gray-600">
               <fa icon="history" /> 33min
             </div>

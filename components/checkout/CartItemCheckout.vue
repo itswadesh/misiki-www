@@ -28,7 +28,7 @@
                 {{ item.variant.mrp | currency(settings.currency_symbol) }}
               </span>
               <span class>|</span>
-              <span class="font-hairline text-orange-500">
+              <span class="font-hairline text-primary-500">
                 {{ calculateOffPercent(item.variant.mrp, item.variant.price) }}%
                 OFF
               </span>
