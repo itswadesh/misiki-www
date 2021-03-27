@@ -12,7 +12,7 @@
     <!-- <Loading /> -->
     <!-- <ErrComponent/> -->
     <div class="h-full min-h-screen mx-auto">
-      <nuxt class="mt-24 lg:mt-12"/>
+      <nuxt class="mt-24 lg:mt-12" />
     </div>
     <BackToTopDark />
     <CheckoutFooter />

@@ -6,8 +6,7 @@
     >
       Get started as chef in 30 seconds
     </nuxt-link> -->
-    <HomeHeroSlider class="bg-white " />
-
+    <HomeHeroSlider class="bg-white" />
     <div class="w-full mb-20">
       <!-- <Categories /> -->
       <!-- <div class="block px-2 py-2 mx-auto mb-2 text-center bg-blue-200 border-2 border-blue-300 shadow">
@@ -16,7 +15,7 @@
       </div>
       <AllItems /> -->
       <Popular />
-      <BestSellers />
+      <!-- <BestSellers /> -->
     </div>
     <StickyFooter />
     <a
@@ -40,7 +39,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import Nav from '~/components/home/Nav'
 
 import Categories from '~/components/Categories'
