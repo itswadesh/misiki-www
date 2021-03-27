@@ -28,9 +28,9 @@
       <div>
         <geo-location />
       </div>
-      <div>
+      <!-- <div>
         Business Address: Gopinath Nilay, Kuaramunda, Sundergarh, Odisha
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

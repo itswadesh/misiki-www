@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100">
-    <div class="p-4 mt-16 sm:mt-12 sm:p-8">
+    <div class="p-4 sm:p-8">
       <div class="w-full px-3 py-5 mt-0 bg-white shadow">
         <main class="">
           <div class="mx-3 mb-16">

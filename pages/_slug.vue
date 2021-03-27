@@ -80,7 +80,7 @@
                 </div>
                 <h1 class="mt-2 text-xl font-bold">{{ data.name }}</h1>
                 <!-- <div class="flex items-center justify-between mt-4 text-sm">
-            <div class="px-3 text-white bg-primary-500 rounded-full">free delivery</div>
+            <div class="px-3 text-white rounded-full bg-primary-500">free delivery</div>
             <div class="text-gray-600">
               <fa icon="history" /> 33min
             </div>
@@ -111,6 +111,9 @@
                   <h2 class="text-2xl font-bold sm:mr-5">
                     {{ data.price | currency(settings.currency_symbol) }}
                   </h2>
+                  <div class="text-2xl font-bold strike-through sm:mr-5">
+                    {{ data.mrp | currency(settings.currency_symbol) }}
+                  </div>
                   <div class="flex justify-around">
                     <CartButtons
                       :product="product"

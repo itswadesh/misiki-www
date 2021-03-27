@@ -6,10 +6,10 @@
     >
       Get started as chef in 30 seconds
     </nuxt-link> -->
-    <HomeHeroSlider class="bg-white mt-14" />
+    <HomeHeroSlider class="bg-white " />
 
     <div class="w-full mb-20">
-      <Categories />
+      <!-- <Categories /> -->
       <!-- <div class="block px-2 py-2 mx-auto mb-2 text-center bg-blue-200 border-2 border-blue-300 shadow">
         For delivery info:
         <span class="font-bold">8637260828</span> (Bheem)
