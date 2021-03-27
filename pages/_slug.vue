@@ -108,11 +108,16 @@
                   </div>
                 </div>
                 <div class="flex flex-row justify-between py-3 mb-2 sm:mb-0">
+                  <div class="flex items-center">
                   <h2 class="text-2xl font-bold sm:mr-5">
                     {{ data.price | currency(settings.currency_symbol) }}
                   </h2>
-                  <div class="text-2xl font-bold strike-through sm:mr-5">
+                  <del class="ml-2 text-xs strike-through sm:mr-5" v-if="data.mrp>data.price">
                     {{ data.mrp | currency(settings.currency_symbol) }}
+                  </del>
+                  <div class="flex items-center justify-center px-3 ml-4 text-center bg-green-500 perc">
+                    {{ calculateOffPercent }} % discount
+                  </div>
                   </div>
                   <div class="flex justify-around">
                     <CartButtons
@@ -503,4 +508,14 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.perc {
+  height: 18px;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 7px;
+  color: #ffffff;
+}
+</style>
