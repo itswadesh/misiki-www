@@ -24,8 +24,8 @@ import Product from '~/components/ProductBestseller.vue'
 export default {
   props: ['title', 'products'],
   components: {
-    Carousel,
-    Slide,
+    // Carousel,
+    // Slide,
     Product,
   },
 }

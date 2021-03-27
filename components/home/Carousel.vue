@@ -18,8 +18,8 @@ import Vue from 'vue'
 export default {
   props: ['title', 'products'],
   components: {
-    Carousel,
-    Slide,
+    // Carousel,
+    // Slide,
   },
 }
 </script>
