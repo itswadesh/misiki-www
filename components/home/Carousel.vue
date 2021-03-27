@@ -12,8 +12,8 @@
 
 <script>
 import Vue from 'vue'
-import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
-import '@jambonn/vue-concise-carousel/dist/vue-concise-carousel.css'
+// import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
+// import '@jambonn/vue-concise-carousel/dist/vue-concise-carousel.css'
 
 export default {
   props: ['title', 'products'],

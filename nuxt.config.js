@@ -27,7 +27,6 @@ config.server = {
 config.buildModules = [
   '@nuxtjs/apollo',
   '@nuxtjs/robots',
-  '@nuxtjs/component-cache',
   // '@nuxtjs/onesignal',
   '@nuxtjs/pwa',
   '@nuxtjs/tailwindcss',
