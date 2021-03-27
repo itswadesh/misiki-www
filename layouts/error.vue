@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex flex-col justify-center items-center text-lg antialiased min-h-screen pb-20"
+    class="flex flex-col items-center justify-center min-h-screen pb-20 text-lg antialiased"
   >
     <div
       class="mask"
       v-if="$store.state.settings && $store.state.settings.closed"
     >
-      <h1 class="text-red-500 text-xl bg-gray-900 p-8">
+      <h1 class="p-8 text-xl text-red-500 bg-gray-900">
         {{ $store.state.settings.closedMessage }}
       </h1>
     </div>
@@ -15,7 +15,7 @@
     <h1 v-if="error.statusCode === 404">Not found</h1>
     <pre v-else>{{ error }}</pre>
     &nbsp;
-    <nuxt-link to="/" class="primary text-2xl px-4 rounded"
+    <nuxt-link to="/" class="px-4 text-2xl rounded primary"
       >Home page</nuxt-link
     >
   </div>
@@ -28,5 +28,8 @@ import { Error } from '~/shared/components'
 export default {
   props: ['error'],
   components: { Error, Loading },
+  head() {
+    return this.$nuxtI18nHead()
+  },
 }
 </script>

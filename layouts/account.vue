@@ -36,5 +36,8 @@ export default {
     Loading,
   },
   middleware: ['geo'],
+  head() {
+    return this.$nuxtI18nHead()
+  },
 }
 </script>

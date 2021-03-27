@@ -24,6 +24,9 @@ import StickyFooter from '~/components/StickyFooter'
 export default {
   components: { Error, Search, StickyFooter, BackToTopDark, Loading },
   middleware: ['geo'],
+  head() {
+    return this.$nuxtI18nHead()
+  },
   // created() {
   //   this.a = this.$cookies.get('geo')
   //   if (!this.a) {
