@@ -7,7 +7,7 @@
   >
     <template v-slot="{ result: { error, data }, isLoading }">
       <div v-if="isLoading" class="flex">
-        <Product class="w-1/2" v-for="(n, ix) in 2" :key="ix" :p="{}" />
+        <Product class="w-1/2" v-for="(n, ix) in 2" :key="ix" :product="{}" />
       </div>
       <div v-else-if="error">
         <ErrComponent />

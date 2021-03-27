@@ -18,7 +18,7 @@
     <div class="container pb-16 mx-auto">
       <!-- <div class="flex flex-wrap">
         <div class="w-1/2" v-for="p in products" :key="p._id">
-          <Product :p="p" class />
+          <Product :product="p" class />
         </div>
       </div>-->
       <Categories class="" />

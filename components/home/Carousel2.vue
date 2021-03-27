@@ -6,7 +6,7 @@
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
     >
       <div v-for="p in products" :key="p.id" class="col-span-1">
-        <Product :p="p" class="" />
+        <Product :product="p" class="" />
       </div>
     </div>
     <!-- </carousel> -->

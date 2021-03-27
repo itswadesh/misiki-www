@@ -7,12 +7,15 @@
     >
       <template v-slot="{ result: { error, data }, isLoading }">
         <div v-if="isLoading" class="flex">
-          <Product class="w-1/4" v-for="(n, ix) in 2" :key="ix" :p="{}" />
+          <Product class="w-1/4" v-for="(n, ix) in 2" :key="ix" :product="{}" />
         </div>
         <ErrComponent v-else-if="error" :error="error" />
-        <div v-else-if="data && data.data.length" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <div
+          v-else-if="data && data.data.length"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+        >
           <div v-for="p in data.data" :key="p.id" class="col-span-1">
-            <Product :p="p" />
+            <Product :product="p" />
           </div>
         </div>
         <div v-else-if="!isLoading" class="flex flex-col min-h-screen">

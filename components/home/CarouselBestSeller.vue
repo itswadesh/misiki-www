@@ -9,7 +9,7 @@
     </div>
     <carousel :perPage="6" :paginationEnabled="false">
       <slide v-for="p in products[0] && products[0].items" :key="p.id" class>
-        <Product :p="p" />
+        <Product :product="p" />
       </slide>
     </carousel>
   </div>
