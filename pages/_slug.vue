@@ -109,15 +109,21 @@
                 </div>
                 <div class="flex flex-row justify-between py-3 mb-2 sm:mb-0">
                   <div class="flex items-center">
-                  <h2 class="text-2xl font-bold sm:mr-5">
-                    {{ data.price | currency(settings.currency_symbol) }}
-                  </h2>
-                  <del class="ml-2 text-xs strike-through sm:mr-5" v-if="data.mrp>data.price">
-                    {{ data.mrp | currency(settings.currency_symbol) }}
-                  </del>
-                  <div class="flex items-center justify-center px-3 ml-4 text-center bg-green-500 perc">
-                    {{ calculateOffPercent }} % discount
-                  </div>
+                    <h2 class="text-2xl font-bold sm:mr-5">
+                      {{ data.price | currency(settings.currency_symbol) }}
+                    </h2>
+                    <del
+                      class="ml-2 text-xs strike-through sm:mr-5"
+                      v-if="data.mrp > data.price"
+                    >
+                      {{ data.mrp | currency(settings.currency_symbol) }}
+                    </del>
+                    <div
+                      class="flex items-center justify-center px-3 ml-4 text-center bg-green-500 perc"
+                      v-if="calculateOffPercent > 0"
+                    >
+                      {{ calculateOffPercent }} % discount
+                    </div>
                   </div>
                   <div class="flex justify-around">
                     <CartButtons
@@ -371,9 +377,16 @@ export default {
     }),
     ...mapGetters({ user: 'auth/user' }),
     calculateOffPercent() {
-      if (!this.product || !this.product) return 0
+      if (
+        !this.product ||
+        !this.product.mrp ||
+        !this.product.price ||
+        !this.product.mrp == 0 ||
+        !this.product.price == 0
+      )
+        return 0
       let percent =
-        ((this.product.mrp - this.product.price) * 100) / this.product.mrp
+        (this.product.mrp - this.product.price * 100) / this.product.mrp
       return Math.round(percent)
     },
     calculatePrice() {
