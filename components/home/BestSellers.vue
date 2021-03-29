@@ -1,5 +1,5 @@
 <template>
-  <ApolloQuery
+  <!-- <ApolloQuery
     :query="require('~/gql/product/bestSellers.gql')"
     :update="(data) => data.bestSellers"
     :variables="{ city }"
@@ -11,69 +11,72 @@
       </div>
       <div v-else-if="error">
         <ErrComponent />
-      </div>
-      <div v-else-if="data">
-        <div v-if="data.t && data.t.length > 0">
-          <CarouselBestSeller
-            :products="data.t"
-            :title="`Best Sellers on ${data.t[0]._id.date}`"
-          />
-        </div>
-        <div class="mt-4" v-if="data.t1 && data.t1.length > 0">
-          <CarouselBestSeller
-            :products="data.t1"
-            :title="`Best Sellers on ${data.t1[0]._id.date}`"
-          />
-        </div>
-        <div class="mt-4" v-if="data.t2 && data.t2.length > 0">
-          <CarouselBestSeller
-            :products="data.t2"
-            :title="`Best Sellers on ${data.t2[0]._id.date}`"
-          />
-        </div>
-        <div class="mt-4" v-if="data.t3 && data.t3.length > 0">
-          <CarouselBestSeller
-            :products="data.t3"
-            :title="`Best Sellers on ${data.t3[0]._id.date}`"
-          />
-        </div>
-        <div class="mt-4" v-if="data.t4 && data.t4.length > 0">
-          <CarouselBestSeller
-            :products="data.t4"
-            :title="`Best Sellers on ${data.t4[0]._id.date}`"
-          />
-        </div>
-      </div>
-    </template>
-  </ApolloQuery>
+      </div> -->
+  <div v-if="products">
+    <div v-if="products.t && products.t.length > 0">
+      <CarouselBestSeller
+        :products="products.t"
+        :title="`Best Sellers on ${products.t[0]._id.date}`"
+      />
+    </div>
+    <div class="mt-4" v-if="products.t1 && products.t1.length > 0">
+      <CarouselBestSeller
+        :products="products.t1"
+        :title="`Best Sellers on ${products.t1[0]._id.date}`"
+      />
+    </div>
+    <div class="mt-4" v-if="products.t2 && products.t2.length > 0">
+      <CarouselBestSeller
+        :products="products.t2"
+        :title="`Best Sellers on ${products.t2[0]._id.date}`"
+      />
+    </div>
+    <div class="mt-4" v-if="products.t3 && products.t3.length > 0">
+      <CarouselBestSeller
+        :products="products.t3"
+        :title="`Best Sellers on ${products.t3[0]._id.date}`"
+      />
+    </div>
+    <div class="mt-4" v-if="products.t4 && products.t4.length > 0">
+      <CarouselBestSeller
+        :products="products.t4"
+        :title="`Best Sellers on ${products.t4[0]._id.date}`"
+      />
+    </div>
+  </div>
+  <!-- </template>
+  </ApolloQuery> -->
 </template>
 
 <script>
 import Vue from 'vue'
 import CarouselBestSeller from './CarouselBestSeller'
-import bestSellers from '~/gql/product/bestSellers.gql'
+import BEST_SELLERS from '~/gql/product/bestSellers.gql'
 import { Product } from '~/shared/components'
 
 export default {
   data() {
-    return { city: null }
+    return {
+      products: null,
+      city: null,
+    }
   },
   middleware: ['geo'],
   async created() {
     this.city = (this.$cookies.get('geo') || {}).city
-    //   try {
-    //     this.$store.commit('clearErr')
-    //     this.bestSellers = (
-    //       await this.$apollo.query({
-    //         query: bestSellers
-    //         // fetchPolicy: 'no-cache'
-    //       })
-    //     ).data.bestSellers
-    //   } catch (e) {
-    //     this.$store.commit('setErr', e)
-    //   } finally {
-    //     this.$store.commit('busy', false)
-    //   }
+    try {
+      this.$store.commit('clearErr')
+      this.products = (
+        await this.$apollo.query({
+          query: BEST_SELLERS,
+          // fetchPolicy: 'no-cache'
+        })
+      ).data.bestSellers
+    } catch (e) {
+      this.$store.commit('setErr', e)
+    } finally {
+      this.$store.commit('busy', false)
+    }
   },
   components: { CarouselBestSeller, Product },
 }

@@ -1,5 +1,8 @@
 <template>
-  <div class="w-full px-2 mx-auto my-4">
+  <div
+    class="w-full px-2 mx-auto my-4"
+    v-if="products && products[0] && products[0].items"
+  >
     <div class="flex justify-center mx-4 border-b">
       <p
         class="pb-2 mt-2 text-center border-b2 text-accent-600 border-accent-600 md:ml-6 md:mt-4"
@@ -8,7 +11,7 @@
       </p>
     </div>
     <VueSlickCarousel v-bind="settings" class="flex">
-      <div v-for="p in products[0] && products[0].items" :key="p.id" class>
+      <div v-for="p in products[0].items" :key="p.id" class>
         <ProductBestseller :product="p" />
       </div>
     </VueSlickCarousel>

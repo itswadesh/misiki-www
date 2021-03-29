@@ -1,12 +1,15 @@
 <template>
-  <div class="mb-6 h-60 md:h-64 lg:h-80 xl:h-96 sm:mb-0">
-    <p class="flex justify-center">
+  <div
+    v-if="banners && banners.data"
+    class="mb-6 h-60 md:h-64 lg:h-80 xl:h-96 sm:mb-0"
+  >
+    <div class="flex justify-center">
       <!-- <img src="/loading.svg" v-if="loading" class="absolute z-10 justify-center block m-3" /> -->
       <progress
         v-if="loading"
         class="absolute z-10 justify-center block m-3 material-progress-circular"
       />
-    </p>
+    </div>
     <!-- <SlideBarSkeleton v-if="skeleton" /> -->
 
     <VueSlickCarousel
