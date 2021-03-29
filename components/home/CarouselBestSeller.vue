@@ -7,26 +7,59 @@
         {{ title }}
       </p>
     </div>
-    <carousel :perPage="6" :paginationEnabled="false">
-      <slide v-for="p in products[0] && products[0].items" :key="p.id" class>
-        <Product :product="p" />
-      </slide>
-    </carousel>
+    <VueSlickCarousel v-bind="settings" class="flex">
+      <div v-for="p in products[0] && products[0].items" :key="p.id" class>
+        <ProductBestseller :product="p" />
+      </div>
+    </VueSlickCarousel>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-// import { Carousel, Slide } from '@jambonn/vue-concise-carousel'
-// import '@jambonn/vue-concise-carousel/dist/vue-concise-carousel.css'
-import Product from '~/components/ProductBestseller.vue'
+import ProductBestseller from '~/components/ProductBestseller.vue'
 
 export default {
   props: ['title', 'products'],
+  data() {
+    return {
+      settings: {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 5,
+              slidesToScroll: 5,
+              infinite: true,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+        ],
+      },
+    }
+  },
   components: {
-    // Carousel,
-    // Slide,
-    Product,
+    ProductBestseller,
   },
 }
 </script>

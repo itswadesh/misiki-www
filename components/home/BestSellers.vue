@@ -14,31 +14,31 @@
       </div>
       <div v-else-if="data">
         <div v-if="data.t && data.t.length > 0">
-          <Carousel
+          <CarouselBestSeller
             :products="data.t"
             :title="`Best Sellers on ${data.t[0]._id.date}`"
           />
         </div>
         <div class="mt-4" v-if="data.t1 && data.t1.length > 0">
-          <Carousel
+          <CarouselBestSeller
             :products="data.t1"
             :title="`Best Sellers on ${data.t1[0]._id.date}`"
           />
         </div>
         <div class="mt-4" v-if="data.t2 && data.t2.length > 0">
-          <Carousel
+          <CarouselBestSeller
             :products="data.t2"
             :title="`Best Sellers on ${data.t2[0]._id.date}`"
           />
         </div>
         <div class="mt-4" v-if="data.t3 && data.t3.length > 0">
-          <Carousel
+          <CarouselBestSeller
             :products="data.t3"
             :title="`Best Sellers on ${data.t3[0]._id.date}`"
           />
         </div>
         <div class="mt-4" v-if="data.t4 && data.t4.length > 0">
-          <Carousel
+          <CarouselBestSeller
             :products="data.t4"
             :title="`Best Sellers on ${data.t4[0]._id.date}`"
           />
@@ -50,9 +50,8 @@
 
 <script>
 import Vue from 'vue'
-import Carousel from './CarouselBestSeller'
+import CarouselBestSeller from './CarouselBestSeller'
 import bestSellers from '~/gql/product/bestSellers.gql'
-import FoodItem from './FoodItem.vue'
 import { Product } from '~/shared/components'
 
 export default {
@@ -76,7 +75,7 @@ export default {
     //     this.$store.commit('busy', false)
     //   }
   },
-  components: { Carousel, FoodItem, Product },
+  components: { CarouselBestSeller, Product },
 }
 </script>
 
