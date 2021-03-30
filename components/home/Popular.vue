@@ -22,7 +22,7 @@
     </div>
   </div>
   <div
-    v-else
+    v-else-if="!loading"
     class="flex flex-col items-center justify-center w-full text-center h-72"
   >
     <h3 class="text-3xl font-bold">No food available now</h3>
@@ -43,12 +43,14 @@ export default {
     return {
       products: null,
       city: null,
+      loading: false,
     }
   },
   middleware: ['geo'],
   async created() {
     this.city = (this.$cookies.get('geo') || {}).city
     try {
+      this.loading = true
       this.$store.commit('clearErr')
       this.products = (
         await this.$apollo.query({
@@ -59,6 +61,7 @@ export default {
     } catch (e) {
       this.$store.commit('setErr', e)
     } finally {
+      this.loading = false
       this.$store.commit('busy', false)
     }
   },
