@@ -63,13 +63,14 @@ export default {
   },
   middleware: ['geo'],
   async created() {
-    this.city = (this.$cookies.get('geo') || {}).city
+    const city = (this.$cookies.get('geo') || {}).city
     try {
       this.$store.commit('clearErr')
       this.products = (
         await this.$apollo.query({
           query: BEST_SELLERS,
-          // fetchPolicy: 'no-cache'
+          variables: { city },
+          fetchPolicy: 'no-cache',
         })
       ).data.bestSellers
     } catch (e) {
