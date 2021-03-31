@@ -15,66 +15,83 @@
             </p>
             <div class="py-6 mx-5">
               <div class="flex justify-center mb-4 font-light leading-loose">
-                Misiki is a FNB ecommerce platform which delivers home cooked hygined food from housewives to food lovers. 
-                Housewives / Househusbands prepare food and our delivery boy delivers to the customer. We are operating in Sunabeda since 2019 and planning to expand to Berhampur in next leap.
+                Misiki is a FNB ecommerce platform which delivers home cooked
+                hygined food from housewives to food lovers. Housewives /
+                Househusbands prepare food and our delivery boy delivers to the
+                customer. We are operating in Sunabeda since 2019 and planning
+                to expand to Berhampur in next leap.
               </div>
               <div class="flex justify-center">
-                <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="overflow-hidden bg-white shadow sm:rounded-lg">
-  <div class="px-4 py-5 sm:px-6">
-    <h3 class="text-lg font-medium leading-6 text-gray-900">
-      Business Information
-    </h3>
-    <p class="max-w-2xl mt-1 text-sm text-gray-500">
-      Business details and application.
-    </p>
-  </div>
-  <div class="border-t border-gray-200">
-    <dl>
-      <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">
-          Address
-        </dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          RO-10, Sunabeda, Koraput, Odisha - 763002, India
-        </dd>
-      </div>
-      <div class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">
-          Phone
-        </dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          +91-9078571888
-        </dd>
-      </div>
-      <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">
-          Delivery Time
-        </dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          7:00PM - 9:00PM (Daily)
-        </dd>
-      </div>
-      <div class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">
-         Platform Open Time
-        </dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          7:00AM - 6:00PM (Daily)
-        </dd>
-      </div>
-      <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">
-          Email
-        </dt>
-        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          hi@misiki.in
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-
+                <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+                  <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">
+                      Business Information
+                    </h3>
+                    <p class="max-w-2xl mt-1 text-sm text-gray-500">
+                      Business details and application.
+                    </p>
+                  </div>
+                  <div class="border-t border-gray-200">
+                    <dl>
+                      <div
+                        class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                      >
+                        <dt class="text-sm font-medium text-gray-500">
+                          Address
+                        </dt>
+                        <dd
+                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                        >
+                          RO-10, Sunabeda, Koraput, Odisha - 763002, India
+                        </dd>
+                      </div>
+                      <div
+                        class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                      >
+                        <dt class="text-sm font-medium text-gray-500">Phone</dt>
+                        <dd
+                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                        >
+                          +91-9078571888
+                        </dd>
+                      </div>
+                      <div
+                        class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                      >
+                        <dt class="text-sm font-medium text-gray-500">
+                          Delivery Time
+                        </dt>
+                        <dd
+                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                        >
+                          7:00PM - 9:00PM (Daily)
+                        </dd>
+                      </div>
+                      <div
+                        class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                      >
+                        <dt class="text-sm font-medium text-gray-500">
+                          Platform Open Time
+                        </dt>
+                        <dd
+                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                        >
+                          7:00AM - 6:00PM (Daily)
+                        </dd>
+                      </div>
+                      <div
+                        class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                      >
+                        <dt class="text-sm font-medium text-gray-500">Email</dt>
+                        <dd
+                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                        >
+                          hi@misiki.in
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
