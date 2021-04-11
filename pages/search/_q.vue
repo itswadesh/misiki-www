@@ -18,12 +18,7 @@
       <div v-if="loading && data && data.length" class="text-center">
         Loading.......
       </div>
-      <div
-        v-infinite-scroll="loadMore"
-        :infinite-scroll-distance="3"
-        :infinite-scroll-immediate-check="true"
-        class="flex flex-wrap"
-      >
+      <div class="flex flex-wrap">
         <!-- <transition-group
           @before-enter="beforeEnter"
           @enter="enter"
@@ -38,6 +33,7 @@
           :key="p.id"
           :p="p"
         />
+        <infinite-loading @infinite="loadMore"></infinite-loading>
         <!-- </transition-group> -->
       </div>
       <div v-if="data.length < 1 && !loading" class="mt-64 text-center">

@@ -1,94 +1,92 @@
 <template>
-<div>
-  <Nav />
-  <div class="container mx-auto">
-    <CheckoutHeader selected="payment" class="mt-24 sm:mt-16" />
-    <div
-      class="flex items-center justify-between p-3 m-auto shadow lg:py-2 lg:px-0 lg:shadow-none lg:w-1/2"
-    >
-      <nuxt-link to="/checkout/address" class="flex items-center">
-        <svg class="mb-1" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"
-          />
-        </svg>
-        <div class="text-xl font-bold text-gray-700">Payment</div>
-      </nuxt-link>
-      <div class="text-xs text-gray-600">Step 3 of 3</div>
-    </div>
-    <br />
-    <div class="p-2 m-auto text-sm text-gray-700 lg:px-0 lg:w-1/2">
-      <div class="mb-6 text-lg text-center">
-        Select your prefered payment method
-      </div>
-      <ApolloQuery
-        :query="require('~/gql/payment/paymentMethods.gql')"
-        :variables="{ active: true }"
-        :update="
-          (data) => {
-            paymentMethod = data.paymentMethods.data[0].value
-            return data.paymentMethods
-          }
-        "
+  <div>
+    <Nav />
+    <div class="container mx-auto">
+      <CheckoutHeader selected="payment" class="mt-24 sm:mt-16" />
+      <div
+        class="flex items-center justify-between p-3 m-auto shadow lg:py-2 lg:px-0 lg:shadow-none lg:w-1/2"
       >
-        <template v-slot="{ result: { error, data }, isLoading }">
-          <div v-if="isLoading">
-           Loading....
-          </div>
-          <ErrComponent v-else-if="error" :error="error" />
-          <div v-else-if="data && data.data.length > 0">
-            <div v-for="p in data.data" :key="p.id">
-              <div
-                v-if="
-                  paymentMethod == 'Stripe' &&
-                  p.name == 'Stripe' &&
-                  loadedStripe &&
-                  p.key &&
-                  p.key != null
-                "
-                class="px-6 py-4 my-2 rounded shadow-lg"
-              >
-                <client-only placeholder="Loading...">
-                  <Card
-                    class="stripe-card input"
-                    id="card"
-                    :class="{ complete }"
-                    :stripe="p.key"
-                    @change="complete = $event.complete"
-                  />
-                </client-only>
-              </div>
+        <nuxt-link to="/checkout/address" class="flex items-center">
+          <svg class="mb-1" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"
+            />
+          </svg>
+          <div class="text-xl font-bold text-gray-700">Payment</div>
+        </nuxt-link>
+        <div class="text-xs text-gray-600">Step 3 of 3</div>
+      </div>
+      <br />
+      <div class="p-2 m-auto text-sm text-gray-700 lg:px-0 lg:w-1/2">
+        <div class="mb-6 text-lg text-center">
+          Select your prefered payment method
+        </div>
+        <ApolloQuery
+          :query="require('~/gql/payment/paymentMethods.gql')"
+          :variables="{ active: true }"
+          :update="
+            (data) => {
+              paymentMethod = data.paymentMethods.data[0].value
+              return data.paymentMethods
+            }
+          "
+        >
+          <template v-slot="{ result: { error, data }, isLoading }">
+            <div v-if="isLoading">Loading....</div>
+            <div v-else-if="error">{{ error }}</div>
+            <div v-else-if="data && data.data.length > 0">
+              <div v-for="p in data.data" :key="p.id">
+                <div
+                  v-if="
+                    paymentMethod == 'Stripe' &&
+                    p.name == 'Stripe' &&
+                    loadedStripe &&
+                    p.key &&
+                    p.key != null
+                  "
+                  class="px-6 py-4 my-2 rounded shadow-lg"
+                >
+                  <client-only placeholder="Loading...">
+                    <Card
+                      class="stripe-card input"
+                      id="card"
+                      :class="{ complete }"
+                      :stripe="p.key"
+                      @change="complete = $event.complete"
+                    />
+                  </client-only>
+                </div>
 
-              <label
-                class="flex justify-between w-full px-6 py-4 my-2 bg-white rounded shadow-lg cursor-pointer"
-              >
-                <div class="flex-1">
-                  <h2 class="text-xl font-black">{{ p.name }}</h2>
-                  <div
-                    v-if="p.name != 'COD' && (!p.key || p.key == '')"
-                    class="text-center text-red-500"
-                  >
-                    {{ p.name }} Publishable key is invalid
+                <label
+                  class="flex justify-between w-full px-6 py-4 my-2 bg-white rounded shadow-lg cursor-pointer"
+                >
+                  <div class="flex-1">
+                    <h2 class="text-xl font-black">{{ p.name }}</h2>
+                    <div
+                      v-if="p.name != 'COD' && (!p.key || p.key == '')"
+                      class="text-center text-red-500"
+                    >
+                      {{ p.name }} Publishable key is invalid
+                    </div>
+                    <p v-else>
+                      {{ p.text }}
+                    </p>
                   </div>
-                  <p v-else>
-                    {{ p.text }}
-                  </p>
-                </div>
-                <div class="flex items-center">
-                  <img v-lazy="p.img" :alt="p.name" class="w-16 h-12 mx-4" />
-                  <Radio
-                    :value="p.value"
-                    v-model="paymentMethod"
-                    :color="p.color"
-                  />
-                </div>
-              </label>
+                  <div class="flex items-center">
+                    <img v-lazy="p.img" :alt="p.name" class="w-16 h-12 mx-4" />
+                    <Radio
+                      :value="p.value"
+                      v-model="paymentMethod"
+                      :color="p.color"
+                    />
+                  </div>
+                </label>
+              </div>
             </div>
-          </div>
-        </template>
-      </ApolloQuery>
+          </template>
+        </ApolloQuery>
 
-      <!-- <div
+        <!-- <div
         v-if="
           paymentMethod == 'Stripe' &&
           loadedStripe &&
@@ -106,7 +104,7 @@
           />
         </client-only>
       </div> -->
-      <!-- <label
+        <!-- <label
         v-if="
           settings.stripePublishableKey &&
           settings.stripePublishableKey != '' &&
@@ -125,7 +123,7 @@
           <Radio value="Stripe" v-model="paymentMethod" color="blue" />
         </div>
       </label> -->
-      <!-- <label
+        <!-- <label
         v-if="
           settings.RAZORPAY_KEY_ID &&
           settings.RAZORPAY_KEY_ID != '' &&
@@ -145,7 +143,7 @@
           <Radio value="Online" v-model="paymentMethod" color="blue" />
         </div>
       </label> -->
-      <!-- <label
+        <!-- <label
         class="flex justify-between px-6 py-4 my-2 bg-white rounded shadow-lg"
       >
         <div class="flex-1">
@@ -157,61 +155,63 @@
           <Radio value="COD" v-model="paymentMethod" />
         </div>
       </label> -->
-    </div>
+      </div>
 
-    <div
-      class="p-2 m-auto mb-32 text-sm text-gray-700 lg:px-0 lg:w-1/2 lg:mb-2"
-    >
-      <div>DELIVER TO</div>
-      <div class="flex justify-between w-full bg-white rounded shadow">
-        <div class="flex-1 p-2" v-if="address">
-          <div class="font-semibold">
-            {{ address.firstName }} {{ address.lastName }}
-          </div>
-          <div class="py-2 text-xs">
-            <div>{{ address.address }}</div>
-            <div>{{ address.city }}</div>
-            <div>{{ address.state }}</div>
-            <div>{{ address.zip }}</div>
-            <div class="pt-2">
-              Mobile:
-              <span class="font-bold">{{ address.phone }}</span>
+      <div
+        class="p-2 m-auto mb-32 text-sm text-gray-700 lg:px-0 lg:w-1/2 lg:mb-2"
+      >
+        <div>DELIVER TO</div>
+        <div class="flex justify-between w-full bg-white rounded shadow">
+          <div class="flex-1 p-2" v-if="address">
+            <div class="font-semibold">
+              {{ address.firstName }} {{ address.lastName }}
             </div>
-            <div class="pt-2">
-              <nuxt-link
-                to="/checkout/address"
-                class="font-semibold text-blue-700"
-                >Change Address</nuxt-link
+            <div class="py-2 text-xs">
+              <div>{{ address.address }}</div>
+              <div>{{ address.city }}</div>
+              <div>{{ address.state }}</div>
+              <div>{{ address.zip }}</div>
+              <div class="pt-2">
+                Mobile:
+                <span class="font-bold">{{ address.phone }}</span>
+              </div>
+              <div class="pt-2">
+                <nuxt-link
+                  to="/checkout/address"
+                  class="font-semibold text-blue-700"
+                  >Change Address</nuxt-link
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="fixed bottom-0 w-full p-2 m-auto font-bold bg-white shadow-md lg:shadow-none lg:w-1/2 lg:relative"
+      >
+        <div class="flex items-center p-2">
+          <div class="flex-1 text-center">
+            <div>{{ cart.total | currency(settings.currency_symbol) }}</div>
+            <div>
+              <nuxt-link to="/cart" class="text-red-400"
+                >view details</nuxt-link
               >
             </div>
           </div>
+          <form
+            novalidate
+            autocomplete="off"
+            @submit.stop.prevent="submit()"
+            class="flex-1 p-1"
+          >
+            <Submit class="w-full">
+              <span v-if="paymentMethod == 'COD'">Place Order</span>
+              <span v-else-if="razorpayReady && loadedStripe">Pay Now</span>
+            </Submit>
+          </form>
         </div>
       </div>
     </div>
-    <div
-      class="fixed bottom-0 w-full p-2 m-auto font-bold bg-white shadow-md lg:shadow-none lg:w-1/2 lg:relative"
-    >
-      <div class="flex items-center p-2">
-        <div class="flex-1 text-center">
-          <div>{{ cart.total | currency(settings.currency_symbol) }}</div>
-          <div>
-            <nuxt-link to="/cart" class="text-red-400">view details</nuxt-link>
-          </div>
-        </div>
-        <form
-          novalidate
-          autocomplete="off"
-          @submit.stop.prevent="submit()"
-          class="flex-1 p-1"
-        >
-          <Submit class="w-full">
-            <span v-if="paymentMethod == 'COD'">Place Order</span>
-            <span v-else-if="razorpayReady && loadedStripe">Pay Now</span>
-          </Submit>
-        </form>
-      </div>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -234,9 +234,14 @@ export default {
   middleware({ store, redirect }) {
     if (store.state.cart.qty < 1) return redirect('/cart')
   },
-  components: { CheckoutHeader, Radio, Submit, Card,  Nav
-  // ContentLoader
-   },
+  components: {
+    CheckoutHeader,
+    Radio,
+    Submit,
+    Card,
+    Nav,
+    // ContentLoader
+  },
   data() {
     return {
       address: {},
