@@ -216,9 +216,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import Nav from '~/components/home/Nav'
-
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 import { Radio, Submit } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
@@ -240,7 +238,6 @@ export default {
     Submit,
     Card,
     Nav,
-    // ContentLoader
   },
   data() {
     return {
