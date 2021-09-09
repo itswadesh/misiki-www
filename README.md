@@ -1,4 +1,5 @@
 # Clone Entire
+
 ```
 git clone git@github.com:itswadesh/misiki-www.git --recurse-submodules
 ```
@@ -26,4 +27,4 @@ $ yarn start
 $ yarn generate
 ```
 
-now secrets add http_endpoint https://apiv2.misiki.in
+now secrets add http_endpoint https://apiv2.foodaffair.club

@@ -146,9 +146,9 @@
               Misiki reserves the right to terminate your access to the platform
               and use of any services at our sole discretion and without notice
               to you. You can cancel your account any time by sending an email
-              to support@misiki.in. After your account is cancelled by either
-              party you will still be bound to the terms and conditions which
-              you agreed to including limitation of liability, dispute
+              to support@foodaffair.club. After your account is cancelled by
+              either party you will still be bound to the terms and conditions
+              which you agreed to including limitation of liability, dispute
               resolution, warranty disclaimers, content status, outstanding
               payments and ownership provisions. All campaign agreements will be
               subject to the payment and cancellation provisions outlined in
@@ -170,7 +170,7 @@
               dispute arising from these terms and conditions can be heard in
               Sundergarh jurisdiction.
             </p>
-            Any Questing please reach - hi@misiki.in
+            Any Questing please reach - hi@foodaffair.club
           </div>
         </main>
       </div>

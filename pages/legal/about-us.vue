@@ -140,7 +140,7 @@
                             sm:mt-0 sm:col-span-2
                           "
                         >
-                          hi@misiki.in
+                          hi@foodaffair.club
                         </dd>
                       </div>
                     </dl>

@@ -4,7 +4,15 @@
     <div class="container mx-auto">
       <CheckoutHeader selected="payment" class="mt-24 sm:mt-16" />
       <div
-        class="flex items-center justify-between p-3 m-auto shadow lg:py-2 lg:px-0 lg:shadow-none lg:w-1/2"
+        class="
+          flex
+          items-center
+          justify-between
+          p-3
+          m-auto
+          shadow
+          lg:py-2 lg:px-0 lg:shadow-none lg:w-1/2
+        "
       >
         <nuxt-link to="/checkout/address" class="flex items-center">
           <svg class="mb-1" viewBox="0 0 24 24" fill="currentColor">
@@ -58,7 +66,18 @@
                 </div>
 
                 <label
-                  class="flex justify-between w-full px-6 py-4 my-2 bg-white rounded shadow-lg cursor-pointer"
+                  class="
+                    flex
+                    justify-between
+                    w-full
+                    px-6
+                    py-4
+                    my-2
+                    bg-white
+                    rounded
+                    shadow-lg
+                    cursor-pointer
+                  "
                 >
                   <div class="flex-1">
                     <h2 class="text-xl font-black">{{ p.name }}</h2>
@@ -187,7 +206,17 @@
         </div>
       </div>
       <div
-        class="fixed bottom-0 w-full p-2 m-auto font-bold bg-white shadow-md lg:shadow-none lg:w-1/2 lg:relative"
+        class="
+          fixed
+          bottom-0
+          w-full
+          p-2
+          m-auto
+          font-bold
+          bg-white
+          shadow-md
+          lg:shadow-none lg:w-1/2 lg:relative
+        "
       >
         <div class="flex items-center p-2">
           <div class="flex-1 text-center">
@@ -368,7 +397,7 @@ export default {
               this.user && this.user.lastName
             }`,
             phone: this.user && this.user.phone,
-            email: (this.user && this.user.email) || 'hi@misiki.in',
+            email: (this.user && this.user.email) || 'hi@foodaffair.club',
             contact: this.user && this.user.phone,
           },
           notes: {

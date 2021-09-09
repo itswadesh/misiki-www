@@ -4,7 +4,8 @@
       <h1 class="text-4xl text-center">Refund & Cancellation Policy</h1>
       <ul>
         <li>
-          You may cancel your account at anytime by emailing support@misiki.in
+          You may cancel your account at anytime by emailing
+          support@foodaffair.club
         </li>
         <li>
           Once your account is cancelled all of your Content will be immediately
