@@ -1,12 +1,19 @@
 {
-  "git.ignoreLimitWarning": true,
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    //   "editor.formatOnSave": true,
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
   "git.confirmEmptyCommits": false,
   "git.confirmSync": false,
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "files.eol": "\n"
 }
