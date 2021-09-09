@@ -9,7 +9,20 @@
     <div class="">
       <div class="container px-2 mx-auto">
         <div
-          class="flex flex-wrap items-start justify-center py-8 pr-0 mx-auto my-4 mb-8 bg-white rounded shadow lg:bg-transparent lg:shadow-none lg:rounded-none"
+          class="
+            flex flex-wrap
+            items-start
+            justify-center
+            py-8
+            pr-0
+            mx-auto
+            my-4
+            mb-8
+            bg-white
+            rounded
+            shadow
+            lg:bg-transparent lg:shadow-none lg:rounded-none
+          "
         >
           <div class="overflow-hidden bg-white shadow sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
@@ -23,23 +36,38 @@
             <div class="border-t border-gray-200">
               <dl>
                 <div
-                  class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  class="
+                    px-4
+                    py-5
+                    bg-gray-50
+                    sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                  "
                 >
                   <dt class="text-sm font-medium text-gray-500">Address</dt>
                   <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    RO-10, Sunabeda, Koraput, Odisha - 763002, India
+                    RO-10, Zyrardow - 36-316, Poland
                   </dd>
                 </div>
                 <div
-                  class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  class="
+                    px-4
+                    py-5
+                    bg-white
+                    sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                  "
                 >
                   <dt class="text-sm font-medium text-gray-500">Phone</dt>
                   <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    +91-9078571888
+                    +48-9078571888
                   </dd>
                 </div>
                 <div
-                  class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  class="
+                    px-4
+                    py-5
+                    bg-gray-50
+                    sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                  "
                 >
                   <dt class="text-sm font-medium text-gray-500">
                     Delivery Time
@@ -49,7 +77,12 @@
                   </dd>
                 </div>
                 <div
-                  class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  class="
+                    px-4
+                    py-5
+                    bg-white
+                    sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                  "
                 >
                   <dt class="text-sm font-medium text-gray-500">
                     Platform Open Time
@@ -59,7 +92,12 @@
                   </dd>
                 </div>
                 <div
-                  class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                  class="
+                    px-4
+                    py-5
+                    bg-gray-50
+                    sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                  "
                 >
                   <dt class="text-sm font-medium text-gray-500">Email</dt>
                   <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
@@ -88,17 +126,53 @@
                   type="text"
                   v-model="email"
                   placeholder="Your email"
-                  class="w-full px-2 mb-2 mr-4 text-xs bg-gray-100 border border-gray-400 rounded w-108 hover:bg-white focus:outline-none"
+                  class="
+                    w-full
+                    px-2
+                    mb-2
+                    mr-4
+                    text-xs
+                    bg-gray-100
+                    border border-gray-400
+                    rounded
+                    w-108
+                    hover:bg-white
+                    focus:outline-none
+                  "
                 />
                 <textarea
                   v-model="message"
                   placeholder="Message"
-                  class="w-full h-32 px-2 mb-2 mr-4 text-xs bg-gray-100 border border-gray-400 rounded w-108 hover:bg-white focus:outline-none"
+                  class="
+                    w-full
+                    h-32
+                    px-2
+                    mb-2
+                    mr-4
+                    text-xs
+                    bg-gray-100
+                    border border-gray-400
+                    rounded
+                    w-108
+                    hover:bg-white
+                    focus:outline-none
+                  "
                 />
                 <button
                   type="submit"
                   :disabled="loading"
-                  class="flex items-center justify-center w-full h-12 py-2 text-2xl font-bold rounded outline-none"
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    w-full
+                    h-12
+                    py-2
+                    text-2xl
+                    font-bold
+                    rounded
+                    outline-none
+                  "
                   :class="{
                     'primary text-white': !loading,
                     'border border-gray-400 bg-gray-300': loading,

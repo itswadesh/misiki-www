@@ -9,7 +9,16 @@
               Us
             </h1>
             <p
-              class="px-2 text-lg font-bold leading-relaxed tracking-widest text-center leader lg:px-64"
+              class="
+                px-2
+                text-lg
+                font-bold
+                leading-relaxed
+                tracking-widest
+                text-center
+                leader
+                lg:px-64
+              "
             >
               Home food home delivered with love.
             </p>
@@ -18,8 +27,8 @@
                 Misiki is a FNB ecommerce platform which delivers home cooked
                 hygined food from housewives to food lovers. Housewives /
                 Househusbands prepare food and our delivery boy delivers to the
-                customer. We are operating in Sunabeda since 2019 and planning
-                to expand to Berhampur in next leap.
+                customer. We are operating in Poland since 2019 and planning to
+                expand to Berhampur in next leap.
               </div>
               <div class="flex justify-center">
                 <div class="overflow-hidden bg-white shadow sm:rounded-lg">
@@ -34,57 +43,102 @@
                   <div class="border-t border-gray-200">
                     <dl>
                       <div
-                        class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                        class="
+                          px-4
+                          py-5
+                          bg-gray-50
+                          sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                        "
                       >
                         <dt class="text-sm font-medium text-gray-500">
                           Address
                         </dt>
                         <dd
-                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                          class="
+                            mt-1
+                            text-sm text-gray-900
+                            sm:mt-0 sm:col-span-2
+                          "
                         >
-                          RO-10, Sunabeda, Koraput, Odisha - 763002, India
+                          RO-10, Zyrardow - 36-316, Poland
                         </dd>
                       </div>
                       <div
-                        class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                        class="
+                          px-4
+                          py-5
+                          bg-white
+                          sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                        "
                       >
                         <dt class="text-sm font-medium text-gray-500">Phone</dt>
                         <dd
-                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                          class="
+                            mt-1
+                            text-sm text-gray-900
+                            sm:mt-0 sm:col-span-2
+                          "
                         >
-                          +91-9078571888
+                          +48-9078571888
                         </dd>
                       </div>
                       <div
-                        class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                        class="
+                          px-4
+                          py-5
+                          bg-gray-50
+                          sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                        "
                       >
                         <dt class="text-sm font-medium text-gray-500">
                           Delivery Time
                         </dt>
                         <dd
-                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                          class="
+                            mt-1
+                            text-sm text-gray-900
+                            sm:mt-0 sm:col-span-2
+                          "
                         >
                           7:00PM - 9:00PM (Daily)
                         </dd>
                       </div>
                       <div
-                        class="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                        class="
+                          px-4
+                          py-5
+                          bg-white
+                          sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                        "
                       >
                         <dt class="text-sm font-medium text-gray-500">
                           Platform Open Time
                         </dt>
                         <dd
-                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                          class="
+                            mt-1
+                            text-sm text-gray-900
+                            sm:mt-0 sm:col-span-2
+                          "
                         >
                           7:00AM - 6:00PM (Daily)
                         </dd>
                       </div>
                       <div
-                        class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+                        class="
+                          px-4
+                          py-5
+                          bg-gray-50
+                          sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6
+                        "
                       >
                         <dt class="text-sm font-medium text-gray-500">Email</dt>
                         <dd
-                          class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"
+                          class="
+                            mt-1
+                            text-sm text-gray-900
+                            sm:mt-0 sm:col-span-2
+                          "
                         >
                           hi@misiki.in
                         </dd>
