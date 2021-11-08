@@ -13,7 +13,13 @@
     <div class="w-full px-1 my-4 sm:px-4">
       <h2 class="m-2 mt-3 text-xl">Today's Menu</h2>
       <div
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+        class="
+          grid grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-4
+          xl:grid-cols-5
+          2xl:grid-cols-6
+        "
       >
         <div v-for="p in products" :key="p.id" class="col-span-1">
           <Product :product="p" class="" />
@@ -42,22 +48,19 @@ export default {
   data() {
     return {
       products: null,
-      city: null,
+      geo: null,
       loading: false,
     }
   },
   middleware: ['geo'],
   async created() {
-    this.city = (this.$cookies.get('geo') || {}).city
+    this.geo = this.$cookies.get('geo') || {}
     try {
       this.loading = true
       this.$store.commit('clearErr')
       this.products = (
-        await this.$apollo.query({
-          query: POPULAR,
-          // fetchPolicy: 'no-cache'
-        })
-      ).data.popular.data
+        await this.$get('product/popular', { zip: this.geo.zip })
+      ).data
     } catch (e) {
       this.$store.commit('setErr', e)
     } finally {

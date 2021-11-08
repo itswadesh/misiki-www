@@ -15,7 +15,7 @@
       </div>
       <AllItems /> -->
       <Popular />
-      <BestSellers />
+      <!-- <BestSellers /> -->
     </div>
     <StickyFooter />
     <a

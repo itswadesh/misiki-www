@@ -58,18 +58,18 @@ export default {
   data() {
     return {
       products: null,
-      city: null,
+      geo: null,
     }
   },
   middleware: ['geo'],
   async created() {
-    const city = (this.$cookies.get('geo') || {}).city
+    const geo = this.$cookies.get('geo') || {}
     try {
       this.$store.commit('clearErr')
       this.products = (
         await this.$apollo.query({
           query: BEST_SELLERS,
-          variables: { city },
+          variables: { zip: geo.zip },
           fetchPolicy: 'no-cache',
         })
       ).data.bestSellers
