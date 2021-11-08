@@ -13,12 +13,6 @@ import {
 } from './shared/config/index'
 // delete config.fontawesome
 delete config.buildModules
-config.plugins.push({ src: '~/shared/plugins/map.js', ssr: false })
-config.plugins.push({ src: '~/shared/plugins/timer.js', ssr: false })
-config.plugins.push({ src: '~/shared/plugins/slick.js' })
-config.plugins.push({ src: '~/shared/plugins/slick.js' })
-config.plugins.push({ src: '~/plugins/api.js' })
-config.plugins.push({ src: '~/plugins/vue-mq.js' })
 
 // config.plugins.push({ src: '~/shared/plugins/drift.js', ssr: false })
 // config.plugins.push(

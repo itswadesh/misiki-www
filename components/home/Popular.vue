@@ -53,7 +53,7 @@ export default {
     }
   },
   middleware: ['geo'],
-  async created() {
+  async mounted() {
     this.geo = this.$cookies.get('geo') || {}
     try {
       this.loading = true
