@@ -62,7 +62,7 @@ export default {
     }
   },
   middleware: ['geo'],
-  async created() {
+  async mounted() {
     const geo = this.$cookies.get('geo') || {}
     try {
       this.$store.commit('clearErr')
