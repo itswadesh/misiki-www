@@ -8,7 +8,7 @@
         :name="f.name"
         :value="f.value"
         :color="f.color"
-        v-model="type"
+        v-model="foodType"
         @onUpdatePlan="filter"
       ></SelectablePlan>
     </div>
@@ -64,7 +64,7 @@ export default {
   mixins: [infiniteScroll],
   data() {
     return {
-      type: '',
+      foodType: '',
       model: SEARCH,
       attr: 'search',
       foodFilters: [
@@ -85,7 +85,7 @@ export default {
     SelectablePlan,
   },
   created() {
-    this.type = this.$route.query.type || ''
+    this.foodType = this.$route.query.foodType || ''
   },
   mounted() {
     this.getData() // Creates server rendering issue unless placed here
@@ -125,7 +125,7 @@ export default {
     // },
     filter() {
       this.$router.push(
-        `/search/${this.$route.params.q || ''}?type=${this.type}`
+        `/search/${this.$route.params.q || ''}?foodType=${this.foodType}`
       )
     },
   },

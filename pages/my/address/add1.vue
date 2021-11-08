@@ -79,12 +79,28 @@
           />
         </div>
         <div
-          class="fixed bottom-0 flex justify-between w-full shadow lg:shadow-none lg:w-1/3"
+          class="
+            fixed
+            bottom-0
+            flex
+            justify-between
+            w-full
+            shadow
+            lg:shadow-none lg:w-1/3
+          "
         >
           <button
             type="button"
             @click="$router.push('/checkout/address')"
-            class="w-1/2 p-3 text-sm font-semibold tracking-widest text-black bg-white"
+            class="
+              w-1/2
+              p-3
+              text-sm
+              font-semibold
+              tracking-widest
+              text-black
+              bg-white
+            "
           >
             CANCEL
           </button>
@@ -104,7 +120,7 @@
 import Vue from 'vue'
 import { Textbox } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
-import address from '~/gql/user/address.gql'
+import address from '~/gql/address/address.gql'
 export default {
   middleware: ['isAuth'],
   data() {

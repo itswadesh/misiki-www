@@ -1,6 +1,6 @@
 <template>
   <div class="p-2 bg-white rounded shadow">
-    <ApolloQuery :query="require('~/gql/user/addresses.gql')">
+    <ApolloQuery :query="require('~/gql/address/addresses.gql')">
       <template v-slot="{ result: { error, data }, isLoading }">
         <div v-if="isLoading">Loading........</div>
         <div v-else-if="error">
@@ -41,7 +41,14 @@
             <label class="flex w-full border-t border-gray-200">
               <button
                 @click="go('/checkout/address')"
-                class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
+                class="
+                  w-1/2
+                  py-1
+                  mt-1
+                  tracking-widest
+                  text-blue-500
+                  border-r border-gray-200
+                "
               >
                 Edit/Change
               </button>
@@ -63,7 +70,7 @@
 <script>
 // import Vue from 'vue'
 import { Radio } from '~/shared/components/ui'
-import addresses from '~/gql/user/addresses.gql'
+import addresses from '~/gql/address/addresses.gql'
 
 export default {
   components: { Radio },

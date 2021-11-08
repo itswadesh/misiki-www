@@ -6,7 +6,7 @@
     >
       Get started as chef in 30 seconds
     </nuxt-link> -->
-    <HomeHeroSlider class="bg-white" />
+    <!-- <HomeHeroSlider class="bg-white" /> -->
     <div class="w-full mb-20">
       <!-- <Categories /> -->
       <!-- <div class="block px-2 py-2 mx-auto mb-2 text-center bg-blue-200 border-2 border-blue-300 shadow">
@@ -21,7 +21,20 @@
     <a
       href="https://api.whatsapp.com/send?phone=919078571888"
       target="_blank"
-      class="fixed bottom-0 right-0 block w-12 h-12 mb-20 mr-4 bg-green-500 rounded-full cursor-pointer hover:shadow-lg"
+      class="
+        fixed
+        bottom-0
+        right-0
+        block
+        w-12
+        h-12
+        mb-20
+        mr-4
+        bg-green-500
+        rounded-full
+        cursor-pointer
+        hover:shadow-lg
+      "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

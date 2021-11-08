@@ -7,13 +7,23 @@
         CHOOSE DELIVERY ADDRESS
       </div>
       <div class="m-2 lg:flex">
-        <ApolloQuery :query="require('~/gql/user/addresses.gql')">
+        <ApolloQuery :query="require('~/gql/address/addresses.gql')">
           <template v-slot="{ result: { error, data }, isLoading }">
             <div v-if="isLoading">Loading........</div>
             <ErrComponent v-else-if="error" :error="error" />
             <div v-else-if="data && data.addresses">
               <div
-                class="flex flex-wrap justify-between p-2 m-1 bg-white border border-green-500 rounded shadow lg:w-1/3"
+                class="
+                  flex flex-wrap
+                  justify-between
+                  p-2
+                  m-1
+                  bg-white
+                  border border-green-500
+                  rounded
+                  shadow
+                  lg:w-1/3
+                "
                 v-for="(a, ix) in data.addresses"
                 :key="a._id"
               >
@@ -47,7 +57,14 @@
                 </label>
                 <div class="flex w-full border-t border-gray-200">
                   <button
-                    class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
+                    class="
+                      w-1/2
+                      py-1
+                      mt-1
+                      tracking-widest
+                      text-blue-500
+                      border-r border-gray-200
+                    "
                   >
                     Remove
                   </button>
@@ -64,7 +81,19 @@
         </ApolloQuery>
         <nuxt-link
           to="/checkout/add"
-          class="flex justify-between px-4 py-2 m-1 my-2 bg-white rounded shadow pointer lg:w-1/3"
+          class="
+            flex
+            justify-between
+            px-4
+            py-2
+            m-1
+            my-2
+            bg-white
+            rounded
+            shadow
+            pointer
+            lg:w-1/3
+          "
         >
           <div>Add New Address</div>
           <ArrowRightIcon class="text-right" aria-hidden="true" />
@@ -72,11 +101,29 @@
       </div>
     </div>
     <div
-      class="fixed bottom-0 right-0 w-full p-2 bg-white lg:inset-auto lg:w-1/4 lg:absolute"
+      class="
+        fixed
+        bottom-0
+        right-0
+        w-full
+        p-2
+        bg-white
+        lg:inset-auto lg:w-1/4 lg:absolute
+      "
     >
       <button
         @click="$router.push('/checkout/address')"
-        class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-red-500 rounded"
+        class="
+          w-full
+          p-3
+          mt-3
+          text-sm
+          font-semibold
+          tracking-widest
+          text-white
+          bg-red-500
+          rounded
+        "
       >
         CONFIRM
       </button>
@@ -91,7 +138,7 @@ import Nav from '~/components/home/Nav'
 import { Radio } from '~/shared/components/ui'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 import { ArrowRightIcon } from 'vue-feather-icons'
-// import addresses from '~/gql/user/addresses.gql'
+// import addresses from '~/gql/address/addresses.gql'
 export default {
   data() {
     return {

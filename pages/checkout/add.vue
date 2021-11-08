@@ -28,8 +28,6 @@ import Nav from '~/components/home/Nav'
 
 import { Textbox } from '~/shared/components/ui'
 import { AddressEdit } from '~/shared/components'
-import addAddress from '~/gql/user/addAddress.gql'
-import updateAddress from '~/gql/user/updateAddress.gql'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 
 export default {
@@ -63,7 +61,6 @@ export default {
     //   this.$router.push(url)
     // },
     // async submit(address) {
-    //   if (address && address.coords) delete address.coords.__typename
     //   try {
     //     this.$store.commit('clearErr')
     //     // address.zip = +address.zip

@@ -14,7 +14,18 @@
 
             <div v-else-if="data && data.addresses.length > 0">
               <div
-                class="flex flex-wrap justify-between w-full p-2 mb-2 bg-white border rounded shadow md:w-4/5"
+                class="
+                  flex flex-wrap
+                  justify-between
+                  w-full
+                  p-2
+                  mb-2
+                  bg-white
+                  border
+                  rounded
+                  shadow
+                  md:w-4/5
+                "
                 :class="{ 'border-green-500': selectedAddress == a.id }"
                 v-for="(a, ix) in data.addresses"
                 :key="a.id"
@@ -51,7 +62,14 @@
                 <div class="flex w-full border-t border-gray-200">
                   <button
                     @click="del(a, query)"
-                    class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
+                    class="
+                      w-1/2
+                      py-1
+                      mt-1
+                      tracking-widest
+                      text-blue-500
+                      border-r border-gray-200
+                    "
                   >
                     Remove
                   </button>
@@ -111,8 +129,8 @@ import CartSummaryCheckout from '~/components/checkout/CartSummaryCheckout'
 import { Radio } from '~/shared/components/ui'
 import CartItem from '~/components/cart/CartItem'
 const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
-import ADDRESSES from '~/gql/user/addresses.gql'
-import deleteAddress from '~/gql/user/deleteAddress.gql'
+import ADDRESSES from '~/gql/address/addresses.gql'
+import deleteAddress from '~/gql/address/deleteAddress.gql'
 export default {
   middleware: ['isAuth'],
   data() {

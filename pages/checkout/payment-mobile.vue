@@ -252,7 +252,7 @@ const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 import capturePay from '~/gql/pay/capturePay.gql'
 import razorpay from '~/gql/pay/razorpay.gql'
 import STRIPE_MUTATION from '~/gql/pay/stripe.gql'
-import address from '~/gql/user/address.gql'
+import address from '~/gql/address/address.gql'
 import validateCart from '~/gql/cart/validateCart.gql'
 import { Card, createToken, CardNumber } from 'vue-stripe-elements-plus'
 // import { STRIPE_PUBLISHABLE_KEY } from '~/shared/config'
@@ -323,7 +323,6 @@ export default {
     async submit() {
       if (this.address) {
         delete this.address.__typename
-        delete this.address.coords.__typename
         delete this.address.createdAt
         delete this.address.updatedAt
       }
